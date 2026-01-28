@@ -1,0 +1,687 @@
+{
+  "description": "JLPT-organized minimal pairs for Japanese pitch accent study",
+  "methodology": "Level N contains pairs where min(jlpt(word1), jlpt(word2)) = N",
+  "data_sources": {
+    "accent": "UniDic (NINJAL) - authoritative linguistic resource",
+    "jlpt_lists": "Commonly-used educational vocabulary lists"
+  },
+  "usage": "Words with same reading but different accent patterns, organized by difficulty",
+  "levels": {
+    "N5": [
+      {
+        "reading": "あさ",
+        "mora_count": 2,
+        "word1": {
+          "surface": "朝",
+          "accent": 1,
+          "pattern": "HLL",
+          "jlpt": "N5"
+        },
+        "word2": {
+          "surface": "麻",
+          "accent": 2,
+          "pattern": "LHL",
+          "jlpt": "N5"
+        }
+      },
+      {
+        "reading": "あめ",
+        "mora_count": 2,
+        "word1": {
+          "surface": "飴",
+          "accent": 0,
+          "pattern": "LHH",
+          "jlpt": "N5"
+        },
+        "word2": {
+          "surface": "雨",
+          "accent": 1,
+          "pattern": "HLL",
+          "jlpt": "N5"
+        }
+      },
+      {
+        "reading": "いし",
+        "mora_count": 2,
+        "word1": {
+          "surface": "意思",
+          "accent": 1,
+          "pattern": "HLL",
+          "jlpt": "N5"
+        },
+        "word2": {
+          "surface": "石",
+          "accent": 2,
+          "pattern": "LHL",
+          "jlpt": "N5"
+        }
+      },
+      {
+        "reading": "いし",
+        "mora_count": 2,
+        "word1": {
+          "surface": "医師",
+          "accent": 1,
+          "pattern": "HLL",
+          "jlpt": "N5"
+        },
+        "word2": {
+          "surface": "石",
+          "accent": 2,
+          "pattern": "LHL",
+          "jlpt": "N5"
+        }
+      },
+      {
+        "reading": "おう",
+        "mora_count": 2,
+        "word1": {
+          "surface": "追う",
+          "accent": 0,
+          "pattern": "LHH",
+          "jlpt": "N5"
+        },
+        "word2": {
+          "surface": "王",
+          "accent": 1,
+          "pattern": "HLL",
+          "jlpt": "N5"
+        }
+      },
+      {
+        "reading": "おう",
+        "mora_count": 2,
+        "word1": {
+          "surface": "負う",
+          "accent": 0,
+          "pattern": "LHH",
+          "jlpt": "N5"
+        },
+        "word2": {
+          "surface": "王",
+          "accent": 1,
+          "pattern": "HLL",
+          "jlpt": "N5"
+        }
+      },
+      {
+        "reading": "かみ",
+        "mora_count": 2,
+        "word1": {
+          "surface": "神",
+          "accent": 1,
+          "pattern": "HLL",
+          "jlpt": "N5"
+        },
+        "word2": {
+          "surface": "紙",
+          "accent": 2,
+          "pattern": "LHL",
+          "jlpt": "N5"
+        }
+      },
+      {
+        "reading": "かみ",
+        "mora_count": 2,
+        "word1": {
+          "surface": "神",
+          "accent": 1,
+          "pattern": "HLL",
+          "jlpt": "N5"
+        },
+        "word2": {
+          "surface": "髪",
+          "accent": 2,
+          "pattern": "LHL",
+          "jlpt": "N5"
+        }
+      },
+      {
+        "reading": "きる",
+        "mora_count": 2,
+        "word1": {
+          "surface": "着る",
+          "accent": 0,
+          "pattern": "LHH",
+          "jlpt": "N5"
+        },
+        "word2": {
+          "surface": "切る",
+          "accent": 1,
+          "pattern": "HLL",
+          "jlpt": "N5"
+        }
+      },
+      {
+        "reading": "さけ",
+        "mora_count": 2,
+        "word1": {
+          "surface": "酒",
+          "accent": 0,
+          "pattern": "LHH",
+          "jlpt": "N5"
+        },
+        "word2": {
+          "surface": "鮭",
+          "accent": 1,
+          "pattern": "HLL",
+          "jlpt": "N5"
+        }
+      },
+      {
+        "reading": "す",
+        "mora_count": 1,
+        "word1": {
+          "surface": "巣",
+          "accent": 0,
+          "pattern": "LH",
+          "jlpt": "N5"
+        },
+        "word2": {
+          "surface": "酢",
+          "accent": 1,
+          "pattern": "HL",
+          "jlpt": "N5"
+        }
+      },
+      {
+        "reading": "せき",
+        "mora_count": 2,
+        "word1": {
+          "surface": "席",
+          "accent": 1,
+          "pattern": "HLL",
+          "jlpt": "N5"
+        },
+        "word2": {
+          "surface": "咳",
+          "accent": 2,
+          "pattern": "LHL",
+          "jlpt": "N5"
+        }
+      },
+      {
+        "reading": "てん",
+        "mora_count": 2,
+        "word1": {
+          "surface": "点",
+          "accent": 0,
+          "pattern": "LHH",
+          "jlpt": "N5"
+        },
+        "word2": {
+          "surface": "天",
+          "accent": 1,
+          "pattern": "HLL",
+          "jlpt": "N5"
+        }
+      },
+      {
+        "reading": "は",
+        "mora_count": 1,
+        "word1": {
+          "surface": "葉",
+          "accent": 0,
+          "pattern": "LH",
+          "jlpt": "N5"
+        },
+        "word2": {
+          "surface": "歯",
+          "accent": 1,
+          "pattern": "HL",
+          "jlpt": "N5"
+        }
+      },
+      {
+        "reading": "は",
+        "mora_count": 1,
+        "word1": {
+          "surface": "葉",
+          "accent": 0,
+          "pattern": "LH",
+          "jlpt": "N5"
+        },
+        "word2": {
+          "surface": "刃",
+          "accent": 1,
+          "pattern": "HL",
+          "jlpt": "N5"
+        }
+      },
+      {
+        "reading": "はし",
+        "mora_count": 2,
+        "word1": {
+          "surface": "端",
+          "accent": 0,
+          "pattern": "LHH",
+          "jlpt": "N5"
+        },
+        "word2": {
+          "surface": "箸",
+          "accent": 1,
+          "pattern": "HLL",
+          "jlpt": "N5"
+        }
+      },
+      {
+        "reading": "はし",
+        "mora_count": 2,
+        "word1": {
+          "surface": "端",
+          "accent": 0,
+          "pattern": "LHH",
+          "jlpt": "N5"
+        },
+        "word2": {
+          "surface": "橋",
+          "accent": 2,
+          "pattern": "LHL",
+          "jlpt": "N5"
+        }
+      },
+      {
+        "reading": "はし",
+        "mora_count": 2,
+        "word1": {
+          "surface": "箸",
+          "accent": 1,
+          "pattern": "HLL",
+          "jlpt": "N5"
+        },
+        "word2": {
+          "surface": "橋",
+          "accent": 2,
+          "pattern": "LHL",
+          "jlpt": "N5"
+        }
+      },
+      {
+        "reading": "はち",
+        "mora_count": 2,
+        "word1": {
+          "surface": "蜂",
+          "accent": 0,
+          "pattern": "LHH",
+          "jlpt": "N5"
+        },
+        "word2": {
+          "surface": "八",
+          "accent": 2,
+          "pattern": "LHL",
+          "jlpt": "N5"
+        }
+      },
+      {
+        "reading": "ひ",
+        "mora_count": 1,
+        "word1": {
+          "surface": "日",
+          "accent": 0,
+          "pattern": "LH",
+          "jlpt": "N5"
+        },
+        "word2": {
+          "surface": "火",
+          "accent": 1,
+          "pattern": "HL",
+          "jlpt": "N5"
+        }
+      },
+      {
+        "reading": "ひ",
+        "mora_count": 1,
+        "word1": {
+          "surface": "陽",
+          "accent": 0,
+          "pattern": "LH",
+          "jlpt": "N5"
+        },
+        "word2": {
+          "surface": "火",
+          "accent": 1,
+          "pattern": "HL",
+          "jlpt": "N5"
+        }
+      }
+    ],
+    "N4": [
+      {
+        "reading": "うる",
+        "mora_count": 2,
+        "word1": {
+          "surface": "売る",
+          "accent": 0,
+          "pattern": "LHH",
+          "jlpt": "N5"
+        },
+        "word2": {
+          "surface": "得る",
+          "accent": 1,
+          "pattern": "HLL",
+          "jlpt": "N4"
+        }
+      },
+      {
+        "reading": "かえる",
+        "mora_count": 3,
+        "word1": {
+          "surface": "変える",
+          "accent": 0,
+          "pattern": "LHHH",
+          "jlpt": "N4"
+        },
+        "word2": {
+          "surface": "帰る",
+          "accent": 1,
+          "pattern": "HLLL",
+          "jlpt": "N4"
+        }
+      }
+    ],
+    "N3": [
+      {
+        "reading": "かえる",
+        "mora_count": 3,
+        "word1": {
+          "surface": "変える",
+          "accent": 0,
+          "pattern": "LHHH",
+          "jlpt": "N4"
+        },
+        "word2": {
+          "surface": "返る",
+          "accent": 1,
+          "pattern": "HLLL",
+          "jlpt": "N3"
+        }
+      },
+      {
+        "reading": "かえる",
+        "mora_count": 3,
+        "word1": {
+          "surface": "替える",
+          "accent": 0,
+          "pattern": "LHHH",
+          "jlpt": "N3"
+        },
+        "word2": {
+          "surface": "帰る",
+          "accent": 1,
+          "pattern": "HLLL",
+          "jlpt": "N4"
+        }
+      },
+      {
+        "reading": "かえる",
+        "mora_count": 3,
+        "word1": {
+          "surface": "替える",
+          "accent": 0,
+          "pattern": "LHHH",
+          "jlpt": "N3"
+        },
+        "word2": {
+          "surface": "返る",
+          "accent": 1,
+          "pattern": "HLLL",
+          "jlpt": "N3"
+        }
+      },
+      {
+        "reading": "かえる",
+        "mora_count": 3,
+        "word1": {
+          "surface": "代える",
+          "accent": 0,
+          "pattern": "LHHH",
+          "jlpt": "N3"
+        },
+        "word2": {
+          "surface": "帰る",
+          "accent": 1,
+          "pattern": "HLLL",
+          "jlpt": "N4"
+        }
+      },
+      {
+        "reading": "かえる",
+        "mora_count": 3,
+        "word1": {
+          "surface": "代える",
+          "accent": 0,
+          "pattern": "LHHH",
+          "jlpt": "N3"
+        },
+        "word2": {
+          "surface": "返る",
+          "accent": 1,
+          "pattern": "HLLL",
+          "jlpt": "N3"
+        }
+      },
+      {
+        "reading": "かえる",
+        "mora_count": 3,
+        "word1": {
+          "surface": "換える",
+          "accent": 0,
+          "pattern": "LHHH",
+          "jlpt": "N3"
+        },
+        "word2": {
+          "surface": "帰る",
+          "accent": 1,
+          "pattern": "HLLL",
+          "jlpt": "N4"
+        }
+      },
+      {
+        "reading": "かえる",
+        "mora_count": 3,
+        "word1": {
+          "surface": "換える",
+          "accent": 0,
+          "pattern": "LHHH",
+          "jlpt": "N3"
+        },
+        "word2": {
+          "surface": "返る",
+          "accent": 1,
+          "pattern": "HLLL",
+          "jlpt": "N3"
+        }
+      },
+      {
+        "reading": "かける",
+        "mora_count": 3,
+        "word1": {
+          "surface": "欠ける",
+          "accent": 0,
+          "pattern": "LHHH",
+          "jlpt": "N3"
+        },
+        "word2": {
+          "surface": "掛ける",
+          "accent": 2,
+          "pattern": "LHLL",
+          "jlpt": "N4"
+        }
+      },
+      {
+        "reading": "かける",
+        "mora_count": 3,
+        "word1": {
+          "surface": "欠ける",
+          "accent": 0,
+          "pattern": "LHHH",
+          "jlpt": "N3"
+        },
+        "word2": {
+          "surface": "賭ける",
+          "accent": 2,
+          "pattern": "LHLL",
+          "jlpt": "N3"
+        }
+      },
+      {
+        "reading": "かける",
+        "mora_count": 3,
+        "word1": {
+          "surface": "欠ける",
+          "accent": 0,
+          "pattern": "LHHH",
+          "jlpt": "N3"
+        },
+        "word2": {
+          "surface": "駆ける",
+          "accent": 2,
+          "pattern": "LHLL",
+          "jlpt": "N3"
+        }
+      }
+    ],
+    "N2": [
+      {
+        "reading": "いる",
+        "mora_count": 2,
+        "word1": {
+          "surface": "居る",
+          "accent": 0,
+          "pattern": "LHH",
+          "jlpt": "N3"
+        },
+        "word2": {
+          "surface": "射る",
+          "accent": 1,
+          "pattern": "HLL",
+          "jlpt": "N2"
+        }
+      },
+      {
+        "reading": "いる",
+        "mora_count": 2,
+        "word1": {
+          "surface": "要る",
+          "accent": 0,
+          "pattern": "LHH",
+          "jlpt": "N3"
+        },
+        "word2": {
+          "surface": "射る",
+          "accent": 1,
+          "pattern": "HLL",
+          "jlpt": "N2"
+        }
+      }
+    ],
+    "N1": [
+      {
+        "reading": "おろし",
+        "mora_count": 3,
+        "word1": {
+          "surface": "降ろし",
+          "accent": 2,
+          "pattern": "LHLL",
+          "jlpt": "N1"
+        },
+        "word2": {
+          "surface": "卸し",
+          "accent": 3,
+          "pattern": "LHHL",
+          "jlpt": "N2"
+        }
+      },
+      {
+        "reading": "かけ",
+        "mora_count": 2,
+        "word1": {
+          "surface": "欠け",
+          "accent": 0,
+          "pattern": "LHH",
+          "jlpt": "N1"
+        },
+        "word2": {
+          "surface": "賭け",
+          "accent": 2,
+          "pattern": "LHL",
+          "jlpt": "N1"
+        }
+      },
+      {
+        "reading": "かみ",
+        "mora_count": 2,
+        "word1": {
+          "surface": "噛み",
+          "accent": 1,
+          "pattern": "HLL",
+          "jlpt": "N1"
+        },
+        "word2": {
+          "surface": "紙",
+          "accent": 2,
+          "pattern": "LHL",
+          "jlpt": "N5"
+        }
+      },
+      {
+        "reading": "かみ",
+        "mora_count": 2,
+        "word1": {
+          "surface": "噛み",
+          "accent": 1,
+          "pattern": "HLL",
+          "jlpt": "N1"
+        },
+        "word2": {
+          "surface": "髪",
+          "accent": 2,
+          "pattern": "LHL",
+          "jlpt": "N5"
+        }
+      },
+      {
+        "reading": "かり",
+        "mora_count": 2,
+        "word1": {
+          "surface": "借り",
+          "accent": 0,
+          "pattern": "LHH",
+          "jlpt": "N1"
+        },
+        "word2": {
+          "surface": "刈り",
+          "accent": 1,
+          "pattern": "HLL",
+          "jlpt": "N1"
+        }
+      },
+      {
+        "reading": "かれ",
+        "mora_count": 2,
+        "word1": {
+          "surface": "枯れ",
+          "accent": 0,
+          "pattern": "LHH",
+          "jlpt": "N1"
+        },
+        "word2": {
+          "surface": "彼",
+          "accent": 1,
+          "pattern": "HLL",
+          "jlpt": "N4"
+        }
+      }
+    ]
+  },
+  "statistics": {
+    "total_pairs": 41,
+    "by_level": {
+      "N5": 21,
+      "N4": 2,
+      "N3": 10,
+      "N2": 2,
+      "N1": 6
+    }
+  }
+}

@@ -13,7 +13,8 @@ Deploy free on Streamlit Cloud:
     4. Deploy
 """
 import streamlit as st
-from pitch_accent import SentenceParser, HTMLFormatter, FugashiAccentEngine
+import subprocess
+import sys
 
 # Page config
 st.set_page_config(
@@ -21,6 +22,32 @@ st.set_page_config(
     page_icon="🎵",
     layout="wide"
 )
+
+# Download UniDic if not present (required for first run on Streamlit Cloud)
+@st.cache_resource
+def ensure_unidic():
+    """Download UniDic dictionary if not already installed."""
+    import os
+    try:
+        import unidic
+        # Check if dictionary files actually exist
+        dicdir = unidic.DICDIR
+        if not os.path.exists(os.path.join(dicdir, "dicrc")):
+            raise FileNotFoundError("UniDic not fully installed")
+    except Exception as e:
+        st.info(f"Downloading UniDic dictionary (first time only, ~500MB)... This may take a few minutes.")
+        result = subprocess.run(
+            [sys.executable, "-m", "unidic", "download"],
+            capture_output=True,
+            text=True
+        )
+        if result.returncode != 0:
+            st.error(f"Failed to download UniDic: {result.stderr}")
+            st.stop()
+
+ensure_unidic()
+
+from pitch_accent import SentenceParser, HTMLFormatter, FugashiAccentEngine
 
 # Initialize components (cached for performance)
 @st.cache_resource
