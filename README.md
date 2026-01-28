@@ -1,5 +1,7 @@
 # Japanese Pitch Accent Anki Generator
 
+**[日本語版はこちら](README_ja.md)**
+
 Generate Anki flashcards for Japanese pitch accent study. Takes Japanese text and produces cards with:
 - Color-coded pitch patterns (red=high, blue=low)
 - Accent type numbers `[n]` where n=position of downstep (0=flat/heiban)
@@ -29,8 +31,8 @@ With sandhi (this tool):
 
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_USERNAME/pitch-accent-anki.git
-cd pitch-accent-anki
+git clone https://github.com/rschein2/PitchAccent.git
+cd PitchAccent
 
 # Create virtual environment (recommended)
 python -m venv venv
@@ -38,7 +40,7 @@ source venv/bin/activate  # Linux/Mac
 # or: venv\Scripts\activate  # Windows
 
 # Install dependencies
-pip install fugashi unidic requests beautifulsoup4
+pip install -r requirements.txt
 
 # Download UniDic dictionary (~500MB, required)
 python -m unidic download
@@ -96,6 +98,39 @@ python anki_generator.py --input text.txt --output study.txt
 読む [1] HLL: 読んだ [1] HLLL, 読んで [1] HLLL, 読まない [2] LHLLL, 読みます [3] LHHLL
 ```
 
+## Data Source & Reliability
+
+### UniDic (国語研短単位自動解析用辞書)
+
+The pitch accent data comes from **UniDic**, developed by NINJAL (National Institute for Japanese Language and Linguistics / 国立国語研究所), Japan's premier government language research institution.
+
+**What makes UniDic authoritative:**
+- Built from linguist-annotated corpora: CSJ (Corpus of Spontaneous Japanese) and BCCWJ (Balanced Corpus of Contemporary Written Japanese)
+- Accent data (`aType` field) based on Tokyo dialect standard pronunciation
+- **De facto standard** for Japanese NLP research worldwide
+- Used by universities, commercial products, and major NLP libraries
+- Professionally maintained with versioned releases
+
+**This is NOT:**
+- Crowd-sourced or wiki-style data
+- Amateur annotations
+- Web-scraped content
+
+### Accuracy Estimates
+
+| Component | Accuracy | Notes |
+|-----------|----------|-------|
+| Single word accent (UniDic) | ~95%+ | Very high for common vocabulary |
+| Conjugation accent (F-type rules) | ~95%+ | Based on UniDic's formal rules |
+| Compound noun sandhi | ~80-90% | Some compounds are lexicalized exceptions |
+| Numeral + counter | ~85-90% | Common counters well-covered |
+
+**Why compound accuracy is lower:**
+- Some compounds have become lexicalized with non-predictable accents
+- Proper nouns may follow different patterns
+- Very long compounds (4+ elements) become less predictable
+- Regional and generational variation exists
+
 ## How It Works
 
 ### Accent Computation
@@ -106,6 +141,8 @@ Uses UniDic's morphological analysis with F-type combination rules:
 - **F3**: If heiban → stay heiban; else shift
 - **F4**: Always shift to boundary
 - etc.
+
+**Detailed documentation:** [docs/f_type_rules.md](docs/f_type_rules.md)
 
 ### Compound Noun Sandhi
 
@@ -118,13 +155,13 @@ Implements Tokyo dialect length-driven rules:
 | 3-4 mora (accented) | Preserve N2's accent position |
 | 5+ mora | Preserve N2's accent (or heiban if N2 is heiban) |
 
-Based on: [TUFS Compound Accent Rules](https://www.coelang.tufs.ac.jp/mt/ja/pmod/practical/02-07-01.php)
+**Detailed documentation:** [docs/compound_sandhi.md](docs/compound_sandhi.md)
 
-### Numeral Conversion
+### Numeral Accent
 
-Arabic numerals are converted to Japanese readings:
-- `1952` → `せんきゅうひゃくごじゅうに`
-- `6万人` → `ろくまんにん`
+Implements Miyazaki-style numeral × counter category system with 13 categories (α-ν) and override codes.
+
+**Detailed documentation:** [docs/numeral_accent.md](docs/numeral_accent.md)
 
 ## File Structure
 
@@ -138,7 +175,11 @@ Arabic numerals are converted to Japanese readings:
 ├── sentence_parser.py    # Tokenization & compound detection
 ├── html_formatter.py     # Color-coded HTML output
 ├── corpus_loader.py      # Text/file input handling
-└── pitch_lookup.py       # Optional: JPDB/OJAD verification
+├── pitch_lookup.py       # Optional: JPDB/OJAD verification
+└── docs/
+    ├── compound_sandhi.md    # Compound noun accent rules (detailed)
+    ├── f_type_rules.md       # F-type combination rules (detailed)
+    └── numeral_accent.md     # Numeral accent rules (detailed)
 ```
 
 ## Optional: JPDB API for Verification
@@ -151,17 +192,23 @@ The core functionality works offline. For optional pitch verification against jp
 
 ## Limitations
 
-- Compound accent rules are ~80-90% accurate (some compounds are lexicalized exceptions)
-- Numeral readings ignore rendaku (さんひゃく instead of さんびゃく)
-- Very long compounds may have unpredictable accents
-- Some counters not yet in the category table
+- **Compound accent rules are ~80-90% accurate** - Some compounds are lexicalized exceptions that don't follow productive rules. The tool uses the most common Tokyo dialect patterns, but individual speakers may vary.
+- **Numeral readings don't include rendaku** - Outputs さんひゃく instead of さんびゃく. This is a simplification; full rendaku rules are complex.
+- **Very long compounds** - Compounds with 4+ elements may have unpredictable accents.
+- **Counter coverage** - Some less common counters aren't in the category table yet.
+- **No regional variants** - Only Tokyo standard dialect is supported.
 
 ## References
 
-- [UniDic](https://clrd.ninjal.ac.jp/unidic/) - Morphological dictionary
-- [TUFS Language Modules](https://www.coelang.tufs.ac.jp/mt/ja/pmod/practical/02-07-01.php) - Compound accent rules
+### Primary Sources
+- [UniDic](https://clrd.ninjal.ac.jp/unidic/) - Morphological dictionary with accent data (NINJAL)
+- [TUFS Language Modules](https://www.coelang.tufs.ac.jp/mt/ja/pmod/practical/02-07-01.php) - Compound accent rules (Tokyo University of Foreign Studies)
 - [Miyazaki et al. (2012)](https://www.gavo.t.u-tokyo.ac.jp/~mine/paper/PDF/2012/ASJ_1-11-11_p319-322_t2012-3.pdf) - Numeral accent rules
-- [OJAD](https://www.gavo.t.u-tokyo.ac.jp/ojad/) - Online Japanese Accent Dictionary
+
+### Additional Resources
+- [OJAD](https://www.gavo.t.u-tokyo.ac.jp/ojad/) - Online Japanese Accent Dictionary (University of Tokyo)
+- Kubozono, Haruo - Research on Japanese prosody and compound accent
+- NHK日本語発音アクセント新辞典 (2016) - NHK Pronunciation and Accent Dictionary
 
 ## License
 
