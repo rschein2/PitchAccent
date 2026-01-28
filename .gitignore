@@ -1,0 +1,45 @@
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+
+# Environment variables (API keys)
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Output files
+*.tsv
+*.csv
+output/
+decks/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Cached data
+.cache/
+*.cache
+
+# Test outputs
+test_*.txt
+test_*.html
+japan_us_*.txt
+japan_us_*.html

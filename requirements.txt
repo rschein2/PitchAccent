@@ -1,0 +1,4 @@
+fugashi
+unidic
+requests
+beautifulsoup4

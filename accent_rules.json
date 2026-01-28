@@ -1,0 +1,916 @@
+{
+  "suffix_rules": {
+    "ます|助動詞|*|助動詞-マス": {
+      "surface": "ます",
+      "pos1": "助動詞",
+      "pos2": "*",
+      "cType": "助動詞-マス",
+      "lemma": "ます",
+      "aConType_raw": "動詞%F4@1",
+      "aConType": {
+        "動詞": {
+          "type": "F4",
+          "M": 1,
+          "L": null
+        }
+      }
+    },
+    "た|助動詞|*|助動詞-タ": {
+      "surface": "た",
+      "pos1": "助動詞",
+      "pos2": "*",
+      "cType": "助動詞-タ",
+      "lemma": "た",
+      "aConType_raw": "動詞%F2@1,形容詞%F4@-2",
+      "aConType": {
+        "動詞": {
+          "type": "F2",
+          "M": 1,
+          "L": null
+        },
+        "形容詞": {
+          "type": "F4",
+          "M": -2,
+          "L": null
+        }
+      }
+    },
+    "だ|助動詞|*|助動詞-タ": {
+      "surface": "だ",
+      "pos1": "助動詞",
+      "pos2": "*",
+      "cType": "助動詞-タ",
+      "lemma": "た",
+      "aConType_raw": "動詞%F2@1",
+      "aConType": {
+        "動詞": {
+          "type": "F2",
+          "M": 1,
+          "L": null
+        }
+      }
+    },
+    "です|助動詞|*|助動詞-デス": {
+      "surface": "です",
+      "pos1": "助動詞",
+      "pos2": "*",
+      "cType": "助動詞-デス",
+      "lemma": "です",
+      "aConType_raw": "形容詞%F2@-1,動詞%F2@0,名詞%F2@1",
+      "aConType": {
+        "形容詞": {
+          "type": "F2",
+          "M": -1,
+          "L": null
+        },
+        "動詞": {
+          "type": "F2",
+          "M": 0,
+          "L": null
+        },
+        "名詞": {
+          "type": "F2",
+          "M": 1,
+          "L": null
+        }
+      }
+    },
+    "ない|助動詞|*|助動詞-ナイ": {
+      "surface": "ない",
+      "pos1": "助動詞",
+      "pos2": "*",
+      "cType": "助動詞-ナイ",
+      "lemma": "ない",
+      "aConType_raw": "動詞%F3@0",
+      "aConType": {
+        "動詞": {
+          "type": "F3",
+          "M": 0,
+          "L": null
+        }
+      }
+    },
+    "ぬ|助動詞|*|助動詞-ヌ": {
+      "surface": "ぬ",
+      "pos1": "助動詞",
+      "pos2": "*",
+      "cType": "助動詞-ヌ",
+      "lemma": "ず",
+      "aConType_raw": "動詞%F4@0",
+      "aConType": {
+        "動詞": {
+          "type": "F4",
+          "M": 0,
+          "L": null
+        }
+      }
+    },
+    "れる|助動詞|*|助動詞-レル": {
+      "surface": "れる",
+      "pos1": "助動詞",
+      "pos2": "*",
+      "cType": "助動詞-レル",
+      "lemma": "れる",
+      "aConType_raw": "動詞%F3@1",
+      "aConType": {
+        "動詞": {
+          "type": "F3",
+          "M": 1,
+          "L": null
+        }
+      }
+    },
+    "られる|助動詞|*|助動詞-レル": {
+      "surface": "られる",
+      "pos1": "助動詞",
+      "pos2": "*",
+      "cType": "助動詞-レル",
+      "lemma": "られる",
+      "aConType_raw": "動詞%F3@2",
+      "aConType": {
+        "動詞": {
+          "type": "F3",
+          "M": 2,
+          "L": null
+        }
+      }
+    },
+    "せる|助動詞|*|下一段-サ行": {
+      "surface": "せる",
+      "pos1": "助動詞",
+      "pos2": "*",
+      "cType": "下一段-サ行",
+      "lemma": "せる",
+      "aConType_raw": "動詞%F3@1",
+      "aConType": {
+        "動詞": {
+          "type": "F3",
+          "M": 1,
+          "L": null
+        }
+      }
+    },
+    "させる|助動詞|*|下一段-サ行": {
+      "surface": "させる",
+      "pos1": "助動詞",
+      "pos2": "*",
+      "cType": "下一段-サ行",
+      "lemma": "させる",
+      "aConType_raw": "動詞%F3@2",
+      "aConType": {
+        "動詞": {
+          "type": "F3",
+          "M": 2,
+          "L": null
+        }
+      }
+    },
+    "たい|助動詞|*|助動詞-タイ": {
+      "surface": "たい",
+      "pos1": "助動詞",
+      "pos2": "*",
+      "cType": "助動詞-タイ",
+      "lemma": "たい",
+      "aConType_raw": "動詞%F4@1",
+      "aConType": {
+        "動詞": {
+          "type": "F4",
+          "M": 1,
+          "L": null
+        }
+      }
+    },
+    "たがる|助動詞|*|五段-ラ行": {
+      "surface": "たがる",
+      "pos1": "助動詞",
+      "pos2": "*",
+      "cType": "五段-ラ行",
+      "lemma": "たがる",
+      "aConType_raw": "動詞%F4@2",
+      "aConType": {
+        "動詞": {
+          "type": "F4",
+          "M": 2,
+          "L": null
+        }
+      }
+    },
+    "らしい|助動詞|*|助動詞-ラシイ": {
+      "surface": "らしい",
+      "pos1": "助動詞",
+      "pos2": "*",
+      "cType": "助動詞-ラシイ",
+      "lemma": "らしい",
+      "aConType_raw": "名詞%F4@2,動詞%F4@2,形容詞%F4@2",
+      "aConType": {
+        "名詞": {
+          "type": "F4",
+          "M": 2,
+          "L": null
+        },
+        "動詞": {
+          "type": "F4",
+          "M": 2,
+          "L": null
+        },
+        "形容詞": {
+          "type": "F4",
+          "M": 2,
+          "L": null
+        }
+      }
+    },
+    "だ|助動詞|*|助動詞-ダ": {
+      "surface": "だ",
+      "pos1": "助動詞",
+      "pos2": "*",
+      "cType": "助動詞-ダ",
+      "lemma": "だ",
+      "aConType_raw": "名詞%F1",
+      "aConType": {
+        "名詞": {
+          "type": "F1",
+          "M": null,
+          "L": null
+        }
+      }
+    },
+    "べき|助動詞|*|文語助動詞-ベシ": {
+      "surface": "べき",
+      "pos1": "助動詞",
+      "pos2": "*",
+      "cType": "文語助動詞-ベシ",
+      "lemma": "べし",
+      "aConType_raw": "動詞%F2@1",
+      "aConType": {
+        "動詞": {
+          "type": "F2",
+          "M": 1,
+          "L": null
+        }
+      }
+    },
+    "まい|助動詞|*|助動詞-マイ": {
+      "surface": "まい",
+      "pos1": "助動詞",
+      "pos2": "*",
+      "cType": "助動詞-マイ",
+      "lemma": "まい",
+      "aConType_raw": "動詞%F4@1",
+      "aConType": {
+        "動詞": {
+          "type": "F4",
+          "M": 1,
+          "L": null
+        }
+      }
+    },
+    "が|助詞|接続助詞|*": {
+      "surface": "が",
+      "pos1": "助詞",
+      "pos2": "接続助詞",
+      "cType": "*",
+      "lemma": "が",
+      "aConType_raw": "動詞%F2@0,形容詞%F2@-1",
+      "aConType": {
+        "動詞": {
+          "type": "F2",
+          "M": 0,
+          "L": null
+        },
+        "形容詞": {
+          "type": "F2",
+          "M": -1,
+          "L": null
+        }
+      }
+    },
+    "を|助詞|格助詞|*": {
+      "surface": "を",
+      "pos1": "助詞",
+      "pos2": "格助詞",
+      "cType": "*",
+      "lemma": "を",
+      "aConType_raw": "動詞%F2@0,名詞%F1,形容詞%F2@-1",
+      "aConType": {
+        "動詞": {
+          "type": "F2",
+          "M": 0,
+          "L": null
+        },
+        "名詞": {
+          "type": "F1",
+          "M": null,
+          "L": null
+        },
+        "形容詞": {
+          "type": "F2",
+          "M": -1,
+          "L": null
+        }
+      }
+    },
+    "に|助詞|格助詞|*": {
+      "surface": "に",
+      "pos1": "助詞",
+      "pos2": "格助詞",
+      "cType": "*",
+      "lemma": "に",
+      "aConType_raw": "名詞%F1",
+      "aConType": {
+        "名詞": {
+          "type": "F1",
+          "M": null,
+          "L": null
+        }
+      }
+    },
+    "へ|助詞|格助詞|*": {
+      "surface": "へ",
+      "pos1": "助詞",
+      "pos2": "格助詞",
+      "cType": "*",
+      "lemma": "へ",
+      "aConType_raw": "名詞%F1",
+      "aConType": {
+        "名詞": {
+          "type": "F1",
+          "M": null,
+          "L": null
+        }
+      }
+    },
+    "で|助動詞|*|助動詞-ダ": {
+      "surface": "で",
+      "pos1": "助動詞",
+      "pos2": "*",
+      "cType": "助動詞-ダ",
+      "lemma": "だ",
+      "aConType_raw": "名詞%F1",
+      "aConType": {
+        "名詞": {
+          "type": "F1",
+          "M": null,
+          "L": null
+        }
+      }
+    },
+    "と|助詞|格助詞|*": {
+      "surface": "と",
+      "pos1": "助詞",
+      "pos2": "格助詞",
+      "cType": "*",
+      "lemma": "と",
+      "aConType_raw": "名詞%F1,動詞%F1,形容詞%F2@-1",
+      "aConType": {
+        "名詞": {
+          "type": "F1",
+          "M": null,
+          "L": null
+        },
+        "動詞": {
+          "type": "F1",
+          "M": null,
+          "L": null
+        },
+        "形容詞": {
+          "type": "F2",
+          "M": -1,
+          "L": null
+        }
+      }
+    },
+    "から|助詞|接続助詞|*": {
+      "surface": "から",
+      "pos1": "助詞",
+      "pos2": "接続助詞",
+      "cType": "*",
+      "lemma": "から",
+      "aConType_raw": "動詞%F2@0,形容詞%F2@-1",
+      "aConType": {
+        "動詞": {
+          "type": "F2",
+          "M": 0,
+          "L": null
+        },
+        "形容詞": {
+          "type": "F2",
+          "M": -1,
+          "L": null
+        }
+      }
+    },
+    "まで|助詞|副助詞|*": {
+      "surface": "まで",
+      "pos1": "助詞",
+      "pos2": "副助詞",
+      "cType": "*",
+      "lemma": "まで",
+      "aConType_raw": "名詞%F2@1,形容詞%F2@1,動詞%F2@1",
+      "aConType": {
+        "名詞": {
+          "type": "F2",
+          "M": 1,
+          "L": null
+        },
+        "形容詞": {
+          "type": "F2",
+          "M": 1,
+          "L": null
+        },
+        "動詞": {
+          "type": "F2",
+          "M": 1,
+          "L": null
+        }
+      }
+    },
+    "より|助詞|格助詞|*": {
+      "surface": "より",
+      "pos1": "助詞",
+      "pos2": "格助詞",
+      "cType": "*",
+      "lemma": "より",
+      "aConType_raw": "名詞%F2@1,動詞%F2@1,形容詞%F2@1",
+      "aConType": {
+        "名詞": {
+          "type": "F2",
+          "M": 1,
+          "L": null
+        },
+        "動詞": {
+          "type": "F2",
+          "M": 1,
+          "L": null
+        },
+        "形容詞": {
+          "type": "F2",
+          "M": 1,
+          "L": null
+        }
+      }
+    },
+    "は|助詞|係助詞|*": {
+      "surface": "は",
+      "pos1": "助詞",
+      "pos2": "係助詞",
+      "cType": "*",
+      "lemma": "は",
+      "aConType_raw": "動詞%F2@0,名詞%F1,形容詞%F2@-1",
+      "aConType": {
+        "動詞": {
+          "type": "F2",
+          "M": 0,
+          "L": null
+        },
+        "名詞": {
+          "type": "F1",
+          "M": null,
+          "L": null
+        },
+        "形容詞": {
+          "type": "F2",
+          "M": -1,
+          "L": null
+        }
+      }
+    },
+    "も|助詞|係助詞|*": {
+      "surface": "も",
+      "pos1": "助詞",
+      "pos2": "係助詞",
+      "cType": "*",
+      "lemma": "も",
+      "aConType_raw": "動詞%F2@-1,形容詞%F4@-2,名詞%F1",
+      "aConType": {
+        "動詞": {
+          "type": "F2",
+          "M": -1,
+          "L": null
+        },
+        "形容詞": {
+          "type": "F4",
+          "M": -2,
+          "L": null
+        },
+        "名詞": {
+          "type": "F1",
+          "M": null,
+          "L": null
+        }
+      }
+    },
+    "か|助詞|副助詞|*": {
+      "surface": "か",
+      "pos1": "助詞",
+      "pos2": "副助詞",
+      "cType": "*",
+      "lemma": "か",
+      "aConType_raw": "動詞%F2@0,形容詞%F2@-1,名詞%F1",
+      "aConType": {
+        "動詞": {
+          "type": "F2",
+          "M": 0,
+          "L": null
+        },
+        "形容詞": {
+          "type": "F2",
+          "M": -1,
+          "L": null
+        },
+        "名詞": {
+          "type": "F1",
+          "M": null,
+          "L": null
+        }
+      }
+    },
+    "な|助動詞|*|助動詞-ヌ": {
+      "surface": "な",
+      "pos1": "助動詞",
+      "pos2": "*",
+      "cType": "助動詞-ヌ",
+      "lemma": "ず",
+      "aConType_raw": "動詞%F4@0",
+      "aConType": {
+        "動詞": {
+          "type": "F4",
+          "M": 0,
+          "L": null
+        }
+      }
+    },
+    "ね|助動詞|*|助動詞-ヌ": {
+      "surface": "ね",
+      "pos1": "助動詞",
+      "pos2": "*",
+      "cType": "助動詞-ヌ",
+      "lemma": "ず",
+      "aConType_raw": "動詞%F4@0",
+      "aConType": {
+        "動詞": {
+          "type": "F4",
+          "M": 0,
+          "L": null
+        }
+      }
+    },
+    "よ|助詞|終助詞|*": {
+      "surface": "よ",
+      "pos1": "助詞",
+      "pos2": "終助詞",
+      "cType": "*",
+      "lemma": "よ",
+      "aConType_raw": "名詞%F1,動詞%F2@0,形容詞%F2@-1",
+      "aConType": {
+        "名詞": {
+          "type": "F1",
+          "M": null,
+          "L": null
+        },
+        "動詞": {
+          "type": "F2",
+          "M": 0,
+          "L": null
+        },
+        "形容詞": {
+          "type": "F2",
+          "M": -1,
+          "L": null
+        }
+      }
+    },
+    "の|助詞|格助詞|*": {
+      "surface": "の",
+      "pos1": "助詞",
+      "pos2": "格助詞",
+      "cType": "*",
+      "lemma": "の",
+      "aConType_raw": "名詞%F1",
+      "aConType": {
+        "名詞": {
+          "type": "F1",
+          "M": null,
+          "L": null
+        }
+      }
+    },
+    "ば|助詞|接続助詞|*": {
+      "surface": "ば",
+      "pos1": "助詞",
+      "pos2": "接続助詞",
+      "cType": "*",
+      "lemma": "ば",
+      "aConType_raw": "動詞%F2@0,形容詞%F2@-1",
+      "aConType": {
+        "動詞": {
+          "type": "F2",
+          "M": 0,
+          "L": null
+        },
+        "形容詞": {
+          "type": "F2",
+          "M": -1,
+          "L": null
+        }
+      }
+    },
+    "て|助詞|接続助詞|*": {
+      "surface": "て",
+      "pos1": "助詞",
+      "pos2": "接続助詞",
+      "cType": "*",
+      "lemma": "て",
+      "aConType_raw": "動詞%F1,形容詞%F2@-1",
+      "aConType": {
+        "動詞": {
+          "type": "F1",
+          "M": null,
+          "L": null
+        },
+        "形容詞": {
+          "type": "F2",
+          "M": -1,
+          "L": null
+        }
+      }
+    },
+    "けど|助詞|接続助詞|*": {
+      "surface": "けど",
+      "pos1": "助詞",
+      "pos2": "接続助詞",
+      "cType": "*",
+      "lemma": "けれど",
+      "aConType_raw": "動詞%F2@0,形容詞%F2@-1",
+      "aConType": {
+        "動詞": {
+          "type": "F2",
+          "M": 0,
+          "L": null
+        },
+        "形容詞": {
+          "type": "F2",
+          "M": -1,
+          "L": null
+        }
+      }
+    },
+    "けれど|助詞|接続助詞|*": {
+      "surface": "けれど",
+      "pos1": "助詞",
+      "pos2": "接続助詞",
+      "cType": "*",
+      "lemma": "けれど",
+      "aConType_raw": "動詞%F2@0,形容詞%F2@-1",
+      "aConType": {
+        "動詞": {
+          "type": "F2",
+          "M": 0,
+          "L": null
+        },
+        "形容詞": {
+          "type": "F2",
+          "M": -1,
+          "L": null
+        }
+      }
+    },
+    "の|助詞|準体助詞|*": {
+      "surface": "の",
+      "pos1": "助詞",
+      "pos2": "準体助詞",
+      "cType": "*",
+      "lemma": "の",
+      "aConType_raw": "動詞%F2@0,形容詞%F2@-1",
+      "aConType": {
+        "動詞": {
+          "type": "F2",
+          "M": 0,
+          "L": null
+        },
+        "形容詞": {
+          "type": "F2",
+          "M": -1,
+          "L": null
+        }
+      }
+    },
+    "たり|助詞|副助詞|*": {
+      "surface": "たり",
+      "pos1": "助詞",
+      "pos2": "副助詞",
+      "cType": "*",
+      "lemma": "たり",
+      "aConType_raw": "動詞%F6@1,-1,形容詞%F2@-2",
+      "aConType": {
+        "動詞": {
+          "type": "F6",
+          "M": 1,
+          "L": null
+        },
+        "形容詞": {
+          "type": "F2",
+          "M": -2,
+          "L": null
+        }
+      }
+    },
+    "ながら|助詞|接続助詞|*": {
+      "surface": "ながら",
+      "pos1": "助詞",
+      "pos2": "接続助詞",
+      "cType": "*",
+      "lemma": "ながら",
+      "aConType_raw": "名詞%F4@1,動詞%F4@1,形容詞%F4@1",
+      "aConType": {
+        "名詞": {
+          "type": "F4",
+          "M": 1,
+          "L": null
+        },
+        "動詞": {
+          "type": "F4",
+          "M": 1,
+          "L": null
+        },
+        "形容詞": {
+          "type": "F4",
+          "M": 1,
+          "L": null
+        }
+      }
+    },
+    "し|助動詞|*|文語助動詞-キ": {
+      "surface": "し",
+      "pos1": "助動詞",
+      "pos2": "*",
+      "cType": "文語助動詞-キ",
+      "lemma": "き",
+      "aConType_raw": "動詞%F4@0",
+      "aConType": {
+        "動詞": {
+          "type": "F4",
+          "M": 0,
+          "L": null
+        }
+      }
+    },
+    "なら|助動詞|*|助動詞-ダ": {
+      "surface": "なら",
+      "pos1": "助動詞",
+      "pos2": "*",
+      "cType": "助動詞-ダ",
+      "lemma": "だ",
+      "aConType_raw": "名詞%F1",
+      "aConType": {
+        "名詞": {
+          "type": "F1",
+          "M": null,
+          "L": null
+        }
+      }
+    },
+    "たら|助動詞|*|助動詞-タ": {
+      "surface": "たら",
+      "pos1": "助動詞",
+      "pos2": "*",
+      "cType": "助動詞-タ",
+      "lemma": "た",
+      "aConType_raw": "動詞%F2@1,形容詞%F4@-2",
+      "aConType": {
+        "動詞": {
+          "type": "F2",
+          "M": 1,
+          "L": null
+        },
+        "形容詞": {
+          "type": "F4",
+          "M": -2,
+          "L": null
+        }
+      }
+    }
+  },
+  "verb_inflection_patterns": {
+    "下一段-バ行|連体形-一般": {
+      "cType": "下一段-バ行",
+      "cForm": "連体形-一般",
+      "aModType": "*",
+      "example": "食べる"
+    },
+    "下一段-バ行|連用形-一般": {
+      "cType": "下一段-バ行",
+      "cForm": "連用形-一般",
+      "aModType": "M4@1",
+      "example": "食べ"
+    },
+    "下一段-バ行|未然形-一般": {
+      "cType": "下一段-バ行",
+      "cForm": "未然形-一般",
+      "aModType": "M4@1",
+      "example": "食べ"
+    },
+    "下一段-バ行|仮定形-一般": {
+      "cType": "下一段-バ行",
+      "cForm": "仮定形-一般",
+      "aModType": "*",
+      "example": "食べれ"
+    },
+    "下一段-バ行|命令形": {
+      "cType": "下一段-バ行",
+      "cForm": "命令形",
+      "aModType": "*",
+      "example": "食べろ"
+    },
+    "下一段-バ行|意志推量形": {
+      "cType": "下一段-バ行",
+      "cForm": "意志推量形",
+      "aModType": "M1@1",
+      "example": "食べよう"
+    },
+    "五段-カ行|終止形-一般": {
+      "cType": "五段-カ行",
+      "cForm": "終止形-一般",
+      "aModType": "*",
+      "example": "書く"
+    },
+    "五段-カ行|連用形-一般": {
+      "cType": "五段-カ行",
+      "cForm": "連用形-一般",
+      "aModType": "*",
+      "example": "書き"
+    },
+    "五段-カ行|連用形-イ音便": {
+      "cType": "五段-カ行",
+      "cForm": "連用形-イ音便",
+      "aModType": "*",
+      "example": "書い"
+    },
+    "五段-カ行|仮定形-一般": {
+      "cType": "五段-カ行",
+      "cForm": "仮定形-一般",
+      "aModType": "*",
+      "example": "書け"
+    },
+    "五段-カ行|命令形": {
+      "cType": "五段-カ行",
+      "cForm": "命令形",
+      "aModType": "*",
+      "example": "書け"
+    },
+    "五段-カ行|意志推量形": {
+      "cType": "五段-カ行",
+      "cForm": "意志推量形",
+      "aModType": "M1@1",
+      "example": "書こう"
+    },
+    "下一段-カ行|連体形-一般": {
+      "cType": "下一段-カ行",
+      "cForm": "連体形-一般",
+      "aModType": "*",
+      "example": "書ける"
+    },
+    "サ行変格|連体形-一般": {
+      "cType": "サ行変格",
+      "cForm": "連体形-一般",
+      "aModType": "*",
+      "example": "する"
+    },
+    "サ行変格|連用形-一般": {
+      "cType": "サ行変格",
+      "cForm": "連用形-一般",
+      "aModType": "*",
+      "example": "し"
+    },
+    "サ行変格|仮定形-一般": {
+      "cType": "サ行変格",
+      "cForm": "仮定形-一般",
+      "aModType": "*",
+      "example": "すれ"
+    },
+    "サ行変格|命令形": {
+      "cType": "サ行変格",
+      "cForm": "命令形",
+      "aModType": "*",
+      "example": "しろ"
+    },
+    "上一段-カ行|連体形-一般": {
+      "cType": "上一段-カ行",
+      "cForm": "連体形-一般",
+      "aModType": "*",
+      "example": "できる"
+    },
+    "カ行変格|終止形-一般": {
+      "cType": "カ行変格",
+      "cForm": "終止形-一般",
+      "aModType": "*",
+      "example": "来る"
+    },
+    "カ行変格|連用形-一般": {
+      "cType": "カ行変格",
+      "cForm": "連用形-一般",
+      "aModType": "*",
+      "example": "来"
+    }
+  }
+}
