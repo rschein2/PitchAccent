@@ -7,6 +7,10 @@ Generate Anki flashcards for Japanese pitch accent study. Takes Japanese text an
 - Accent type numbers `[n]` where n=position of downstep (0=flat/heiban)
 - Verb/adjective conjugation drills with pitch patterns
 
+## New to Pitch Accent?
+
+If you're a Japanese learner who hasn't encountered pitch accent before, start here: **[What Is Pitch Accent?](docs/what_is_pitch_accent.md)** — a plain-language introduction covering the basics, why it matters, and how Japanese compares to other pitch-accent languages like Swedish and Serbo-Croatian.
+
 ## What Makes This Different
 
 Most pitch accent tools just look up dictionary forms. This tool:
@@ -115,6 +119,25 @@ python anki_generator.py --input text.txt --output study.txt
 読む [1] HLL: 読んだ [1] HLLL, 読んで [1] HLLL, 読まない [2] LHLLL, 読みます [3] LHHLL
 ```
 
+## Minimal Pairs Database
+
+The repo includes a database of **844 minimal pairs** — words with identical readings but different pitch accents — organized by JLPT level. These are derived programmatically from UniDic accent data cross-referenced with JLPT vocabulary lists.
+
+| Level | Pairs | Example |
+|-------|-------|---------|
+| N5 | 28 | あめ: 飴[0] LHH ↔ 雨[1] HLL |
+| N4 | 27 | かえる: 変える[0] LHHH ↔ 帰る[1] HLLL |
+| N3 | 96 | いし: 意志[1] HLL ↔ 石[2] LHL |
+| N2 | 184 | あき: 空き[0] LHH ↔ 秋[1] HLL |
+| N1 | 509 | あさ: 朝[1] HLL ↔ 麻[2] LHL |
+
+Data files: `pitch_accent/jlpt_minimal_pairs_exhaustive.json`
+
+To regenerate (requires internet for Jisho API):
+```bash
+python scripts/build_exhaustive_minimal_pairs.py
+```
+
 ## Data Source & Reliability
 
 ### UniDic (国語研短単位自動解析用辞書)
@@ -199,6 +222,7 @@ Implements Miyazaki-style numeral × counter category system with 13 categories 
 │   └── lookup.py              # Optional: JPDB verification
 │
 ├── docs/                      # Detailed documentation
+│   ├── what_is_pitch_accent.md  # Intro for learners
 │   ├── compound_sandhi.md
 │   ├── f_type_rules.md
 │   └── numeral_accent.md
@@ -207,6 +231,9 @@ Implements Miyazaki-style numeral × counter category system with 13 categories 
 │   └── japan_us_relations.txt
 │
 └── scripts/                   # Development utilities
+    ├── build_minimal_pairs.py          # UniDic-based minimal pairs
+    ├── build_jlpt_minimal_pairs.py     # JLPT-organized pairs
+    ├── build_exhaustive_minimal_pairs.py # Full JLPT pairs (Jisho API)
     ├── demo.py
     ├── compare_engines.py
     └── extract_rules.py

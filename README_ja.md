@@ -6,6 +6,10 @@
 - アクセント型番号 `[n]`（n＝下がり目の位置、0＝平板型）
 - 動詞・形容詞の活用形ドリル
 
+## ピッチアクセントとは？
+
+ピッチアクセントについて詳しくない方は **[What Is Pitch Accent?](docs/what_is_pitch_accent.md)**（英語）をご覧ください。日本語のピッチアクセントの基本、なぜ重要なのか、スウェーデン語やセルビア・クロアチア語など他の高低アクセント言語との比較を解説しています。
+
 ## 特長
 
 一般的なピッチアクセントツールは辞書形のみを扱いますが、本ツールは：
@@ -46,6 +50,17 @@ python -m unidic download
 ```
 
 ## 使い方
+
+### Webインターフェース（最も簡単）
+
+```bash
+# ローカルで実行
+pip install streamlit
+streamlit run app.py
+# ブラウザで http://localhost:8501 が開きます
+```
+
+**無料クラウドデプロイ**：[Streamlit Cloud](https://share.streamlit.io) で無料公開可能
 
 ### テキストから生成
 ```bash
@@ -129,6 +144,20 @@ UniDicの形態素解析とF型結合規則を使用：
 
 詳細: [docs/numeral_accent.md](docs/numeral_accent.md)
 
+## ミニマルペア・データベース
+
+同じ読みで異なるピッチアクセントを持つ単語（ミニマルペア）のデータベースを収録しています。JLPT級別に整理されています。
+
+| 級 | ペア数 | 例 |
+|----|--------|-----|
+| N5 | 28 | あめ: 飴[0] LHH ↔ 雨[1] HLL |
+| N4 | 27 | かえる: 変える[0] LHHH ↔ 帰る[1] HLLL |
+| N3 | 96 | いし: 意志[1] HLL ↔ 石[2] LHL |
+| N2 | 184 | あき: 空き[0] LHH ↔ 秋[1] HLL |
+| N1 | 509 | あさ: 朝[1] HLL ↔ 麻[2] LHL |
+
+合計：**844ペア**（UniDicアクセントデータ × JLPT語彙リストから自動生成）
+
 ## データソース
 
 ### UniDic（国語研短単位自動解析用辞書）
@@ -168,6 +197,7 @@ UniDicは素人によるWiki的なデータではなく、専門の言語学者�
 │   └── lookup.py              # オプション：JPDB検証用
 │
 ├── docs/                      # 詳細ドキュメント
+│   ├── what_is_pitch_accent.md  # 学習者向け入門
 │   ├── compound_sandhi.md
 │   ├── f_type_rules.md
 │   └── numeral_accent.md
@@ -176,6 +206,9 @@ UniDicは素人によるWiki的なデータではなく、専門の言語学者�
 │   └── japan_us_relations.txt
 │
 └── scripts/                   # 開発ユーティリティ
+    ├── build_minimal_pairs.py          # UniDicミニマルペア生成
+    ├── build_jlpt_minimal_pairs.py     # JLPT級別ペア生成
+    ├── build_exhaustive_minimal_pairs.py # 網羅的ペア生成
     ├── demo.py
     ├── compare_engines.py
     └── extract_rules.py

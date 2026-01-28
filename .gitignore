@@ -37,6 +37,11 @@ Thumbs.db
 # Cached data
 .cache/
 *.cache
+pitch_accent/jlpt_vocab_cache.json
+pitch_accent/jlpt_word_cache.json
+
+# Large downloads
+*.gz
 
 # Test outputs
 test_*.txt
