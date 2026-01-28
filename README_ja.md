@@ -152,20 +152,33 @@ UniDicは素人によるWiki的なデータではなく、専門の言語学者�
 ## ファイル構成
 
 ```
-├── anki_generator.py     # メインCLIエントリーポイント
-├── accent_engine.py      # コアアクセント計算（F型規則）
-├── accent_rules.json     # UniDic接尾辞結合規則
-├── compound_accent.py    # 複合名詞の連濁
-├── numeral_accent.py     # 助数詞カテゴリーとアクセント規則
-├── numeral_reading.py    # アラビア数字 → ひらがな変換
-├── sentence_parser.py    # トークン化と複合語検出
-├── html_formatter.py     # 色分けHTML出力
-├── corpus_loader.py      # テキスト/ファイル入力処理
-├── pitch_lookup.py       # オプション：JPDB/OJAD検証用
-└── docs/
-    ├── compound_sandhi.md    # 複合名詞アクセント規則の詳細
-    ├── f_type_rules.md       # F型結合規則の詳細
-    └── numeral_accent.md     # 数詞アクセント規則の詳細
+├── anki_generator.py          # メインCLIエントリーポイント
+├── requirements.txt
+│
+├── pitch_accent/              # コアライブラリパッケージ
+│   ├── __init__.py
+│   ├── engine.py              # アクセント計算（F型規則）
+│   ├── rules.json             # UniDic接尾辞結合規則
+│   ├── compound.py            # 複合名詞の連濁
+│   ├── numeral.py             # 助数詞カテゴリーとアクセント規則
+│   ├── numeral_reading.py     # アラビア数字 → ひらがな変換
+│   ├── parser.py              # トークン化と複合語検出
+│   ├── formatter.py           # 色分けHTML出力
+│   ├── corpus.py              # テキスト/ファイル入力処理
+│   └── lookup.py              # オプション：JPDB検証用
+│
+├── docs/                      # 詳細ドキュメント
+│   ├── compound_sandhi.md
+│   ├── f_type_rules.md
+│   └── numeral_accent.md
+│
+├── examples/                  # サンプル入力ファイル
+│   └── japan_us_relations.txt
+│
+└── scripts/                   # 開発ユーティリティ
+    ├── demo.py
+    ├── compare_engines.py
+    └── extract_rules.py
 ```
 
 ## 参考文献

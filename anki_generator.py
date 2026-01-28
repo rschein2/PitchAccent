@@ -26,10 +26,10 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
 
-from accent_engine import FugashiAccentEngine, AccentResult
-from sentence_parser import SentenceParser, ParsedSentence, ParsedWord
-from html_formatter import HTMLFormatter
-from corpus_loader import CorpusLoader
+from pitch_accent.engine import FugashiAccentEngine, AccentResult
+from pitch_accent.parser import SentenceParser, ParsedSentence, ParsedWord
+from pitch_accent.formatter import HTMLFormatter
+from pitch_accent.corpus import CorpusLoader
 
 
 @dataclass

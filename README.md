@@ -48,7 +48,24 @@ python -m unidic download
 
 ## Usage
 
-### Generate from text
+### Web Interface (easiest)
+
+```bash
+# Run locally
+pip install streamlit
+streamlit run app.py
+# Opens in browser at http://localhost:8501
+```
+
+**Free cloud deployment** on [Streamlit Cloud](https://share.streamlit.io):
+1. Push repo to GitHub
+2. Go to share.streamlit.io and sign in with GitHub
+3. Click "New app" → select your repo → set `app.py` as main file
+4. Deploy (takes ~5 min first time for UniDic download)
+
+### Command Line
+
+#### Generate from text
 ```bash
 # Direct text input
 python anki_generator.py --text "今日は天気がいいですね。" --output deck.tsv
@@ -166,20 +183,33 @@ Implements Miyazaki-style numeral × counter category system with 13 categories 
 ## File Structure
 
 ```
-├── anki_generator.py     # Main CLI entry point
-├── accent_engine.py      # Core accent computation (F-type rules)
-├── accent_rules.json     # UniDic suffix combination rules
-├── compound_accent.py    # Compound noun sandhi
-├── numeral_accent.py     # Counter categories & accent rules
-├── numeral_reading.py    # Arabic → hiragana conversion
-├── sentence_parser.py    # Tokenization & compound detection
-├── html_formatter.py     # Color-coded HTML output
-├── corpus_loader.py      # Text/file input handling
-├── pitch_lookup.py       # Optional: JPDB/OJAD verification
-└── docs/
-    ├── compound_sandhi.md    # Compound noun accent rules (detailed)
-    ├── f_type_rules.md       # F-type combination rules (detailed)
-    └── numeral_accent.md     # Numeral accent rules (detailed)
+├── anki_generator.py          # Main CLI entry point
+├── requirements.txt
+│
+├── pitch_accent/              # Core library package
+│   ├── __init__.py
+│   ├── engine.py              # Accent computation (F-type rules)
+│   ├── rules.json             # UniDic suffix combination rules
+│   ├── compound.py            # Compound noun sandhi
+│   ├── numeral.py             # Counter categories & accent rules
+│   ├── numeral_reading.py     # Arabic → hiragana conversion
+│   ├── parser.py              # Tokenization & compound detection
+│   ├── formatter.py           # Color-coded HTML output
+│   ├── corpus.py              # Text/file input handling
+│   └── lookup.py              # Optional: JPDB verification
+│
+├── docs/                      # Detailed documentation
+│   ├── compound_sandhi.md
+│   ├── f_type_rules.md
+│   └── numeral_accent.md
+│
+├── examples/                  # Sample input files
+│   └── japan_us_relations.txt
+│
+└── scripts/                   # Development utilities
+    ├── demo.py
+    ├── compare_engines.py
+    └── extract_rules.py
 ```
 
 ## Optional: JPDB API for Verification

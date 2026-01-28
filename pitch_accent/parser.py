@@ -16,9 +16,9 @@ from typing import Optional
 import fugashi
 import unidic
 
-from compound_accent import CompoundAccentEngine
-from numeral_accent import NumeralAccentEngine
-from numeral_reading import number_to_reading
+from .compound import CompoundAccentEngine
+from .numeral import NumeralAccentEngine
+from .numeral_reading import number_to_reading
 
 
 @dataclass

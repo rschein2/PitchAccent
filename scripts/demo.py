@@ -3,7 +3,11 @@
 Demo of the Japanese Pitch Accent Engine.
 Shows computed patterns for various verb conjugations.
 """
-from accent_engine import FugashiAccentEngine
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from pitch_accent.engine import FugashiAccentEngine
 
 
 def visualize_pattern(pattern: str, reading: str) -> str:

@@ -11,7 +11,7 @@ from typing import Optional
 from pathlib import Path
 
 # Load extracted rules
-RULES_FILE = Path(__file__).parent / "accent_rules.json"
+RULES_FILE = Path(__file__).parent / "rules.json"
 
 
 @dataclass

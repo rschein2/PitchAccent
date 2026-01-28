@@ -2,3 +2,4 @@ fugashi
 unidic
 requests
 beautifulsoup4
+streamlit

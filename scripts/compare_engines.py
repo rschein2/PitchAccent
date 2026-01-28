@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 """Compare our accent engine against JPDB."""
 import os
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 import requests
-from accent_engine import FugashiAccentEngine
+from pitch_accent.engine import FugashiAccentEngine
 
 API_KEY = os.environ.get("JPDB_API_KEY", "af4dc26c0bc3616ab2c483556fa7c495")
 

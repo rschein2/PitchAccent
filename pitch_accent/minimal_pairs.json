@@ -1,0 +1,211 @@
+[
+  {
+    "reading": "アキ",
+    "word1": {
+      "surface": "空き",
+      "accent": 0
+    },
+    "word2": {
+      "surface": "秋",
+      "accent": 1
+    }
+  },
+  {
+    "reading": "アサ",
+    "word1": {
+      "surface": "朝",
+      "accent": 1
+    },
+    "word2": {
+      "surface": "麻",
+      "accent": 2
+    }
+  },
+  {
+    "reading": "アメ",
+    "word1": {
+      "surface": "飴",
+      "accent": 0
+    },
+    "word2": {
+      "surface": "雨",
+      "accent": 1
+    }
+  },
+  {
+    "reading": "イシ",
+    "word1": {
+      "surface": "医師",
+      "accent": 1
+    },
+    "word2": {
+      "surface": "石",
+      "accent": 2
+    }
+  },
+  {
+    "reading": "イシ",
+    "word1": {
+      "surface": "意志",
+      "accent": 1
+    },
+    "word2": {
+      "surface": "石",
+      "accent": 2
+    }
+  },
+  {
+    "reading": "カキ",
+    "word1": {
+      "surface": "柿",
+      "accent": 0
+    },
+    "word2": {
+      "surface": "牡蠣",
+      "accent": 1
+    }
+  },
+  {
+    "reading": "カキ",
+    "word1": {
+      "surface": "柿",
+      "accent": 0
+    },
+    "word2": {
+      "surface": "垣",
+      "accent": 2
+    }
+  },
+  {
+    "reading": "カキ",
+    "word1": {
+      "surface": "牡蠣",
+      "accent": 1
+    },
+    "word2": {
+      "surface": "垣",
+      "accent": 2
+    }
+  },
+  {
+    "reading": "カミ",
+    "word1": {
+      "surface": "神",
+      "accent": 1
+    },
+    "word2": {
+      "surface": "紙",
+      "accent": 2
+    }
+  },
+  {
+    "reading": "カミ",
+    "word1": {
+      "surface": "神",
+      "accent": 1
+    },
+    "word2": {
+      "surface": "髪",
+      "accent": 2
+    }
+  },
+  {
+    "reading": "サケ",
+    "word1": {
+      "surface": "酒",
+      "accent": 0
+    },
+    "word2": {
+      "surface": "鮭",
+      "accent": 1
+    }
+  },
+  {
+    "reading": "セキ",
+    "word1": {
+      "surface": "席",
+      "accent": 1
+    },
+    "word2": {
+      "surface": "咳",
+      "accent": 2
+    }
+  },
+  {
+    "reading": "ハ",
+    "word1": {
+      "surface": "葉",
+      "accent": 0
+    },
+    "word2": {
+      "surface": "歯",
+      "accent": 1
+    }
+  },
+  {
+    "reading": "ハ",
+    "word1": {
+      "surface": "葉",
+      "accent": 0
+    },
+    "word2": {
+      "surface": "刃",
+      "accent": 1
+    }
+  },
+  {
+    "reading": "ハシ",
+    "word1": {
+      "surface": "端",
+      "accent": 0
+    },
+    "word2": {
+      "surface": "箸",
+      "accent": 1
+    }
+  },
+  {
+    "reading": "ハシ",
+    "word1": {
+      "surface": "端",
+      "accent": 0
+    },
+    "word2": {
+      "surface": "橋",
+      "accent": 2
+    }
+  },
+  {
+    "reading": "ハシ",
+    "word1": {
+      "surface": "箸",
+      "accent": 1
+    },
+    "word2": {
+      "surface": "橋",
+      "accent": 2
+    }
+  },
+  {
+    "reading": "ヒ",
+    "word1": {
+      "surface": "日",
+      "accent": 0
+    },
+    "word2": {
+      "surface": "火",
+      "accent": 1
+    }
+  },
+  {
+    "reading": "ヒ",
+    "word1": {
+      "surface": "陽",
+      "accent": 0
+    },
+    "word2": {
+      "surface": "火",
+      "accent": 1
+    }
+  }
+]
