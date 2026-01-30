@@ -9,9 +9,16 @@ Generate Anki flashcards for Japanese pitch accent study. Takes Japanese text an
 
 ## New to Pitch Accent?
 
-If you're a Japanese learner who hasn't encountered pitch accent before, start here: **[What Is Pitch Accent?](docs/what_is_pitch_accent.md)** — a plain-language introduction covering the basics, why it matters, and how Japanese compares to other pitch-accent languages like Swedish and Serbo-Croatian.
+If you're a Japanese learner who hasn't encountered pitch accent before, start here: **[What Is Pitch Accent?](docs/what_is_pitch_accent.md)** — a plain-language introduction covering the basics, why it matters, and how Japanese compares to other pitch-accent languages.
 
-For a deeper linguistic survey, see **[Pitch Accent Across Languages](docs/pitch_accent_across_languages.md)** — covering Japanese, Ancient Greek, Serbian, Scandinavian languages, Basque, and Indigenous American languages. *(Research by GPT Deep Research)*
+### Deep Dives *(GPT Deep Research)*
+
+| Topic | Description |
+|-------|-------------|
+| **[Pitch Accent Across Languages](docs/pitch_accent_across_languages.md)** | Comparative survey: Japanese, Ancient Greek, Serbian, Swedish/Norwegian, Basque, Indigenous American languages |
+| **[Evolution of Japanese Pitch Accent](docs/evolution_of_pitch_accent.md)** | From Old Japanese (Nara period) through Middle Japanese to modern Tokyo standard — how the system changed over 1300 years |
+| **[The NHK Accent Dictionary](docs/nhk_accent_dictionary.md)** | History, methodology, and influence of Japan's authoritative pronunciation reference |
+| **[Pitch Accent in Classical Japanese Poetry](docs/pitch_accent_classical_poetry.md)** | Did waka and haiku poets consider pitch? Evidence from Heian court poetry to Bashō |
 
 ## What Makes This Different
 
@@ -224,8 +231,11 @@ Implements Miyazaki-style numeral × counter category system with 13 categories 
 │   └── lookup.py              # Optional: JPDB verification
 │
 ├── docs/                      # Detailed documentation
-│   ├── what_is_pitch_accent.md  # Intro for learners
+│   ├── what_is_pitch_accent.md           # Intro for learners
 │   ├── pitch_accent_across_languages.md  # Cross-linguistic survey (GPT)
+│   ├── evolution_of_pitch_accent.md      # Historical development (GPT)
+│   ├── nhk_accent_dictionary.md          # NHK dictionary history (GPT)
+│   ├── pitch_accent_classical_poetry.md  # Poetry and pitch (GPT)
 │   ├── compound_sandhi.md
 │   ├── f_type_rules.md
 │   └── numeral_accent.md

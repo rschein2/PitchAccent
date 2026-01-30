@@ -8,9 +8,16 @@
 
 ## ピッチアクセントとは？
 
-ピッチアクセントについて詳しくない方は **[What Is Pitch Accent?](docs/what_is_pitch_accent.md)**（英語）をご覧ください。日本語のピッチアクセントの基本、なぜ重要なのか、スウェーデン語やセルビア・クロアチア語など他の高低アクセント言語との比較を解説しています。
+ピッチアクセントについて詳しくない方は **[What Is Pitch Accent?](docs/what_is_pitch_accent.md)**（英語）をご覧ください。日本語のピッチアクセントの基本、なぜ重要なのか、他の高低アクセント言語との比較を解説しています。
 
-言語学的な詳細については **[Pitch Accent Across Languages](docs/pitch_accent_across_languages.md)**（英語）をご覧ください。日本語、古代ギリシャ語、セルビア語、スカンジナビア諸語、バスク語、アメリカ先住民言語のピッチアクセントを解説しています。*(GPT Deep Research による調査)*
+### 詳細な解説 *(GPT Deep Research による調査・英語)*
+
+| トピック | 内容 |
+|----------|------|
+| **[Pitch Accent Across Languages](docs/pitch_accent_across_languages.md)** | 言語横断的調査：日本語、古代ギリシャ語、セルビア語、スウェーデン語、バスク語、アメリカ先住民言語 |
+| **[Evolution of Japanese Pitch Accent](docs/evolution_of_pitch_accent.md)** | 上代日本語（奈良時代）から中古日本語を経て現代東京方言まで — 1300年の変遷 |
+| **[The NHK Accent Dictionary](docs/nhk_accent_dictionary.md)** | NHK日本語発音アクセント辞典の歴史、方法論、影響力 |
+| **[Pitch Accent in Classical Japanese Poetry](docs/pitch_accent_classical_poetry.md)** | 和歌や俳句の詩人はピッチを意識したか？平安朝から芭蕉まで |
 
 ## 特長
 
@@ -199,8 +206,11 @@ UniDicは素人によるWiki的なデータではなく、専門の言語学者�
 │   └── lookup.py              # オプション：JPDB検証用
 │
 ├── docs/                      # 詳細ドキュメント
-│   ├── what_is_pitch_accent.md  # 学習者向け入門
+│   ├── what_is_pitch_accent.md           # 学習者向け入門
 │   ├── pitch_accent_across_languages.md  # 言語横断的調査（GPT）
+│   ├── evolution_of_pitch_accent.md      # 歴史的発展（GPT）
+│   ├── nhk_accent_dictionary.md          # NHK辞典の歴史（GPT）
+│   ├── pitch_accent_classical_poetry.md  # 詩歌とピッチ（GPT）
 │   ├── compound_sandhi.md
 │   ├── f_type_rules.md
 │   └── numeral_accent.md
