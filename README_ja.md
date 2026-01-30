@@ -10,6 +10,8 @@
 
 ピッチアクセントについて詳しくない方は **[What Is Pitch Accent?](docs/what_is_pitch_accent.md)**（英語）をご覧ください。日本語のピッチアクセントの基本、なぜ重要なのか、スウェーデン語やセルビア・クロアチア語など他の高低アクセント言語との比較を解説しています。
 
+言語学的な詳細については **[Pitch Accent Across Languages](docs/pitch_accent_across_languages.md)**（英語）をご覧ください。日本語、古代ギリシャ語、セルビア語、スカンジナビア諸語、バスク語、アメリカ先住民言語のピッチアクセントを解説しています。*(GPT Deep Research による調査)*
+
 ## 特長
 
 一般的なピッチアクセントツールは辞書形のみを扱いますが、本ツールは：
@@ -198,6 +200,7 @@ UniDicは素人によるWiki的なデータではなく、専門の言語学者�
 │
 ├── docs/                      # 詳細ドキュメント
 │   ├── what_is_pitch_accent.md  # 学習者向け入門
+│   ├── pitch_accent_across_languages.md  # 言語横断的調査（GPT）
 │   ├── compound_sandhi.md
 │   ├── f_type_rules.md
 │   └── numeral_accent.md

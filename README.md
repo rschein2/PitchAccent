@@ -11,6 +11,8 @@ Generate Anki flashcards for Japanese pitch accent study. Takes Japanese text an
 
 If you're a Japanese learner who hasn't encountered pitch accent before, start here: **[What Is Pitch Accent?](docs/what_is_pitch_accent.md)** — a plain-language introduction covering the basics, why it matters, and how Japanese compares to other pitch-accent languages like Swedish and Serbo-Croatian.
 
+For a deeper linguistic survey, see **[Pitch Accent Across Languages](docs/pitch_accent_across_languages.md)** — covering Japanese, Ancient Greek, Serbian, Scandinavian languages, Basque, and Indigenous American languages. *(Research by GPT Deep Research)*
+
 ## What Makes This Different
 
 Most pitch accent tools just look up dictionary forms. This tool:
@@ -223,6 +225,7 @@ Implements Miyazaki-style numeral × counter category system with 13 categories 
 │
 ├── docs/                      # Detailed documentation
 │   ├── what_is_pitch_accent.md  # Intro for learners
+│   ├── pitch_accent_across_languages.md  # Cross-linguistic survey (GPT)
 │   ├── compound_sandhi.md
 │   ├── f_type_rules.md
 │   └── numeral_accent.md
