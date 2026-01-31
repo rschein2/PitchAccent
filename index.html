@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Pitch Accent Tool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .japanese {
+            font-size: 1.5rem;
+            color: #a0a0a0;
+            margin-bottom: 2rem;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #c0c0c0;
+            margin-bottom: 2.5rem;
+        }
+
+        .pitch-demo {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+        }
+
+        .pitch-demo .high {
+            color: #e94560;
+        }
+
+        .pitch-demo .low {
+            color: #4a90d9;
+        }
+
+        .try-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+        }
+
+        .try-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(233, 69, 96, 0.6);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+            text-align: left;
+        }
+
+        .feature {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .feature h3 {
+            color: #e94560;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .feature p {
+            color: #a0a0a0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .links {
+            margin-top: 3rem;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .links a {
+            color: #a0a0a0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .links a:hover {
+            color: #e94560;
+        }
+
+        .footer {
+            margin-top: 3rem;
+            color: #606060;
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: #808080;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Japanese Pitch Accent Tool</h1>
+        <p class="japanese">日本語ピッチアクセント分析ツール</p>
+
+        <p class="description">
+            Enter any Japanese text and see pitch accent patterns instantly.<br>
+            Color-coded visualization with accent numbers for every word.
+        </p>
+
+        <div class="pitch-demo">
+            <span class="low">きょ</span><span class="high">う</span><span class="low">は</span>
+            <span class="low">て</span><span class="high">んき</span><span class="low">が</span>
+            <span class="high">い</span><span class="low">い</span>
+            <span class="low">で</span><span class="high">す</span><span class="low">ね</span>
+        </div>
+
+        <a href="https://pitchaccent.streamlit.app/" class="try-button">
+            Try It Now — Free
+        </a>
+
+        <div class="features">
+            <div class="feature">
+                <h3>Instant Analysis</h3>
+                <p>Paste sentences, paragraphs, or entire articles. Get pitch patterns in seconds.</p>
+            </div>
+            <div class="feature">
+                <h3>Conjugation Forms</h3>
+                <p>See how pitch changes across verb and adjective conjugations.</p>
+            </div>
+            <div class="feature">
+                <h3>Compound Words</h3>
+                <p>Automatic sandhi rules for compound nouns — not just dictionary lookups.</p>
+            </div>
+            <div class="feature">
+                <h3>Anki Export</h3>
+                <p>Generate flashcard decks with color-coded pitch patterns.</p>
+            </div>
+        </div>
+
+        <div class="links">
+            <a href="https://github.com/rschein2/PitchAccent">GitHub Repository</a>
+            <a href="https://github.com/rschein2/PitchAccent/blob/master/docs/what_is_pitch_accent.md">What Is Pitch Accent?</a>
+            <a href="https://github.com/rschein2/PitchAccent/blob/master/docs/pitch_accent_across_languages.md">Pitch Accent Across Languages</a>
+            <a href="https://github.com/rschein2/PitchAccent#minimal-pairs-database">844 Minimal Pairs</a>
+        </div>
+
+        <p class="footer">
+            Data from <a href="https://clrd.ninjal.ac.jp/unidic/">UniDic</a> (NINJAL).
+            Open source under MIT license.
+        </p>
+    </div>
+</body>
+</html>

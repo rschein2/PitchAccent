@@ -1,8 +1,18 @@
-# Japanese Pitch Accent Anki Generator
+# Japanese Pitch Accent Tool
+
+<div align="center">
+
+### [**Try It Now — Free Online Tool**](https://pitchaccent.streamlit.app/)
+
+*No installation required. Paste Japanese text, see pitch patterns instantly.*
+
+</div>
+
+---
 
 **[日本語版はこちら](README_ja.md)**
 
-Generate Anki flashcards for Japanese pitch accent study. Takes Japanese text and produces cards with:
+Analyze Japanese pitch accent patterns and generate Anki flashcards. Enter any text and get:
 - Color-coded pitch patterns (red=high, blue=low)
 - Accent type numbers `[n]` where n=position of downstep (0=flat/heiban)
 - Verb/adjective conjugation drills with pitch patterns
