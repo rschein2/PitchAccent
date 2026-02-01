@@ -1,0 +1,434 @@
+{
+  "pairs": [
+    {
+      "reading": "か",
+      "mora_count": 1,
+      "words": [
+        {
+          "surface": "蚊",
+          "reading": "か",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": ""
+        },
+        {
+          "surface": "課",
+          "reading": "か",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": ""
+        }
+      ]
+    },
+    {
+      "reading": "き",
+      "mora_count": 1,
+      "words": [
+        {
+          "surface": "記",
+          "reading": "き",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": ""
+        },
+        {
+          "surface": "木",
+          "reading": "き",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": ""
+        },
+        {
+          "surface": "来",
+          "reading": "き",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": ""
+        }
+      ]
+    },
+    {
+      "reading": "は",
+      "mora_count": 1,
+      "words": [
+        {
+          "surface": "葉",
+          "reading": "は",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": ""
+        },
+        {
+          "surface": "刃",
+          "reading": "は",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": ""
+        },
+        {
+          "surface": "歯",
+          "reading": "は",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": ""
+        }
+      ]
+    },
+    {
+      "reading": "ひ",
+      "mora_count": 1,
+      "words": [
+        {
+          "surface": "日",
+          "reading": "ひ",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": ""
+        },
+        {
+          "surface": "火",
+          "reading": "ひ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": ""
+        }
+      ]
+    },
+    {
+      "reading": "あか",
+      "mora_count": 2,
+      "words": [
+        {
+          "surface": "赤",
+          "reading": "あか",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": ""
+        },
+        {
+          "surface": "垢",
+          "reading": "あか",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": ""
+        }
+      ]
+    },
+    {
+      "reading": "あさ",
+      "mora_count": 2,
+      "words": [
+        {
+          "surface": "朝",
+          "reading": "あさ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": ""
+        },
+        {
+          "surface": "麻",
+          "reading": "あさ",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": ""
+        }
+      ]
+    },
+    {
+      "reading": "あめ",
+      "mora_count": 2,
+      "words": [
+        {
+          "surface": "飴",
+          "reading": "あめ",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": ""
+        },
+        {
+          "surface": "雨",
+          "reading": "あめ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": ""
+        }
+      ]
+    },
+    {
+      "reading": "いま",
+      "mora_count": 2,
+      "words": [
+        {
+          "surface": "今",
+          "reading": "いま",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": ""
+        },
+        {
+          "surface": "居間",
+          "reading": "いま",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": ""
+        }
+      ]
+    },
+    {
+      "reading": "いる",
+      "mora_count": 2,
+      "words": [
+        {
+          "surface": "要る",
+          "reading": "いる",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": ""
+        },
+        {
+          "surface": "煎る",
+          "reading": "いる",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": ""
+        }
+      ]
+    },
+    {
+      "reading": "かき",
+      "mora_count": 2,
+      "words": [
+        {
+          "surface": "柿",
+          "reading": "かき",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": ""
+        },
+        {
+          "surface": "下記",
+          "reading": "かき",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": ""
+        },
+        {
+          "surface": "牡蠣",
+          "reading": "かき",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": ""
+        }
+      ]
+    },
+    {
+      "reading": "かた",
+      "mora_count": 2,
+      "words": [
+        {
+          "surface": "方",
+          "reading": "かた",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": ""
+        },
+        {
+          "surface": "肩",
+          "reading": "かた",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": ""
+        }
+      ]
+    },
+    {
+      "reading": "かみ",
+      "mora_count": 2,
+      "words": [
+        {
+          "surface": "神",
+          "reading": "かみ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": ""
+        },
+        {
+          "surface": "紙",
+          "reading": "かみ",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": ""
+        },
+        {
+          "surface": "髪",
+          "reading": "かみ",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": ""
+        }
+      ]
+    },
+    {
+      "reading": "きる",
+      "mora_count": 2,
+      "words": [
+        {
+          "surface": "着る",
+          "reading": "きる",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": ""
+        },
+        {
+          "surface": "切る",
+          "reading": "きる",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": ""
+        }
+      ]
+    },
+    {
+      "reading": "こえ",
+      "mora_count": 2,
+      "words": [
+        {
+          "surface": "越え",
+          "reading": "こえ",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": ""
+        },
+        {
+          "surface": "声",
+          "reading": "こえ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": ""
+        }
+      ]
+    },
+    {
+      "reading": "さけ",
+      "mora_count": 2,
+      "words": [
+        {
+          "surface": "酒",
+          "reading": "さけ",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": ""
+        },
+        {
+          "surface": "鮭",
+          "reading": "さけ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": ""
+        }
+      ]
+    },
+    {
+      "reading": "はし",
+      "mora_count": 2,
+      "words": [
+        {
+          "surface": "端",
+          "reading": "はし",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": ""
+        },
+        {
+          "surface": "箸",
+          "reading": "はし",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": ""
+        },
+        {
+          "surface": "橋",
+          "reading": "はし",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": ""
+        }
+      ]
+    },
+    {
+      "reading": "かえる",
+      "mora_count": 3,
+      "words": [
+        {
+          "surface": "変える",
+          "reading": "かえる",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": ""
+        },
+        {
+          "surface": "帰る",
+          "reading": "かえる",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": ""
+        },
+        {
+          "surface": "返る",
+          "reading": "かえる",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": ""
+        }
+      ]
+    },
+    {
+      "reading": "かける",
+      "mora_count": 3,
+      "words": [
+        {
+          "surface": "欠ける",
+          "reading": "かける",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": ""
+        },
+        {
+          "surface": "掛ける",
+          "reading": "かける",
+          "accent": 2,
+          "pos": "動詞",
+          "meaning": ""
+        },
+        {
+          "surface": "駆ける",
+          "reading": "かける",
+          "accent": 2,
+          "pos": "動詞",
+          "meaning": ""
+        }
+      ]
+    },
+    {
+      "reading": "なまり",
+      "mora_count": 3,
+      "words": [
+        {
+          "surface": "鉛",
+          "reading": "なまり",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": ""
+        },
+        {
+          "surface": "なまり",
+          "reading": "なまり",
+          "accent": 3,
+          "pos": "名詞",
+          "meaning": ""
+        }
+      ]
+    }
+  ],
+  "count": 19
+}

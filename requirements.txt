@@ -3,3 +3,4 @@ unidic
 requests
 beautifulsoup4
 streamlit
+litellm

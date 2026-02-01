@@ -11,6 +11,7 @@ from .numeral_reading import number_to_reading
 from .parser import SentenceParser, ParsedWord, ParsedSentence
 from .formatter import HTMLFormatter
 from .corpus import CorpusLoader, TextFileLoader, InteractiveLoader
+from .verb_conjugator import VerbConjugator, ConjugatedForm, AccentGroup
 
 __version__ = "0.1.0"
 
@@ -36,4 +37,8 @@ __all__ = [
     "CorpusLoader",
     "TextFileLoader",
     "InteractiveLoader",
+    # Verb Conjugator
+    "VerbConjugator",
+    "ConjugatedForm",
+    "AccentGroup",
 ]
