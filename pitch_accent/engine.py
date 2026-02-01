@@ -172,8 +172,11 @@ class AccentEngine:
         """
         Apply aModType inflection modification.
 
-        M4@1 means: if accented, subtract 1 from accent position
-        M1@1 means: set accent to 1 (?)
+        From UniDic Table 9:
+        - M4@n: For shortened stems (ichidan verb mizenkei, etc.)
+                If base accent is 0 or 1, keep it unchanged.
+                Otherwise, subtract n from accent position.
+        - M1@n: Set accent to n (used for volitional form)
         """
         if not mod_type or mod_type == "*":
             return base_accent
@@ -187,12 +190,14 @@ class AccentEngine:
         m_val = int(match.group(2))
 
         if m_type == 4:
-            # M4@n: Shift accent position by subtracting n (for shortened stems)
-            if base_accent == 0:
-                return 0  # Heiban stays heiban
+            # M4@n: For shortened stems (e.g., ichidan verbs losing る)
+            # UniDic Table 9: If base accent is 0 or 1, preserve it.
+            #                 Otherwise, subtract n.
+            if base_accent <= 1:
+                return base_accent  # 0 stays 0, 1 stays 1
             else:
                 new_accent = base_accent - m_val
-                return max(0, new_accent)  # Don't go below 0
+                return max(1, new_accent)  # Don't go below 1 for accented
 
         elif m_type == 1:
             # M1@n: Set accent to n (used for volitional)
