@@ -505,17 +505,24 @@ def process_text(text):
                     accent_type = int(word.aType) if word.aType and word.aType != "*" else 0
                     mora_count = engine.count_mora(reading)
                     pattern = engine.accent_to_pattern(accent_type, mora_count)
+                    # Convert reading to hiragana for contour
+                    reading_hira = engine._kata_to_hira(reading)
+                    reading = reading_hira
                 else:
                     result = engine.compute_accent(word.morphemes)
                     reading = result.reading
                     accent_type = result.accent_type
                     pattern = result.pattern
 
+                # Generate contour notation
+                contour = engine.pattern_to_contour(reading, pattern)
+
                 word_data = {
                     'surface': word.surface,
                     'reading': reading,
                     'accent': accent_type,
                     'pattern': pattern,
+                    'contour': contour,
                     'pos': word.pos1,
                     'is_content': True,
                 }
@@ -1015,6 +1022,16 @@ if 'current_text' not in st.session_state:
 if 'verb_sentences_cache' not in st.session_state:
     st.session_state.verb_sentences_cache = {}  # Cache for LLM-generated sentences
 
+# Display options (at least one must be enabled)
+if 'show_colors' not in st.session_state:
+    st.session_state.show_colors = True
+if 'show_pattern' not in st.session_state:
+    st.session_state.show_pattern = True
+if 'show_contour' not in st.session_state:
+    st.session_state.show_contour = True
+if 'show_number' not in st.session_state:
+    st.session_state.show_number = True
+
 # Sidebar with legend and resources
 with st.sidebar:
     st.header("Pitch Pattern Legend")
@@ -1034,6 +1051,27 @@ with st.sidebar:
 
     *[n] = pitch drops after nth mora*
     """)
+
+    st.markdown("---")
+    st.header("Display Options")
+    st.markdown("*Select which representations to show:*")
+
+    # Display option checkboxes
+    new_colors = st.checkbox("Colors (H/L)", value=st.session_state.show_colors, key="opt_colors")
+    new_pattern = st.checkbox("Pattern (LHLL)", value=st.session_state.show_pattern, key="opt_pattern")
+    new_contour = st.checkbox("Contour (た/べ\\る)", value=st.session_state.show_contour, key="opt_contour")
+    new_number = st.checkbox("Number ([2])", value=st.session_state.show_number, key="opt_number")
+
+    # Ensure at least one is selected
+    selected_count = sum([new_colors, new_pattern, new_contour, new_number])
+    if selected_count == 0:
+        st.warning("At least one display option must be selected!")
+        # Keep the previous values
+    else:
+        st.session_state.show_colors = new_colors
+        st.session_state.show_pattern = new_pattern
+        st.session_state.show_contour = new_contour
+        st.session_state.show_number = new_number
 
     st.markdown("---")
     st.header("Resources")
@@ -1257,14 +1295,31 @@ elif analyze_clicked or text_input.strip():
                             if has_relatives:
                                 relative_badge = '<span style="font-size:0.7em;background:#e3f2fd;padding:2px 6px;border-radius:10px;margin-left:5px;">has pairs</span>'
 
+                            # Build display based on user options
+                            color_html = html if st.session_state.show_colors else f'<span style="font-size:1.3em">{word["reading"]}</span>'
+
+                            # Build accent info lines based on options
+                            info_parts = []
+                            if st.session_state.show_number:
+                                info_parts.append(f'<span class="accent-type-name">[{word["accent"]}] {type_name}</span>')
+                            if st.session_state.show_pattern:
+                                info_parts.append(f'<span style="color:#888;font-size:0.85em">{word["pattern"]}</span>')
+                            if st.session_state.show_contour:
+                                contour = word.get('contour', '')
+                                if not contour:
+                                    # Generate contour if not present
+                                    contour = engine.pattern_to_contour(word['reading'], word['pattern'])
+                                info_parts.append(f'<span style="color:#555;font-size:0.95em">{contour}</span>')
+
+                            accent_info_html = '<br>'.join(info_parts) if info_parts else ''
+
                             st.markdown(
                                 f"""
                                 <div class="word-card">
                                     <div class="word-surface">{word['surface']}{relative_badge}</div>
-                                    <div>{html}</div>
+                                    <div>{color_html}</div>
                                     <div class="accent-info">
-                                        <span class="accent-type-name">[{word['accent']}] {type_name}</span><br>
-                                        <span style="color:#888;font-size:0.85em">{word['pattern']}</span>
+                                        {accent_info_html}
                                     </div>
                                 </div>
                                 """,
