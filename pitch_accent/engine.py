@@ -168,21 +168,75 @@ class AccentEngine:
             # Unknown, preserve
             return prev_accent
 
+    def apply_c_rule(self, c_type: str, front_mora: int, front_accent: int, rear_accent: int) -> int:
+        """
+        Apply C-type compound accent rules (UniDic Table 10).
+
+        C-types determine accent for compounds and adjective combinations.
+
+        Variables:
+        - N1 = mora count of front element
+        - M1 = accent type of front element
+        - M2 = accent type of rear element
+
+        Rules:
+        - C1: N1 + M2 (front mora + rear accent)
+        - C2: N1 + 1
+        - C3: N1 (accent at front element's mora boundary)
+        - C4: 0 (heiban)
+        - C5: M1 (preserve front element's accent)
+        """
+        # Parse C-type: C1, C2, C3, C4, C5
+        match = re.match(r"C(\d+)", c_type)
+        if not match:
+            return front_accent  # Unknown, preserve
+
+        c_num = int(match.group(1))
+
+        if c_num == 1:
+            # C1: N1 + M2
+            if rear_accent == 0:
+                return 0  # Rear is heiban, result is heiban
+            return front_mora + rear_accent
+
+        elif c_num == 2:
+            # C2: N1 + 1
+            return front_mora + 1
+
+        elif c_num == 3:
+            # C3: N1 (accent at front boundary)
+            return front_mora
+
+        elif c_num == 4:
+            # C4: 0 (always heiban)
+            return 0
+
+        elif c_num == 5:
+            # C5: M1 (preserve front accent)
+            return front_accent
+
+        else:
+            return front_accent
+
     def apply_mod_type(self, mod_type: str, base_accent: int, mora_count: int = 0) -> int:
         """
         Apply aModType inflection modification.
 
         From UniDic Table 9:
+        - M1@M: Accent = N0 - M (where N0 is mora count of inflected form)
+                Used for volitional form.
+        - M2@M: Conditional - only modifies heiban words.
+                If base accent is 0 (heiban) → N0 - M
+                Otherwise → preserve base accent (unchanged)
+                Used for adjective inflections like 高かっ.
         - M4@M: For shortened stems (ichidan verb mizenkei, etc.)
                 If base accent is 0 or 1, keep it unchanged.
                 Otherwise, subtract M from accent position.
-        - M1@M: Accent = N0 - M (where N0 is mora count of inflected form)
-                Used for volitional form.
         """
         if not mod_type or mod_type == "*":
             return base_accent
 
-        # Parse M-type: M4@1, M1@1, etc.
+        # Parse M-type: M4@1, M1@1, M2@2, etc.
         match = re.match(r"M(\d+)@(-?\d+)", mod_type)
         if not match:
             return base_accent
@@ -190,17 +244,7 @@ class AccentEngine:
         m_type = int(match.group(1))
         m_val = int(match.group(2))
 
-        if m_type == 4:
-            # M4@M: For shortened stems (e.g., ichidan verbs losing る)
-            # UniDic Table 9: If base accent is 0 or 1, preserve it.
-            #                 Otherwise, subtract M.
-            if base_accent <= 1:
-                return base_accent  # 0 stays 0, 1 stays 1
-            else:
-                new_accent = base_accent - m_val
-                return max(1, new_accent)  # Don't go below 1 for accented
-
-        elif m_type == 1:
+        if m_type == 1:
             # M1@M: Accent = N0 - M (mora count based)
             # Used for volitional and other forms where accent position
             # is determined by the inflected form's length.
@@ -210,6 +254,29 @@ class AccentEngine:
             else:
                 # Fallback if no mora count provided
                 return m_val
+
+        elif m_type == 2:
+            # M2@M: Only modifies heiban (base=0) words.
+            # If heiban → N0 - M; otherwise preserve base accent.
+            # Used for adjective inflections (高かっ, 高けれ, etc.)
+            if base_accent == 0:
+                if mora_count > 0:
+                    new_accent = mora_count - m_val
+                    return max(0, new_accent)
+                else:
+                    return base_accent
+            else:
+                return base_accent  # Non-heiban stays unchanged
+
+        elif m_type == 4:
+            # M4@M: For shortened stems (e.g., ichidan verbs losing る)
+            # UniDic Table 9: If base accent is 0 or 1, preserve it.
+            #                 Otherwise, subtract M.
+            if base_accent <= 1:
+                return base_accent  # 0 stays 0, 1 stays 1
+            else:
+                new_accent = base_accent - m_val
+                return max(1, new_accent)  # Don't go below 1 for accented
 
         return base_accent
 
@@ -273,32 +340,57 @@ class AccentEngine:
             m_surface = morph["surface"]
             m_mora = self.count_mora(m_reading)
 
+            # Get rear element's accent (for C-type rules)
+            # Apply any aModType to the rear element first
+            rear_atype = morph.get("aType", "*")
+            if rear_atype and rear_atype != "*":
+                rear_accent = int(str(rear_atype).split(",")[0])
+                # Apply rear element's aModType if present
+                rear_mod = morph.get("aModType", "*")
+                if rear_mod and rear_mod != "*":
+                    rear_accent = self.apply_mod_type(rear_mod, rear_accent, m_mora)
+            else:
+                rear_accent = 0
+
             # Use current POS key for F-rule lookup
             pos_key = current_pos_key
 
-            # Get F-rule from aConType
+            # Check aConType - could be C-type (compounds) or F-type (suffixes)
             acon = morph.get("aConType", "")
-            f_rule = self._parse_acon_for_pos(acon, pos_key)
 
-            if f_rule:
-                f_type = f_rule["type"]
-                m_val = f_rule.get("M")
-                l_val = f_rule.get("L")
-
+            # First check for C-type rules (C1-C5)
+            c_match = re.match(r"C([1-5])", acon)
+            if c_match:
+                c_type = f"C{c_match.group(1)}"
                 prev_accent = current_accent
-                current_accent = self.apply_f_rule(f_type, m_val, l_val, current_accent, current_mora)
-
-                rule_str = f_type
-                if m_val is not None:
-                    rule_str += f"@{m_val}"
-                if l_val is not None:
-                    rule_str += f",{l_val}"
+                current_accent = self.apply_c_rule(c_type, current_mora, current_accent, rear_accent)
 
                 breakdown.append(
-                    f"+ {m_surface}: {rule_str} (N1={current_mora}, M1={prev_accent}) → accent={current_accent}"
+                    f"+ {m_surface}: {c_type} (N1={current_mora}, M1={prev_accent}, M2={rear_accent}) → accent={current_accent}"
                 )
             else:
-                breakdown.append(f"+ {m_surface}: no F-rule found, preserving accent={current_accent}")
+                # Look for F-type rules
+                f_rule = self._parse_acon_for_pos(acon, pos_key)
+
+                if f_rule:
+                    f_type = f_rule["type"]
+                    m_val = f_rule.get("M")
+                    l_val = f_rule.get("L")
+
+                    prev_accent = current_accent
+                    current_accent = self.apply_f_rule(f_type, m_val, l_val, current_accent, current_mora)
+
+                    rule_str = f_type
+                    if m_val is not None:
+                        rule_str += f"@{m_val}"
+                    if l_val is not None:
+                        rule_str += f",{l_val}"
+
+                    breakdown.append(
+                        f"+ {m_surface}: {rule_str} (N1={current_mora}, M1={prev_accent}) → accent={current_accent}"
+                    )
+                else:
+                    breakdown.append(f"+ {m_surface}: no rule found (aConType={acon}), preserving accent={current_accent}")
 
             # Update totals
             current_mora += m_mora
