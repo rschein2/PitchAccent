@@ -23,6 +23,7 @@ class AccentResult:
     mora_count: int        # Total mora count
     pattern: str           # L/H pattern like "LHLL"
     breakdown: list        # Step-by-step computation trace
+    contour: str = ""      # Pitch contour like "た/べ\る" (/ = rise, \ = fall)
 
     def __str__(self):
         type_name = {
@@ -112,6 +113,61 @@ class AccentEngine:
                 high_count = accent_type - 1  # H's after initial L
                 low_count = total - accent_type
                 return "L" + "H" * high_count + "L" * low_count
+
+    def pattern_to_contour(self, reading: str, pattern: str) -> str:
+        """
+        Convert reading + L/H pattern to pitch contour notation.
+
+        Uses / for rising pitch and \\ for falling pitch between morae.
+
+        Examples:
+            たべる + LHLL → た/べ\\る
+            みる + HLL → み\\る
+            いく + LHH → い/く (heiban - no fall within word)
+
+        Args:
+            reading: Kana reading (hiragana or katakana)
+            pattern: L/H pattern string
+
+        Returns:
+            Contour string with /\\ markers between morae
+        """
+        if not reading or not pattern:
+            return reading
+
+        # Split reading into morae
+        morae = []
+        i = 0
+        small_kana = set("ぁぃぅぇぉゃゅょゎァィゥェォャュョヮ")
+
+        while i < len(reading):
+            mora = reading[i]
+            # Combine with following small kana
+            if i + 1 < len(reading) and reading[i + 1] in small_kana:
+                mora += reading[i + 1]
+                i += 1
+            morae.append(mora)
+            i += 1
+
+        # Build contour string
+        result = []
+        # Use the shorter of morae or pattern (pattern may include particle)
+        use_len = min(len(morae), len(pattern))
+
+        for i in range(use_len):
+            result.append(morae[i])
+
+            # Add transition marker if not last mora
+            if i < use_len - 1 and i + 1 < len(pattern):
+                curr = pattern[i]
+                next_p = pattern[i + 1]
+                if curr == "L" and next_p == "H":
+                    result.append("/")
+                elif curr == "H" and next_p == "L":
+                    result.append("\\")
+                # Same pitch = no marker
+
+        return "".join(result)
 
     def apply_f_rule(self, f_type: str, m_val: Optional[int], l_val: Optional[int],
                      prev_accent: int, prev_mora: int) -> int:
@@ -295,7 +351,7 @@ class AccentEngine:
         Returns AccentResult with computed accent.
         """
         if not morphemes:
-            return AccentResult("", "", 0, 0, "", [])
+            return AccentResult("", "", 0, 0, "", [], "")
 
         breakdown = []
 
@@ -410,6 +466,9 @@ class AccentEngine:
         # Convert katakana reading to hiragana for display
         reading_hira = self._kata_to_hira(reading)
 
+        # Generate pitch contour notation (た/べ\る style)
+        contour = self.pattern_to_contour(reading_hira, pattern)
+
         return AccentResult(
             surface=surface,
             reading=reading_hira,
@@ -417,6 +476,7 @@ class AccentEngine:
             mora_count=current_mora,
             pattern=pattern,
             breakdown=breakdown,
+            contour=contour,
         )
 
     def _parse_acon_for_pos(self, acon: str, pos_key: str) -> Optional[dict]:
