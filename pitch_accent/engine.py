@@ -168,15 +168,16 @@ class AccentEngine:
             # Unknown, preserve
             return prev_accent
 
-    def apply_mod_type(self, mod_type: str, base_accent: int) -> int:
+    def apply_mod_type(self, mod_type: str, base_accent: int, mora_count: int = 0) -> int:
         """
         Apply aModType inflection modification.
 
         From UniDic Table 9:
-        - M4@n: For shortened stems (ichidan verb mizenkei, etc.)
+        - M4@M: For shortened stems (ichidan verb mizenkei, etc.)
                 If base accent is 0 or 1, keep it unchanged.
-                Otherwise, subtract n from accent position.
-        - M1@n: Set accent to n (used for volitional form)
+                Otherwise, subtract M from accent position.
+        - M1@M: Accent = N0 - M (where N0 is mora count of inflected form)
+                Used for volitional form.
         """
         if not mod_type or mod_type == "*":
             return base_accent
@@ -190,9 +191,9 @@ class AccentEngine:
         m_val = int(match.group(2))
 
         if m_type == 4:
-            # M4@n: For shortened stems (e.g., ichidan verbs losing る)
+            # M4@M: For shortened stems (e.g., ichidan verbs losing る)
             # UniDic Table 9: If base accent is 0 or 1, preserve it.
-            #                 Otherwise, subtract n.
+            #                 Otherwise, subtract M.
             if base_accent <= 1:
                 return base_accent  # 0 stays 0, 1 stays 1
             else:
@@ -200,8 +201,15 @@ class AccentEngine:
                 return max(1, new_accent)  # Don't go below 1 for accented
 
         elif m_type == 1:
-            # M1@n: Set accent to n (used for volitional)
-            return m_val
+            # M1@M: Accent = N0 - M (mora count based)
+            # Used for volitional and other forms where accent position
+            # is determined by the inflected form's length.
+            if mora_count > 0:
+                new_accent = mora_count - m_val
+                return max(0, new_accent)
+            else:
+                # Fallback if no mora count provided
+                return m_val
 
         return base_accent
 
@@ -235,17 +243,29 @@ class AccentEngine:
         else:
             current_accent = 0
 
+        reading = first.get("reading", first["surface"])
+        current_mora = self.count_mora(reading)
+
         # Apply inflection modification if present
         if first.get("aModType") and first["aModType"] != "*":
             orig_accent = current_accent
-            current_accent = self.apply_mod_type(first["aModType"], current_accent)
-            breakdown.append(f"{first['surface']}: base={orig_accent}, aModType={first['aModType']} → {current_accent}")
+            current_accent = self.apply_mod_type(first["aModType"], current_accent, current_mora)
+            breakdown.append(f"{first['surface']}: base={orig_accent}, aModType={first['aModType']}, N0={current_mora} → {current_accent}")
         else:
             breakdown.append(f"{first['surface']}: base accent={current_accent}")
 
-        reading = first.get("reading", first["surface"])
-        current_mora = self.count_mora(reading)
         surface = first["surface"]
+
+        # Track current POS category for F-rule lookup
+        # Starts as the base word's POS, but changes when suffixes like たい/ない
+        # make the whole thing adjective-like.
+        base_pos = morphemes[0].get("pos1", "動詞")
+        if "動詞" in base_pos:
+            current_pos_key = "動詞"
+        elif "形容詞" in base_pos:
+            current_pos_key = "形容詞"
+        else:
+            current_pos_key = "名詞"
 
         # Process remaining morphemes (suffixes/particles)
         for morph in morphemes[1:]:
@@ -253,17 +273,8 @@ class AccentEngine:
             m_surface = morph["surface"]
             m_mora = self.count_mora(m_reading)
 
-            # Determine POS category for F-rule lookup
-            pos1 = morph.get("pos1", "")
-            prev_pos = morphemes[0].get("pos1", "動詞")  # Assume verb if unknown
-
-            # Map to lookup key (動詞, 形容詞, 名詞)
-            if "動詞" in prev_pos or prev_pos == "動詞":
-                pos_key = "動詞"
-            elif "形容詞" in prev_pos:
-                pos_key = "形容詞"
-            else:
-                pos_key = "名詞"
+            # Use current POS key for F-rule lookup
+            pos_key = current_pos_key
 
             # Get F-rule from aConType
             acon = morph.get("aConType", "")
@@ -294,6 +305,13 @@ class AccentEngine:
             reading += m_reading
             surface += m_surface
 
+            # Update POS key for next suffix based on cType
+            # たい and ない make the whole thing adjective-like for subsequent suffixes
+            ctype = morph.get("cType", "")
+            if "タイ" in ctype or "ナイ" in ctype:
+                current_pos_key = "形容詞"
+                breakdown.append(f"  (POS becomes 形容詞 after {m_surface})")
+
         # Convert to pattern
         pattern = self.accent_to_pattern(current_accent, current_mora)
 
@@ -310,7 +328,12 @@ class AccentEngine:
         )
 
     def _parse_acon_for_pos(self, acon: str, pos_key: str) -> Optional[dict]:
-        """Parse aConType string and extract rule for given POS."""
+        """Parse aConType string and extract rule for given POS.
+
+        Handles formats like:
+        - "動詞%F2@1,形容詞%F4@-2"
+        - "動詞 %F2@1" (with whitespace)
+        """
         if not acon or acon == "*":
             return None
 
@@ -318,8 +341,11 @@ class AccentEngine:
             if "%" not in part:
                 continue
             pos, spec = part.split("%", 1)
+            # Strip whitespace from both POS and spec
+            pos = pos.strip()
+            spec = spec.strip()
             if pos == pos_key:
-                match = re.match(r"F([1-6])(?:@(-?\d+))?(?:@(-?\d+))?", spec)
+                match = re.match(r"F([1-6])(?:@(-?\d+))?(?:,(-?\d+))?", spec)
                 if match:
                     return {
                         "type": f"F{match.group(1)}",
