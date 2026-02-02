@@ -332,19 +332,37 @@ class AccentEngine:
 
         Handles formats like:
         - "動詞%F2@1,形容詞%F4@-2"
+        - "動詞%F6@1,-1,形容詞%F2@-2" (F6 with two parameters)
         - "動詞 %F2@1" (with whitespace)
+
+        The tricky part is F6@M,L where the comma is part of the rule,
+        not a separator between POS branches. We split on commas that
+        start a new POS% chunk, not all commas.
         """
         if not acon or acon == "*":
             return None
 
-        for part in acon.split(","):
+        # Split into POS branches, but preserve F6's comma-separated L parameter
+        # Strategy: split on comma, then rejoin orphaned parts (those without %)
+        raw_parts = acon.split(",")
+        parts = []
+        for p in raw_parts:
+            p = p.strip()
+            if "%" in p:
+                # New POS branch
+                parts.append(p)
+            elif parts:
+                # Orphaned part (like "-1" from F6@1,-1) - append to previous
+                parts[-1] += "," + p
+
+        for part in parts:
             if "%" not in part:
                 continue
             pos, spec = part.split("%", 1)
-            # Strip whitespace from both POS and spec
             pos = pos.strip()
             spec = spec.strip()
             if pos == pos_key:
+                # Match F-rules: F1, F2@1, F3@0, F4@1, F5, F6@1,-1
                 match = re.match(r"F([1-6])(?:@(-?\d+))?(?:,(-?\d+))?", spec)
                 if match:
                     return {
