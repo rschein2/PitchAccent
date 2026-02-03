@@ -263,14 +263,21 @@ def get_accent_type_name(accent_type, mora_count):
     else:
         return "中高 nakadaka"
 
-# Download UniDic if not present (required for first run on Streamlit Cloud)
-@st.cache_resource
+# Import lightweight utilities (no UniDic dependency)
+from pitch_accent.utils import accent_to_pattern, pattern_to_contour, count_mora
+
+# Lazy-load heavy components that require UniDic
+_parser = None
+_formatter = None
+_engine = None
+_verb_conjugator = None
+
+
 def ensure_unidic():
     """Download UniDic dictionary if not already installed."""
     import os
     try:
         import unidic
-        # Check if dictionary files actually exist
         dicdir = unidic.DICDIR
         if not os.path.exists(os.path.join(dicdir, "dicrc")):
             raise FileNotFoundError("UniDic not fully installed")
@@ -285,9 +292,20 @@ def ensure_unidic():
             st.error(f"Failed to download UniDic: {result.stderr}")
             st.stop()
 
-ensure_unidic()
 
-from pitch_accent import SentenceParser, HTMLFormatter, FugashiAccentEngine, VerbConjugator
+def get_heavy_components():
+    """Lazy-load heavy components that require UniDic."""
+    global _parser, _formatter, _engine, _verb_conjugator
+
+    if _parser is None:
+        ensure_unidic()
+        from pitch_accent import SentenceParser, HTMLFormatter, FugashiAccentEngine, VerbConjugator
+        _parser = SentenceParser()
+        _formatter = HTMLFormatter()
+        _engine = FugashiAccentEngine()
+        _verb_conjugator = VerbConjugator()
+
+    return _parser, _formatter, _engine, _verb_conjugator
 
 # LiteLLM for LLM-generated example sentences
 import os
@@ -334,12 +352,6 @@ def generate_sentence_with_llm(verb_form: str, verb_meaning: str) -> str:
     except Exception as e:
         return ""
 
-# Initialize components (cached for performance)
-@st.cache_resource
-def load_components():
-    return SentenceParser(), HTMLFormatter(), FugashiAccentEngine(), VerbConjugator()
-
-parser, formatter, engine, verb_conjugator = load_components()
 
 
 SMALL_KANA = set("ぁぃぅぇぉゃゅょゎァィゥェォャュョヮ")
@@ -487,8 +499,22 @@ def generate_inline_sentence_html(result):
     return ''.join(parts)
 
 
+def kata_to_hira(text: str) -> str:
+    """Convert katakana to hiragana."""
+    result = []
+    for char in text:
+        code = ord(char)
+        if 0x30A1 <= code <= 0x30F6:
+            result.append(chr(code - 0x60))
+        else:
+            result.append(char)
+    return "".join(result)
+
+
 def process_text(text):
     """Process text and return annotated results."""
+    parser, formatter, engine, verb_conjugator = get_heavy_components()
+
     sentences = parser.extract_sentences(text)
     results = []
 
@@ -503,11 +529,10 @@ def process_text(text):
                 if word.is_compound:
                     reading = word.reading
                     accent_type = int(word.aType) if word.aType and word.aType != "*" else 0
-                    mora_count = engine.count_mora(reading)
-                    pattern = engine.accent_to_pattern(accent_type, mora_count)
+                    mora_cnt = count_mora(reading)
+                    pattern = accent_to_pattern(accent_type, mora_cnt)
                     # Convert reading to hiragana for contour
-                    reading_hira = engine._kata_to_hira(reading)
-                    reading = reading_hira
+                    reading = kata_to_hira(reading)
                 else:
                     result = engine.compute_accent(word.morphemes)
                     reading = result.reading
@@ -515,7 +540,7 @@ def process_text(text):
                     pattern = result.pattern
 
                 # Generate contour notation
-                contour = engine.pattern_to_contour(reading, pattern)
+                contour = pattern_to_contour(reading, pattern)
 
                 word_data = {
                     'surface': word.surface,
@@ -636,6 +661,8 @@ VERB_MEANINGS = {
 
 def render_verbs_view(verb_text: str):
     """Render the Verbs conjugation view."""
+    parser, formatter, engine, verb_conjugator = get_heavy_components()
+
     verb_text = verb_text.strip()
 
     # Try to detect if this is a verb
@@ -763,9 +790,48 @@ def render_minimal_pairs_study():
     """Render the Study mode for Minimal Pairs."""
     st.markdown("---")
 
+    # JLPT level filter
+    st.markdown("##### Filter by JLPT Level")
+    jlpt_cols = st.columns(6)
+    with jlpt_cols[0]:
+        show_all_jlpt = st.checkbox("All Levels", value=True, key="study_jlpt_all")
+    with jlpt_cols[1]:
+        show_n5 = st.checkbox("N5", value=False, key="study_jlpt_n5")
+    with jlpt_cols[2]:
+        show_n4 = st.checkbox("N4", value=False, key="study_jlpt_n4")
+    with jlpt_cols[3]:
+        show_n3 = st.checkbox("N3", value=False, key="study_jlpt_n3")
+    with jlpt_cols[4]:
+        show_n2 = st.checkbox("N2", value=False, key="study_jlpt_n2")
+    with jlpt_cols[5]:
+        show_n1 = st.checkbox("N1", value=False, key="study_jlpt_n1")
+
+    # Build JLPT filter set
+    jlpt_filter = None
+    if not show_all_jlpt and (show_n5 or show_n4 or show_n3 or show_n2 or show_n1):
+        jlpt_filter = set()
+        if show_n5:
+            jlpt_filter.add(5)
+        if show_n4:
+            jlpt_filter.add(4)
+        if show_n3:
+            jlpt_filter.add(3)
+        if show_n2:
+            jlpt_filter.add(2)
+        if show_n1:
+            jlpt_filter.add(1)
+
+    # Filter pairs by JLPT level (min_jlpt indicates easiest word in pair)
+    filtered_pairs = MINIMAL_PAIRS
+    if jlpt_filter:
+        filtered_pairs = [p for p in MINIMAL_PAIRS if p.get('min_jlpt', 0) in jlpt_filter]
+
+    st.markdown(f"*Showing {len(filtered_pairs)} pairs*")
+    st.markdown("---")
+
     # Group by mora count
     pairs_by_mora = {}
-    for pair in MINIMAL_PAIRS:
+    for pair in filtered_pairs:
         mora = pair['mora_count']
         if mora not in pairs_by_mora:
             pairs_by_mora[mora] = []
@@ -779,19 +845,25 @@ def render_minimal_pairs_study():
         for pair in pairs:
             reading = pair['reading']
             words = pair['words']
+            min_jlpt = pair.get('min_jlpt', 0)
+
+            # Header with JLPT badge
+            jlpt_badge = get_jlpt_badge_html(min_jlpt)
+            header_html = f"{reading}{jlpt_badge}"
 
             # Create colored display for each word
             word_displays = []
             for w in words:
-                pattern = engine.accent_to_pattern(w['accent'], mora_count)
+                pattern = accent_to_pattern(w['accent'], mora_count)
                 colored = get_accent_html(w['surface'], reading, w['accent'], pattern)
-                word_displays.append(f"{colored} <span style='color:#666'>[{w['accent']}]</span>")
+                word_jlpt = get_jlpt_badge_html(w.get('jlpt_level', 0))
+                word_displays.append(f"{colored} <span style='color:#666'>[{w['accent']}]</span>{word_jlpt}")
 
             words_html = " &nbsp;vs&nbsp; ".join(word_displays)
 
             st.markdown(f"""
             <div class="family-tree">
-                <div class="family-header">{reading}</div>
+                <div class="family-header">{header_html}</div>
                 <div style="font-size:1.2em;">{words_html}</div>
             </div>
             """, unsafe_allow_html=True)
@@ -799,9 +871,10 @@ def render_minimal_pairs_study():
             # Show details in expander
             with st.expander(f"Details for {reading}"):
                 for w in words:
-                    pattern = engine.accent_to_pattern(w['accent'], mora_count)
+                    pattern = accent_to_pattern(w['accent'], mora_count)
                     type_name = get_accent_type_name(w['accent'], mora_count)
-                    st.markdown(f"**{w['surface']}** - [{w['accent']}] {type_name} ({pattern}) - {w['pos']}")
+                    jlpt_label = f"N{w.get('jlpt_level', 0)}" if w.get('jlpt_level', 0) > 0 else ""
+                    st.markdown(f"**{w['surface']}** - [{w['accent']}] {type_name} ({pattern}) - {w['pos']} {jlpt_label}")
 
         st.markdown("")  # Spacing
 
@@ -841,15 +914,24 @@ def render_minimal_pairs_drill():
     if 'drill_last_correct' not in st.session_state:
         st.session_state.drill_last_correct = None
 
-    # Filter by mora count
-    col_filter, col_stats = st.columns([2, 1])
-    with col_filter:
+    # Filter by mora count and JLPT level
+    col_mora, col_jlpt, col_stats = st.columns([1, 2, 1])
+    with col_mora:
         mora_options = sorted(set(p['mora_count'] for p in MINIMAL_PAIRS))
         selected_mora = st.multiselect(
-            "Filter by mora count:",
+            "Mora count:",
             options=mora_options,
             default=mora_options,
             format_func=lambda x: f"{x} mora"
+        )
+
+    with col_jlpt:
+        jlpt_options = [5, 4, 3, 2, 1]
+        selected_jlpt = st.multiselect(
+            "JLPT level:",
+            options=jlpt_options,
+            default=jlpt_options,
+            format_func=lambda x: f"N{x}"
         )
 
     with col_stats:
@@ -861,8 +943,12 @@ def render_minimal_pairs_drill():
             </div>
             """, unsafe_allow_html=True)
 
-    # Filter pairs
-    filtered_pairs = [p for p in MINIMAL_PAIRS if p['mora_count'] in selected_mora]
+    # Filter pairs by mora count and JLPT level
+    filtered_pairs = [
+        p for p in MINIMAL_PAIRS
+        if p['mora_count'] in selected_mora
+        and (p.get('min_jlpt', 0) in selected_jlpt or p.get('min_jlpt', 0) == 0)
+    ]
 
     if not filtered_pairs:
         st.info("No pairs match the selected filters.")
@@ -898,7 +984,7 @@ def render_minimal_pairs_drill():
         reading = pair['reading']
         accent = target['accent']
         mora_count = pair['mora_count']
-        pattern = engine.accent_to_pattern(accent, mora_count)
+        pattern = accent_to_pattern(accent, mora_count)
         pattern_html = get_accent_html("", reading, accent, pattern)
 
         st.markdown(f"""
@@ -924,7 +1010,7 @@ def render_minimal_pairs_drill():
                     elif st.session_state.drill_last_correct == False and i == st.session_state.get('drill_selected_idx'):
                         card_class += " drill-card-incorrect"
 
-                word_pattern = engine.accent_to_pattern(word['accent'], mora_count)
+                word_pattern = accent_to_pattern(word['accent'], mora_count)
 
                 # Create button for each word
                 if st.button(
@@ -947,17 +1033,19 @@ def render_minimal_pairs_drill():
 
         # Show feedback
         if st.session_state.drill_answered:
+            target_jlpt = f" (N{target.get('jlpt_level', 0)})" if target.get('jlpt_level', 0) > 0 else ""
             if st.session_state.drill_last_correct:
-                st.success(f"Correct! {target['surface']} [{target['accent']}] - {target['pos']}")
+                st.success(f"Correct! {target['surface']} [{target['accent']}] - {target['pos']}{target_jlpt}")
             else:
-                st.error(f"Incorrect. The answer was {target['surface']} [{target['accent']}] - {target['pos']}")
+                st.error(f"Incorrect. The answer was {target['surface']} [{target['accent']}] - {target['pos']}{target_jlpt}")
 
             # Show all words with their patterns
             st.markdown("#### All words in this pair:")
             for word in pair['words']:
-                word_pattern = engine.accent_to_pattern(word['accent'], mora_count)
+                word_pattern = accent_to_pattern(word['accent'], mora_count)
                 word_html = get_accent_html("", reading, word['accent'], word_pattern)
-                st.markdown(f"**{word['surface']}** {word_html} [{word['accent']}] - {word['pos']}", unsafe_allow_html=True)
+                word_jlpt = get_jlpt_badge_html(word.get('jlpt_level', 0))
+                st.markdown(f"**{word['surface']}** {word_html} [{word['accent']}] - {word['pos']}{word_jlpt}", unsafe_allow_html=True)
 
     else:
         st.info("Click 'New Question' to start the drill!")
@@ -966,7 +1054,8 @@ def render_minimal_pairs_drill():
     with st.expander(f"View all {len(filtered_pairs)} minimal pairs"):
         for pair in filtered_pairs:
             words_str = ", ".join(f"{w['surface']}[{w['accent']}]" for w in pair['words'])
-            st.markdown(f"**{pair['reading']}** ({pair['mora_count']}拍): {words_str}")
+            jlpt_label = f" N{pair.get('min_jlpt', 0)}" if pair.get('min_jlpt', 0) > 0 else ""
+            st.markdown(f"**{pair['reading']}** ({pair['mora_count']}拍{jlpt_label}): {words_str}")
 
 
 def get_accent_category(accent_type: int, mora_count: int) -> str:
@@ -979,6 +1068,23 @@ def get_accent_category(accent_type: int, mora_count: int) -> str:
         return "odaka"
     else:
         return "nakadaka"
+
+
+def get_jlpt_badge_html(level: int) -> str:
+    """Generate HTML badge for JLPT level."""
+    if level == 0:
+        return ""
+
+    # Color coding: N5=green (easiest), N1=red (hardest)
+    colors = {
+        5: ("#2e7d32", "#e8f5e9"),  # green
+        4: ("#1565c0", "#e3f2fd"),  # blue
+        3: ("#ef6c00", "#fff3e0"),  # orange
+        2: ("#c2185b", "#fce4ec"),  # pink
+        1: ("#d32f2f", "#ffebee"),  # red
+    }
+    text_color, bg_color = colors.get(level, ("#666", "#f5f5f5"))
+    return f'<span style="font-size:0.7em;background:{bg_color};color:{text_color};padding:2px 6px;border-radius:10px;margin-left:5px;font-weight:500;">N{level}</span>'
 
 
 def render_word_family_tree(word_surface: str, word_reading: str):
@@ -999,7 +1105,7 @@ def render_word_family_tree(word_surface: str, word_reading: str):
         cols = st.columns(min(len(related_by_reading), 4))
         for i, w in enumerate(related_by_reading):
             with cols[i % 4]:
-                pattern = engine.accent_to_pattern(w['accent'], len(word_reading))
+                pattern = accent_to_pattern(w['accent'], len(word_reading))
                 html = get_accent_html(w['surface'], word_reading, w['accent'], pattern)
                 st.markdown(f"""
                 <div class="family-member">
@@ -1308,7 +1414,7 @@ elif analyze_clicked or text_input.strip():
                                 contour = word.get('contour', '')
                                 if not contour:
                                     # Generate contour if not present
-                                    contour = engine.pattern_to_contour(word['reading'], word['pattern'])
+                                    contour = pattern_to_contour(word['reading'], word['pattern'])
                                 info_parts.append(f'<span style="color:#555;font-size:0.95em">{contour}</span>')
 
                             accent_info_html = '<br>'.join(info_parts) if info_parts else ''
@@ -1333,7 +1439,7 @@ elif analyze_clicked or text_input.strip():
                                         if pair['reading'] == word['reading']:
                                             for w in pair['words']:
                                                 if w['surface'] != word['surface']:
-                                                    w_pattern = engine.accent_to_pattern(w['accent'], pair['mora_count'])
+                                                    w_pattern = accent_to_pattern(w['accent'], pair['mora_count'])
                                                     w_html = get_accent_html(w['surface'], pair['reading'], w['accent'], w_pattern)
                                                     st.markdown(f"**{w['surface']}** {w_html} [{w['accent']}] - {w['pos']}", unsafe_allow_html=True)
 

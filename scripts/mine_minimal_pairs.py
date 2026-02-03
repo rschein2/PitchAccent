@@ -96,6 +96,7 @@ class WordEntry:
     accent: int       # アクセント型
     pos: str          # 品詞
     meaning: str = "" # 意味（後で追加可能）
+    jlpt_level: int = 0  # 5=N5...1=N1, 0=unknown
 
 
 @dataclass
@@ -103,13 +104,41 @@ class MinimalPair:
     reading: str
     words: list[WordEntry]
     mora_count: int
+    min_jlpt: int = 0  # Easiest word in pair (highest N number)
+    max_jlpt: int = 0  # Hardest word in pair (lowest N number)
 
     def to_dict(self):
         return {
             "reading": self.reading,
             "mora_count": self.mora_count,
+            "min_jlpt": self.min_jlpt,
+            "max_jlpt": self.max_jlpt,
             "words": [asdict(w) for w in self.words]
         }
+
+
+def load_jlpt_vocab() -> dict[str, int]:
+    """Load JLPT vocabulary → level mapping.
+
+    Returns dict where key is word surface form, value is JLPT level (5=N5...1=N1).
+    """
+    import os
+    jlpt_file = os.path.join(os.path.dirname(__file__), "..", "data", "jlpt", "jlpt_vocabulary.json")
+
+    if not os.path.exists(jlpt_file):
+        print(f"Warning: JLPT vocabulary file not found at {jlpt_file}")
+        return {}
+
+    with open(jlpt_file, encoding="utf-8") as f:
+        data = json.load(f)
+
+    # Convert "N5" -> 5, "N1" -> 1, etc.
+    word_to_level = {}
+    for word, level_str in data.items():
+        level = int(level_str[1])  # "N5" -> 5
+        word_to_level[word] = level
+
+    return word_to_level
 
 
 class MinimalPairMiner:
@@ -117,9 +146,10 @@ class MinimalPairMiner:
 
     SMALL_KANA = set("ぁぃぅぇぉゃゅょゎっ")
 
-    def __init__(self):
+    def __init__(self, jlpt_vocab: dict[str, int] = None):
         self.tagger = fugashi.Tagger(f'-d "{unidic.DICDIR}"')
         self.words_by_reading: dict[str, list[WordEntry]] = defaultdict(list)
+        self.jlpt_vocab = jlpt_vocab or {}
 
     def count_mora(self, reading: str) -> int:
         """Count mora in a reading."""
@@ -168,11 +198,19 @@ class MinimalPairMiner:
             else:
                 accent = 0
 
+            # Look up JLPT level
+            jlpt_level = self.jlpt_vocab.get(node.surface, 0)
+            # Also try the lemma if surface form not found
+            if jlpt_level == 0:
+                lemma = f.lemma if hasattr(f, 'lemma') and f.lemma else node.surface
+                jlpt_level = self.jlpt_vocab.get(lemma, 0)
+
             return WordEntry(
                 surface=node.surface,
                 reading=reading,
                 accent=accent,
-                pos=pos
+                pos=pos,
+                jlpt_level=jlpt_level
             )
 
         return None
@@ -213,14 +251,21 @@ class MinimalPairMiner:
             # Sort by accent for consistent ordering
             sorted_entries = sorted(entries, key=lambda e: (e.accent, e.surface))
 
+            # Calculate JLPT range (only from words that have JLPT levels)
+            jlpt_levels = [e.jlpt_level for e in sorted_entries if e.jlpt_level > 0]
+            min_jlpt = max(jlpt_levels) if jlpt_levels else 0  # Easiest = highest number (N5=5)
+            max_jlpt = min(jlpt_levels) if jlpt_levels else 0  # Hardest = lowest number (N1=1)
+
             pairs.append(MinimalPair(
                 reading=reading,
                 words=sorted_entries,
-                mora_count=self.count_mora(reading)
+                mora_count=self.count_mora(reading),
+                min_jlpt=min_jlpt,
+                max_jlpt=max_jlpt
             ))
 
-        # Sort by mora count, then reading
-        pairs.sort(key=lambda p: (p.mora_count, p.reading))
+        # Sort by: 1) easiest level first (highest min_jlpt), 2) mora count, 3) reading
+        pairs.sort(key=lambda p: (-p.min_jlpt, p.mora_count, p.reading))
         return pairs
 
     def find_pairs_for_reading(self, reading: str) -> Optional[MinimalPair]:
@@ -236,16 +281,25 @@ class MinimalPairMiner:
             return None
 
         sorted_entries = sorted(entries, key=lambda e: (e.accent, e.surface))
+
+        # Calculate JLPT range
+        jlpt_levels = [e.jlpt_level for e in sorted_entries if e.jlpt_level > 0]
+        min_jlpt = max(jlpt_levels) if jlpt_levels else 0
+        max_jlpt = min(jlpt_levels) if jlpt_levels else 0
+
         return MinimalPair(
             reading=reading,
             words=sorted_entries,
-            mora_count=self.count_mora(reading)
+            mora_count=self.count_mora(reading),
+            min_jlpt=min_jlpt,
+            max_jlpt=max_jlpt
         )
 
 
 def mine_from_seeds():
     """Mine minimal pairs from seed words."""
-    miner = MinimalPairMiner()
+    jlpt_vocab = load_jlpt_vocab()
+    miner = MinimalPairMiner(jlpt_vocab)
 
     print("Mining minimal pairs from seed words...")
     count = miner.add_words(SEED_WORDS)
@@ -257,19 +311,77 @@ def mine_from_seeds():
     return pairs
 
 
+def mine_from_jlpt():
+    """Mine minimal pairs from ALL JLPT vocabulary.
+
+    This adds all ~8000 JLPT words to find many more minimal pairs.
+    """
+    jlpt_vocab = load_jlpt_vocab()
+    print(f"Loaded {len(jlpt_vocab)} JLPT vocabulary entries")
+
+    miner = MinimalPairMiner(jlpt_vocab)
+
+    # Add all JLPT words
+    print("Adding all JLPT vocabulary words...")
+    count = 0
+    for word in jlpt_vocab.keys():
+        if miner.add_word(word):
+            count += 1
+        if count % 1000 == 0:
+            print(f"  Processed {count} words...")
+
+    print(f"Successfully added {count} words from JLPT vocabulary")
+
+    # Also add seed words to ensure classic pairs are included
+    seed_count = miner.add_words(SEED_WORDS)
+    print(f"Added {seed_count} additional seed words")
+
+    pairs = miner.find_minimal_pairs()
+    print(f"Found {len(pairs)} minimal pairs")
+
+    # Show breakdown by JLPT level
+    level_counts = {5: 0, 4: 0, 3: 0, 2: 0, 1: 0, 0: 0}
+    for pair in pairs:
+        level_counts[pair.min_jlpt] += 1
+
+    print("\nPairs by easiest JLPT level:")
+    for level in [5, 4, 3, 2, 1, 0]:
+        label = f"N{level}" if level > 0 else "Unknown"
+        print(f"  {label}: {level_counts[level]} pairs")
+
+    return pairs
+
+
 def main():
-    pairs = mine_from_seeds()
+    import argparse
+    parser = argparse.ArgumentParser(description="Mine minimal pairs from UniDic")
+    parser.add_argument("--jlpt", action="store_true",
+                       help="Mine from all JLPT vocabulary (slower but finds more pairs)")
+    parser.add_argument("--seeds-only", action="store_true",
+                       help="Mine only from seed words (faster, fewer pairs)")
+    args = parser.parse_args()
+
+    if args.seeds_only:
+        pairs = mine_from_seeds()
+    else:
+        # Default: mine from JLPT vocabulary
+        pairs = mine_from_jlpt()
 
     print("\n" + "="*60)
     print("MINIMAL PAIRS FOUND")
     print("="*60)
 
-    for pair in pairs:
+    # Show first 20 pairs as sample
+    for pair in pairs[:20]:
         words_str = ", ".join(
             f"{w.surface}[{w.accent}]" for w in pair.words
         )
-        print(f"\n{pair.reading} ({pair.mora_count}拍):")
+        jlpt_str = f" (N{pair.min_jlpt})" if pair.min_jlpt > 0 else ""
+        print(f"\n{pair.reading} ({pair.mora_count}拍){jlpt_str}:")
         print(f"  {words_str}")
+
+    if len(pairs) > 20:
+        print(f"\n... and {len(pairs) - 20} more pairs")
 
     # Save to JSON
     output = {

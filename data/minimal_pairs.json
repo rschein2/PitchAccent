@@ -1,434 +1,7445 @@
 {
   "pairs": [
     {
+      "reading": "い",
+      "mora_count": 1,
+      "min_jlpt": 5,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "い",
+          "reading": "い",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "胃",
+          "reading": "い",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "衣",
+          "reading": "い",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 0
+        }
+      ]
+    },
+    {
+      "reading": "え",
+      "mora_count": 1,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "え",
+          "reading": "え",
+          "accent": 0,
+          "pos": "感動詞",
+          "meaning": "",
+          "jlpt_level": 0
+        },
+        {
+          "surface": "重",
+          "reading": "え",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "画",
+          "reading": "え",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "絵",
+          "reading": "え",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        }
+      ]
+    },
+    {
       "reading": "か",
       "mora_count": 1,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
       "words": [
+        {
+          "surface": "下",
+          "reading": "か",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "化",
+          "reading": "か",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 0
+        },
+        {
+          "surface": "科",
+          "reading": "か",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
         {
           "surface": "蚊",
           "reading": "か",
           "accent": 0,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "過",
+          "reading": "か",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 0
+        },
+        {
+          "surface": "可",
+          "reading": "か",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
         },
         {
           "surface": "課",
           "reading": "か",
           "accent": 1,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 3
         }
       ]
     },
     {
       "reading": "き",
       "mora_count": 1,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
       "words": [
+        {
+          "surface": "器",
+          "reading": "き",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "気",
+          "reading": "き",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "着",
+          "reading": "き",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "稀",
+          "reading": "き",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
         {
           "surface": "記",
           "reading": "き",
           "accent": 0,
           "pos": "接尾辞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 0
+        },
+        {
+          "surface": "期",
+          "reading": "き",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
         },
         {
           "surface": "木",
           "reading": "き",
           "accent": 1,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 5
         },
         {
           "surface": "来",
           "reading": "き",
           "accent": 1,
           "pos": "動詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "機",
+          "reading": "き",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "ご",
+      "mora_count": 1,
+      "min_jlpt": 5,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "ご",
+          "reading": "ご",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "御",
+          "reading": "ご",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "碁",
+          "reading": "ご",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "五",
+          "reading": "ご",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "語",
+          "reading": "ご",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "じ",
+      "mora_count": 1,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "児",
+          "reading": "じ",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "次",
+          "reading": "じ",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "耳",
+          "reading": "じ",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "字",
+          "reading": "じ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
         }
       ]
     },
     {
       "reading": "は",
       "mora_count": 1,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
       "words": [
+        {
+          "surface": "派",
+          "reading": "は",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
         {
           "surface": "葉",
           "reading": "は",
           "accent": 0,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 4
         },
         {
           "surface": "刃",
           "reading": "は",
           "accent": 1,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 1
         },
         {
           "surface": "歯",
           "reading": "は",
           "accent": 1,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 5
         }
       ]
     },
     {
-      "reading": "ひ",
+      "reading": "び",
       "mora_count": 1,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
       "words": [
         {
-          "surface": "日",
-          "reading": "ひ",
+          "surface": "鼻",
+          "reading": "び",
           "accent": 0,
-          "pos": "名詞",
-          "meaning": ""
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 5
         },
         {
-          "surface": "火",
-          "reading": "ひ",
+          "surface": "美",
+          "reading": "び",
           "accent": 1,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "み",
+      "mora_count": 1,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "未",
+          "reading": "み",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "身",
+          "reading": "み",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "見",
+          "reading": "み",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "観",
+          "reading": "み",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "よっ",
+      "mora_count": 1,
+      "min_jlpt": 5,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "依っ",
+          "reading": "よっ",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "四",
+          "reading": "よっ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
         }
       ]
     },
     {
       "reading": "あか",
       "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
       "words": [
+        {
+          "surface": "亜科",
+          "reading": "あか",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
         {
           "surface": "赤",
           "reading": "あか",
           "accent": 1,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 5
         },
         {
           "surface": "垢",
           "reading": "あか",
           "accent": 2,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "あき",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "明き",
+          "reading": "あき",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "空き",
+          "reading": "あき",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "秋",
+          "reading": "あき",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
         }
       ]
     },
     {
       "reading": "あさ",
       "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
       "words": [
         {
           "surface": "朝",
           "reading": "あさ",
           "accent": 1,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 5
         },
         {
           "surface": "麻",
           "reading": "あさ",
           "accent": 2,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "あし",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "葦",
+          "reading": "あし",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "脚",
+          "reading": "あし",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 0
+        },
+        {
+          "surface": "足",
+          "reading": "あし",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
         }
       ]
     },
     {
       "reading": "あめ",
       "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 5,
       "words": [
         {
           "surface": "飴",
           "reading": "あめ",
           "accent": 0,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 5
         },
         {
           "surface": "雨",
           "reading": "あめ",
           "accent": 1,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 5
+        }
+      ]
+    },
+    {
+      "reading": "いい",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "いい",
+          "reading": "いい",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "言い",
+          "reading": "いい",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "いい",
+          "reading": "いい",
+          "accent": 1,
+          "pos": "形容詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "伊井",
+          "reading": "いい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "いえ",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "いえ",
+          "reading": "いえ",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "家",
+          "reading": "いえ",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        }
+      ]
+    },
+    {
+      "reading": "いく",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "いく",
+          "reading": "いく",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "行く",
+          "reading": "いく",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "いく",
+          "reading": "いく",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "幾",
+          "reading": "いく",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 0
+        }
+      ]
+    },
+    {
+      "reading": "いけ",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 5,
+      "words": [
+        {
+          "surface": "いけ",
+          "reading": "いけ",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "池",
+          "reading": "いけ",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        }
+      ]
+    },
+    {
+      "reading": "いち",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "位地",
+          "reading": "いち",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "位置",
+          "reading": "いち",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "いち",
+          "reading": "いち",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "一",
+          "reading": "いち",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
         }
       ]
     },
     {
       "reading": "いま",
       "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 3,
       "words": [
         {
           "surface": "今",
           "reading": "いま",
           "accent": 1,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 5
         },
         {
           "surface": "居間",
           "reading": "いま",
           "accent": 2,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 3
         }
       ]
     },
     {
       "reading": "いる",
       "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 2,
       "words": [
+        {
+          "surface": "居る",
+          "reading": "いる",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
         {
           "surface": "要る",
           "reading": "いる",
           "accent": 0,
           "pos": "動詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "炒る",
+          "reading": "いる",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
         },
         {
           "surface": "煎る",
           "reading": "いる",
           "accent": 1,
           "pos": "動詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 2
         }
       ]
     },
     {
-      "reading": "かき",
+      "reading": "うる",
       "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 3,
       "words": [
         {
-          "surface": "柿",
-          "reading": "かき",
+          "surface": "売る",
+          "reading": "うる",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "得る",
+          "reading": "うる",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "おく",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "置く",
+          "reading": "おく",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "おく",
+          "reading": "おく",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "億",
+          "reading": "おく",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "奥",
+          "reading": "おく",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "おす",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "押す",
+          "reading": "おす",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "雄",
+          "reading": "おす",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "かう",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "買う",
+          "reading": "かう",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "飼う",
+          "reading": "かう",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "かぎ",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "かぎ",
+          "reading": "かぎ",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "鍵",
+          "reading": "かぎ",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "かく",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "各",
+          "reading": "かく",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "格",
+          "reading": "かく",
           "accent": 0,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 1
         },
         {
-          "surface": "下記",
-          "reading": "かき",
-          "accent": 1,
-          "pos": "名詞",
-          "meaning": ""
+          "surface": "欠く",
+          "reading": "かく",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
         },
         {
-          "surface": "牡蠣",
-          "reading": "かき",
+          "surface": "佳句",
+          "reading": "かく",
           "accent": 1,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "掻く",
+          "reading": "かく",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "書く",
+          "reading": "かく",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "核",
+          "reading": "かく",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
         }
       ]
     },
     {
       "reading": "かた",
       "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
       "words": [
+        {
+          "surface": "堅",
+          "reading": "かた",
+          "accent": 0,
+          "pos": "形容詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
         {
           "surface": "方",
           "reading": "かた",
           "accent": 0,
           "pos": "接尾辞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 5
         },
         {
           "surface": "肩",
           "reading": "かた",
           "accent": 1,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "過多",
+          "reading": "かた",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
         }
       ]
     },
     {
       "reading": "かみ",
       "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
       "words": [
+        {
+          "surface": "加味",
+          "reading": "かみ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
         {
           "surface": "神",
           "reading": "かみ",
           "accent": 1,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 3
         },
         {
           "surface": "紙",
           "reading": "かみ",
           "accent": 2,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 5
         },
         {
           "surface": "髪",
           "reading": "かみ",
           "accent": 2,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 4
+        }
+      ]
+    },
+    {
+      "reading": "がわ",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "側",
+          "reading": "がわ",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "川",
+          "reading": "がわ",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        }
+      ]
+    },
+    {
+      "reading": "きゅう",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "急",
+          "reading": "きゅう",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "級",
+          "reading": "きゅう",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "九",
+          "reading": "きゅう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "旧",
+          "reading": "きゅう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "球",
+          "reading": "きゅう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
         }
       ]
     },
     {
       "reading": "きる",
       "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 2,
       "words": [
         {
           "surface": "着る",
           "reading": "きる",
           "accent": 0,
           "pos": "動詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 5
         },
         {
           "surface": "切る",
           "reading": "きる",
           "accent": 1,
           "pos": "動詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "斬る",
+          "reading": "きる",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
         }
       ]
     },
     {
       "reading": "こえ",
       "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 3,
       "words": [
         {
           "surface": "越え",
           "reading": "こえ",
           "accent": 0,
           "pos": "動詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 3
         },
         {
           "surface": "声",
           "reading": "こえ",
           "accent": 1,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 5
         }
       ]
     },
     {
-      "reading": "さけ",
+      "reading": "ここ",
       "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
       "words": [
         {
-          "surface": "酒",
-          "reading": "さけ",
+          "surface": "ここ",
+          "reading": "ここ",
           "accent": 0,
-          "pos": "名詞",
-          "meaning": ""
+          "pos": "代名詞",
+          "meaning": "",
+          "jlpt_level": 5
         },
         {
-          "surface": "鮭",
-          "reading": "さけ",
+          "surface": "個々",
+          "reading": "ここ",
           "accent": 1,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "箇箇",
+          "reading": "ここ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "さく",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "作",
+          "reading": "さく",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "咲く",
+          "reading": "さく",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "昨",
+          "reading": "さく",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "策",
+          "reading": "さく",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "裂く",
+          "reading": "さく",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "柵",
+          "reading": "さく",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "しる",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "知る",
+          "reading": "しる",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "汁",
+          "reading": "しる",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "じゅう",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "獣",
+          "reading": "じゅう",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "住",
+          "reading": "じゅう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "十",
+          "reading": "じゅう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "銃",
+          "reading": "じゅう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "する",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "する",
+          "reading": "する",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "刷る",
+          "reading": "する",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "擦る",
+          "reading": "する",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "せん",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "戦",
+          "reading": "せん",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "仙",
+          "reading": "せん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "千",
+          "reading": "せん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "栓",
+          "reading": "せん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "線",
+          "reading": "せん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        }
+      ]
+    },
+    {
+      "reading": "つく",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "突く",
+          "reading": "つく",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "付く",
+          "reading": "つく",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "就く",
+          "reading": "つく",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "点く",
+          "reading": "つく",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "着く",
+          "reading": "つく",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        }
+      ]
+    },
+    {
+      "reading": "てん",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "店",
+          "reading": "てん",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "点",
+          "reading": "てん",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "天",
+          "reading": "てん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "なる",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "鳴る",
+          "reading": "なる",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "なる",
+          "reading": "なる",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "成る",
+          "reading": "なる",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "為る",
+          "reading": "なる",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "生る",
+          "reading": "なる",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "ねる",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "寝る",
+          "reading": "ねる",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "練る",
+          "reading": "ねる",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "ねん",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "念",
+          "reading": "ねん",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "年",
+          "reading": "ねん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        }
+      ]
+    },
+    {
+      "reading": "はい",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "肺",
+          "reading": "はい",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "はい",
+          "reading": "はい",
+          "accent": 1,
+          "pos": "感動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "杯",
+          "reading": "はい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "はく",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "はく",
+          "reading": "はく",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "履く",
+          "reading": "はく",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "吐く",
+          "reading": "はく",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "掃く",
+          "reading": "はく",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
         }
       ]
     },
     {
       "reading": "はし",
       "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 2,
       "words": [
         {
           "surface": "端",
           "reading": "はし",
           "accent": 0,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "はし",
+          "reading": "はし",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
         },
         {
           "surface": "箸",
           "reading": "はし",
           "accent": 1,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 2
         },
         {
           "surface": "橋",
           "reading": "はし",
           "accent": 2,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 5
+        }
+      ]
+    },
+    {
+      "reading": "はる",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "張る",
+          "reading": "はる",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "貼る",
+          "reading": "はる",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "春",
+          "reading": "はる",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        }
+      ]
+    },
+    {
+      "reading": "はん",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "反",
+          "reading": "はん",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "半",
+          "reading": "はん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "班",
+          "reading": "はん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "ばん",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "晩",
+          "reading": "ばん",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "バン",
+          "reading": "ばん",
+          "accent": 1,
+          "pos": "副詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "判",
+          "reading": "ばん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "版",
+          "reading": "ばん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "番",
+          "reading": "ばん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "ひと",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 5,
+      "words": [
+        {
+          "surface": "人",
+          "reading": "ひと",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "一",
+          "reading": "ひと",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        }
+      ]
+    },
+    {
+      "reading": "ふう",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "風",
+          "reading": "ふう",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "封",
+          "reading": "ふう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "ふく",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "副",
+          "reading": "ふく",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "拭く",
+          "reading": "ふく",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "吹く",
+          "reading": "ふく",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "服",
+          "reading": "ふく",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "福",
+          "reading": "ふく",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "ふた",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "蓋",
+          "reading": "ふた",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "二",
+          "reading": "ふた",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        }
+      ]
+    },
+    {
+      "reading": "へん",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "偏",
+          "reading": "へん",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "辺",
+          "reading": "へん",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "変",
+          "reading": "へん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "編",
+          "reading": "へん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "ぺん",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "ぺん",
+          "reading": "ぺん",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "ペン",
+          "reading": "ぺん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        }
+      ]
+    },
+    {
+      "reading": "ほん",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 5,
+      "words": [
+        {
+          "surface": "本",
+          "reading": "ほん",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "本",
+          "reading": "ほん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        }
+      ]
+    },
+    {
+      "reading": "まつ",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "末",
+          "reading": "まつ",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "待つ",
+          "reading": "まつ",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "松",
+          "reading": "まつ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "みち",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "途",
+          "reading": "みち",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "道",
+          "reading": "みち",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "未知",
+          "reading": "みち",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "もの",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "物",
+          "reading": "もの",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "者",
+          "reading": "もの",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "よう",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "用",
+          "reading": "よう",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "八",
+          "reading": "よう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "酔う",
+          "reading": "よう",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "よる",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "因る",
+          "reading": "よる",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "寄る",
+          "reading": "よる",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "夜",
+          "reading": "よる",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        }
+      ]
+    },
+    {
+      "reading": "れい",
+      "mora_count": 2,
+      "min_jlpt": 5,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "礼",
+          "reading": "れい",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "例",
+          "reading": "れい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "零",
+          "reading": "れい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        }
+      ]
+    },
+    {
+      "reading": "あつい",
+      "mora_count": 3,
+      "min_jlpt": 5,
+      "max_jlpt": 5,
+      "words": [
+        {
+          "surface": "厚い",
+          "reading": "あつい",
+          "accent": 0,
+          "pos": "形容詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "暑い",
+          "reading": "あつい",
+          "accent": 2,
+          "pos": "形容詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "熱い",
+          "reading": "あつい",
+          "accent": 2,
+          "pos": "形容詞",
+          "meaning": "",
+          "jlpt_level": 5
         }
       ]
     },
     {
       "reading": "かえる",
       "mora_count": 3,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
       "words": [
+        {
+          "surface": "代える",
+          "reading": "かえる",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
         {
           "surface": "変える",
           "reading": "かえる",
           "accent": 0,
           "pos": "動詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "換える",
+          "reading": "かえる",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "替える",
+          "reading": "かえる",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 3
         },
         {
           "surface": "帰る",
           "reading": "かえる",
           "accent": 1,
           "pos": "動詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 5
         },
         {
           "surface": "返る",
           "reading": "かえる",
           "accent": 1,
           "pos": "動詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 1
         }
       ]
     },
     {
       "reading": "かける",
       "mora_count": 3,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
       "words": [
         {
           "surface": "欠ける",
           "reading": "かける",
           "accent": 0,
           "pos": "動詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "かける",
+          "reading": "かける",
+          "accent": 2,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
         },
         {
           "surface": "掛ける",
           "reading": "かける",
           "accent": 2,
           "pos": "動詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "賭ける",
+          "reading": "かける",
+          "accent": 2,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
         },
         {
           "surface": "駆ける",
           "reading": "かける",
           "accent": 2,
           "pos": "動詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "きのう",
+      "mora_count": 3,
+      "min_jlpt": 5,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "機能",
+          "reading": "きのう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "昨日",
+          "reading": "きのう",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        }
+      ]
+    },
+    {
+      "reading": "くらす",
+      "mora_count": 3,
+      "min_jlpt": 5,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "暮らす",
+          "reading": "くらす",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "クラス",
+          "reading": "くらす",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        }
+      ]
+    },
+    {
+      "reading": "けっこう",
+      "mora_count": 3,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "決行",
+          "reading": "けっこう",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "結構",
+          "reading": "けっこう",
+          "accent": 1,
+          "pos": "副詞",
+          "meaning": "",
+          "jlpt_level": 5
+        }
+      ]
+    },
+    {
+      "reading": "しめる",
+      "mora_count": 3,
+      "min_jlpt": 5,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "湿る",
+          "reading": "しめる",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "占める",
+          "reading": "しめる",
+          "accent": 2,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "締める",
+          "reading": "しめる",
+          "accent": 2,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "閉める",
+          "reading": "しめる",
+          "accent": 2,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        }
+      ]
+    },
+    {
+      "reading": "つける",
+      "mora_count": 3,
+      "min_jlpt": 5,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "浸ける",
+          "reading": "つける",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "漬ける",
+          "reading": "つける",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "つける",
+          "reading": "つける",
+          "accent": 2,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "付ける",
+          "reading": "つける",
+          "accent": 2,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "点ける",
+          "reading": "つける",
+          "accent": 2,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "着ける",
+          "reading": "つける",
+          "accent": 2,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "でんき",
+      "mora_count": 3,
+      "min_jlpt": 5,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "伝記",
+          "reading": "でんき",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "電気",
+          "reading": "でんき",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        }
+      ]
+    },
+    {
+      "reading": "はれる",
+      "mora_count": 3,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "腫れる",
+          "reading": "はれる",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "晴れる",
+          "reading": "はれる",
+          "accent": 2,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        }
+      ]
+    },
+    {
+      "reading": "むこう",
+      "mora_count": 3,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "無効",
+          "reading": "むこう",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "向う",
+          "reading": "むこう",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "向こう",
+          "reading": "むこう",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        }
+      ]
+    },
+    {
+      "reading": "こたえる",
+      "mora_count": 4,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "答える",
+          "reading": "こたえる",
+          "accent": 2,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "堪える",
+          "reading": "こたえる",
+          "accent": 3,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "せんせい",
+      "mora_count": 4,
+      "min_jlpt": 5,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "専制",
+          "reading": "せんせい",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "先生",
+          "reading": "せんせい",
+          "accent": 3,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 5
+        }
+      ]
+    },
+    {
+      "reading": "たいへん",
+      "mora_count": 4,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "たいへん",
+          "reading": "たいへん",
+          "accent": 0,
+          "pos": "副詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "大変",
+          "reading": "たいへん",
+          "accent": 0,
+          "pos": "副詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "対辺",
+          "reading": "たいへん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "だんだん",
+      "mora_count": 4,
+      "min_jlpt": 5,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "だんだん",
+          "reading": "だんだん",
+          "accent": 0,
+          "pos": "副詞",
+          "meaning": "",
+          "jlpt_level": 5
+        },
+        {
+          "surface": "段々",
+          "reading": "だんだん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "こ",
+      "mora_count": 1,
+      "min_jlpt": 4,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "個",
+          "reading": "こ",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "古",
+          "reading": "こ",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "子",
+          "reading": "こ",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "小",
+          "reading": "こ",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "故",
+          "reading": "こ",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "湖",
+          "reading": "こ",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "股",
+          "reading": "こ",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "粉",
+          "reading": "こ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "し",
+      "mora_count": 1,
+      "min_jlpt": 4,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "氏",
+          "reading": "し",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "詩",
+          "reading": "し",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "市",
+          "reading": "し",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "死",
+          "reading": "し",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "ち",
+      "mora_count": 1,
+      "min_jlpt": 4,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "血",
+          "reading": "ち",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "地",
+          "reading": "ち",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "ひ",
+      "mora_count": 1,
+      "min_jlpt": 4,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "日",
+          "reading": "ひ",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "碑",
+          "reading": "ひ",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "費",
+          "reading": "ひ",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "陽",
+          "reading": "ひ",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "非",
+          "reading": "ひ",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "火",
+          "reading": "ひ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        }
+      ]
+    },
+    {
+      "reading": "いか",
+      "mora_count": 2,
+      "min_jlpt": 4,
+      "max_jlpt": 4,
+      "words": [
+        {
+          "surface": "いか",
+          "reading": "いか",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 0
+        },
+        {
+          "surface": "以下",
+          "reading": "いか",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        }
+      ]
+    },
+    {
+      "reading": "いし",
+      "mora_count": 2,
+      "min_jlpt": 4,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "医師",
+          "reading": "いし",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "意志",
+          "reading": "いし",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "意思",
+          "reading": "いし",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "石",
+          "reading": "いし",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        }
+      ]
+    },
+    {
+      "reading": "おり",
+      "mora_count": 2,
+      "min_jlpt": 4,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "織",
+          "reading": "おり",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "檻",
+          "reading": "おり",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "降り",
+          "reading": "おり",
+          "accent": 2,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 4
+        }
+      ]
+    },
+    {
+      "reading": "かん",
+      "mora_count": 2,
+      "min_jlpt": 4,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "乾",
+          "reading": "かん",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "勘",
+          "reading": "かん",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "幹",
+          "reading": "かん",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "かん",
+          "reading": "かん",
+          "accent": 1,
+          "pos": "代名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "感",
+          "reading": "かん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 0
+        },
+        {
+          "surface": "缶",
+          "reading": "かん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "きしゃ",
+      "mora_count": 2,
+      "min_jlpt": 4,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "記者",
+          "reading": "きしゃ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "汽車",
+          "reading": "きしゃ",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        }
+      ]
+    },
+    {
+      "reading": "こう",
+      "mora_count": 2,
+      "min_jlpt": 4,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "こう",
+          "reading": "こう",
+          "accent": 0,
+          "pos": "副詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "校",
+          "reading": "こう",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "硬",
+          "reading": "こう",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "高",
+          "reading": "こう",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "甲",
+          "reading": "こう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "請う",
+          "reading": "こう",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "こと",
+      "mora_count": 2,
+      "min_jlpt": 4,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "琴",
+          "reading": "こと",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "こと",
+          "reading": "こと",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "事",
+          "reading": "こと",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "すみ",
+      "mora_count": 2,
+      "min_jlpt": 4,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "すみ",
+          "reading": "すみ",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "済み",
+          "reading": "すみ",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "隅",
+          "reading": "すみ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "墨",
+          "reading": "すみ",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "すり",
+      "mora_count": 2,
+      "min_jlpt": 4,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "すり",
+          "reading": "すり",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "掏摸",
+          "reading": "すり",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "刷り",
+          "reading": "すり",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "せき",
+      "mora_count": 2,
+      "min_jlpt": 4,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "席",
+          "reading": "せき",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "咳",
+          "reading": "せき",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "そう",
+      "mora_count": 2,
+      "min_jlpt": 4,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "沿う",
+          "reading": "そう",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "添う",
+          "reading": "そう",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "総",
+          "reading": "そう",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "そう",
+          "reading": "そう",
+          "accent": 1,
+          "pos": "副詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "僧",
+          "reading": "そう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "然",
+          "reading": "そう",
+          "accent": 1,
+          "pos": "副詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "然う",
+          "reading": "そう",
+          "accent": 1,
+          "pos": "副詞",
+          "meaning": "",
+          "jlpt_level": 4
+        }
+      ]
+    },
+    {
+      "reading": "つき",
+      "mora_count": 2,
+      "min_jlpt": 4,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "つき",
+          "reading": "つき",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "付き",
+          "reading": "つき",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "月",
+          "reading": "つき",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "とう",
+      "mora_count": 2,
+      "min_jlpt": 4,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "問う",
+          "reading": "とう",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "島",
+          "reading": "とう",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "等",
+          "reading": "とう",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "党",
+          "reading": "とう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "塔",
+          "reading": "とう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "ばい",
+      "mora_count": 2,
+      "min_jlpt": 4,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "倍",
+          "reading": "ばい",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "灰",
+          "reading": "ばい",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "バイ",
+          "reading": "ばい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 0
+        }
+      ]
+    },
+    {
+      "reading": "むし",
+      "mora_count": 2,
+      "min_jlpt": 4,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "虫",
+          "reading": "むし",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "無視",
+          "reading": "むし",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "やく",
+      "mora_count": 2,
+      "min_jlpt": 4,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "焼く",
+          "reading": "やく",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "約",
+          "reading": "やく",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "役",
+          "reading": "やく",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "やむ",
+      "mora_count": 2,
+      "min_jlpt": 4,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "やむ",
+          "reading": "やむ",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "止む",
+          "reading": "やむ",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "病む",
+          "reading": "やむ",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "わく",
+      "mora_count": 2,
+      "min_jlpt": 4,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "沸く",
+          "reading": "わく",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "湧く",
+          "reading": "わく",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "枠",
+          "reading": "わく",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "いがい",
+      "mora_count": 3,
+      "min_jlpt": 4,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "意外",
+          "reading": "いがい",
+          "accent": 0,
+          "pos": "形状詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "以外",
+          "reading": "いがい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        }
+      ]
+    },
+    {
+      "reading": "いけん",
+      "mora_count": 3,
+      "min_jlpt": 4,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "異見",
+          "reading": "いけん",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "意見",
+          "reading": "いけん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        }
+      ]
+    },
+    {
+      "reading": "いじょう",
+      "mora_count": 3,
+      "min_jlpt": 4,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "異常",
+          "reading": "いじょう",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "以上",
+          "reading": "いじょう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        }
+      ]
+    },
+    {
+      "reading": "うえる",
+      "mora_count": 3,
+      "min_jlpt": 4,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "植える",
+          "reading": "うえる",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "飢える",
+          "reading": "うえる",
+          "accent": 2,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "かっこう",
+      "mora_count": 3,
+      "min_jlpt": 4,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "格好",
+          "reading": "かっこう",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "かっこう",
+          "reading": "かっこう",
+          "accent": 1,
+          "pos": "副詞",
+          "meaning": "",
+          "jlpt_level": 4
+        }
+      ]
+    },
+    {
+      "reading": "こうぎ",
+      "mora_count": 3,
+      "min_jlpt": 4,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "抗議",
+          "reading": "こうぎ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "講義",
+          "reading": "こうぎ",
+          "accent": 3,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        }
+      ]
+    },
+    {
+      "reading": "こしょう",
+      "mora_count": 3,
+      "min_jlpt": 4,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "故障",
+          "reading": "こしょう",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "胡椒",
+          "reading": "こしょう",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "しかる",
+      "mora_count": 3,
+      "min_jlpt": 4,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "叱る",
+          "reading": "しかる",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "しかる",
+          "reading": "しかる",
+          "accent": 2,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 4
+        }
+      ]
+    },
+    {
+      "reading": "じしん",
+      "mora_count": 3,
+      "min_jlpt": 4,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "地震",
+          "reading": "じしん",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "自信",
+          "reading": "じしん",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "自身",
+          "reading": "じしん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "もっとも",
+      "mora_count": 3,
+      "min_jlpt": 4,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "尤も",
+          "reading": "もっとも",
+          "accent": 1,
+          "pos": "接続詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "もっとも",
+          "reading": "もっとも",
+          "accent": 3,
+          "pos": "副詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "最も",
+          "reading": "もっとも",
+          "accent": 3,
+          "pos": "副詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "ようい",
+      "mora_count": 3,
+      "min_jlpt": 4,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "容易",
+          "reading": "ようい",
+          "accent": 0,
+          "pos": "形状詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "用意",
+          "reading": "ようい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        }
+      ]
+    },
+    {
+      "reading": "ようじ",
+      "mora_count": 3,
+      "min_jlpt": 4,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "用事",
+          "reading": "ようじ",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "幼児",
+          "reading": "ようじ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "こうがい",
+      "mora_count": 4,
+      "min_jlpt": 4,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "公害",
+          "reading": "こうがい",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "郊外",
+          "reading": "こうがい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        }
+      ]
+    },
+    {
+      "reading": "こうぎょう",
+      "mora_count": 4,
+      "min_jlpt": 4,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "興業",
+          "reading": "こうぎょう",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "工業",
+          "reading": "こうぎょう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "鉱業",
+          "reading": "こうぎょう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "こうこう",
+      "mora_count": 4,
+      "min_jlpt": 4,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "煌々",
+          "reading": "こうこう",
+          "accent": 0,
+          "pos": "形状詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "高校",
+          "reading": "こうこう",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        },
+        {
+          "surface": "孝行",
+          "reading": "こうこう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "こうじょう",
+      "mora_count": 4,
+      "min_jlpt": 4,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "向上",
+          "reading": "こうじょう",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "工場",
+          "reading": "こうじょう",
+          "accent": 3,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 4
+        }
+      ]
+    },
+    {
+      "reading": "お",
+      "mora_count": 1,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "お",
+          "reading": "お",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "御",
+          "reading": "お",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "尾",
+          "reading": "お",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "す",
+      "mora_count": 1,
+      "min_jlpt": 3,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "巣",
+          "reading": "す",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "酢",
+          "reading": "す",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "そ",
+      "mora_count": 1,
+      "min_jlpt": 3,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "素",
+          "reading": "そ",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "疎",
+          "reading": "そ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 0
+        }
+      ]
+    },
+    {
+      "reading": "あら",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "粗",
+          "reading": "あら",
+          "accent": 0,
+          "pos": "形容詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "あら",
+          "reading": "あら",
+          "accent": 1,
+          "pos": "感動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "いき",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "粋",
+          "reading": "いき",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "行き",
+          "reading": "いき",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "息",
+          "reading": "いき",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "意気",
+          "reading": "いき",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 0
+        }
+      ]
+    },
+    {
+      "reading": "いじ",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "維持",
+          "reading": "いじ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "意地",
+          "reading": "いじ",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "えん",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "園",
+          "reading": "えん",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "円",
+          "reading": "えん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "縁",
+          "reading": "えん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "艶",
+          "reading": "えん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "おい",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "甥",
+          "reading": "おい",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "老い",
+          "reading": "おい",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "おい",
+          "reading": "おい",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 0
+        },
+        {
+          "surface": "於い",
+          "reading": "おい",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 0
+        }
+      ]
+    },
+    {
+      "reading": "おう",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "負う",
+          "reading": "おう",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "追う",
+          "reading": "おう",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "王",
+          "reading": "おう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "おき",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "沖",
+          "reading": "おき",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "於",
+          "reading": "おき",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "かぐ",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "嗅ぐ",
+          "reading": "かぐ",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "家具",
+          "reading": "かぐ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "かし",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "貸し",
+          "reading": "かし",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "菓子",
+          "reading": "かし",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "かね",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "金",
+          "reading": "かね",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "鐘",
+          "reading": "かね",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "兼ね",
+          "reading": "かね",
+          "accent": 2,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "がい",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "街",
+          "reading": "がい",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "害",
+          "reading": "がい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "がた",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "型",
+          "reading": "がた",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "難",
+          "reading": "がた",
+          "accent": 2,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "がん",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "岸",
+          "reading": "がん",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "癌",
+          "reading": "がん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "きょく",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "曲",
+          "reading": "きょく",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "局",
+          "reading": "きょく",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "きり",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "霧",
+          "reading": "きり",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "切り",
+          "reading": "きり",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "くむ",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "汲む",
+          "reading": "くむ",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "酌む",
+          "reading": "くむ",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "組む",
+          "reading": "くむ",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "けい",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "系",
+          "reading": "けい",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "計",
+          "reading": "けい",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "刑",
+          "reading": "けい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "けん",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "圏",
+          "reading": "けん",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "権",
+          "reading": "けん",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "件",
+          "reading": "けん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "券",
+          "reading": "けん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "県",
+          "reading": "けん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "げん",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "原",
+          "reading": "げん",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "源",
+          "reading": "げん",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "厳",
+          "reading": "げん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 0
+        }
+      ]
+    },
+    {
+      "reading": "さい",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "再",
+          "reading": "さい",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "差異",
+          "reading": "さい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "際",
+          "reading": "さい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "さけ",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "酒",
+          "reading": "さけ",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "鮭",
+          "reading": "さけ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 0
+        }
+      ]
+    },
+    {
+      "reading": "しき",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "四季",
+          "reading": "しき",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "指揮",
+          "reading": "しき",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "式",
+          "reading": "しき",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "しゅう",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "終",
+          "reading": "しゅう",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "衆",
+          "reading": "しゅう",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "周",
+          "reading": "しゅう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "州",
+          "reading": "しゅう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "週",
+          "reading": "しゅう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "しょう",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "しょう",
+          "reading": "しょう",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "小",
+          "reading": "しょう",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "症",
+          "reading": "しょう",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "商",
+          "reading": "しょう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "章",
+          "reading": "しょう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "賞",
+          "reading": "しょう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "じき",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "直",
+          "reading": "じき",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "時期",
+          "reading": "じき",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "磁器",
+          "reading": "じき",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "磁気",
+          "reading": "じき",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "じょう",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "城",
+          "reading": "じょう",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "情",
+          "reading": "じょう",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "状",
+          "reading": "じょう",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "嬢",
+          "reading": "じょう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "尉",
+          "reading": "じょう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "じょし",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "助詞",
+          "reading": "じょし",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "女史",
+          "reading": "じょし",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "女子",
+          "reading": "じょし",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "せい",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "制",
+          "reading": "せい",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "性",
+          "reading": "せい",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "製",
+          "reading": "せい",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "姓",
+          "reading": "せい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "所為",
+          "reading": "せい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "正",
+          "reading": "せい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "ぜん",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "全",
+          "reading": "ぜん",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "膳",
+          "reading": "ぜん",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "善",
+          "reading": "ぜん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "禅",
+          "reading": "ぜん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "たび",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "足袋",
+          "reading": "たび",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "旅",
+          "reading": "たび",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "たま",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "偶",
+          "reading": "たま",
+          "accent": 0,
+          "pos": "副詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "玉",
+          "reading": "たま",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "だい",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "代",
+          "reading": "だい",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "大",
+          "reading": "だい",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "第",
+          "reading": "だい",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "台",
+          "reading": "だい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "題",
+          "reading": "だい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "だん",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "弾",
+          "reading": "だん",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "だん",
+          "reading": "だん",
+          "accent": 1,
+          "pos": "副詞",
+          "meaning": "",
+          "jlpt_level": 0
+        },
+        {
+          "surface": "壇",
+          "reading": "だん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "段",
+          "reading": "だん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "とし",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "都市",
+          "reading": "とし",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "歳",
+          "reading": "とし",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "とも",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "共",
+          "reading": "とも",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "供",
+          "reading": "とも",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "友",
+          "reading": "とも",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "なま",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "生",
+          "reading": "なま",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "生",
+          "reading": "なま",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "なみ",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "並み",
+          "reading": "なみ",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "波",
+          "reading": "なみ",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "はつ",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "二十",
+          "reading": "はつ",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "発",
+          "reading": "はつ",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "初",
+          "reading": "はつ",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "ふり",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "振り",
+          "reading": "ふり",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "不利",
+          "reading": "ふり",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "へる",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "へる",
+          "reading": "へる",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "減る",
+          "reading": "へる",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "経る",
+          "reading": "へる",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "ほり",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "堀",
+          "reading": "ほり",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "捕吏",
+          "reading": "ほり",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "濠",
+          "reading": "ほり",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "ぼう",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "棒",
+          "reading": "ぼう",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "坊",
+          "reading": "ぼう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 0
+        }
+      ]
+    },
+    {
+      "reading": "まく",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "巻く",
+          "reading": "まく",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "撒く",
+          "reading": "まく",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "蒔く",
+          "reading": "まく",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "幕",
+          "reading": "まく",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "膜",
+          "reading": "まく",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "まま",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "間々",
+          "reading": "まま",
+          "accent": 0,
+          "pos": "副詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "ママ",
+          "reading": "まま",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "めい",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "名",
+          "reading": "めい",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "姪",
+          "reading": "めい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "りょう",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "料",
+          "reading": "りょう",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "寮",
+          "reading": "りょう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "量",
+          "reading": "りょう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "わん",
+      "mora_count": 2,
+      "min_jlpt": 3,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "椀",
+          "reading": "わん",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "碗",
+          "reading": "わん",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "ワン",
+          "reading": "わん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 0
+        },
+        {
+          "surface": "湾",
+          "reading": "わん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "いぜん",
+      "mora_count": 3,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "依然",
+          "reading": "いぜん",
+          "accent": 0,
+          "pos": "副詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "以前",
+          "reading": "いぜん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "いらい",
+      "mora_count": 3,
+      "min_jlpt": 3,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "依頼",
+          "reading": "いらい",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "以来",
+          "reading": "いらい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "いりょう",
+      "mora_count": 3,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "医療",
+          "reading": "いりょう",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "衣料",
+          "reading": "いりょう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "きかん",
+      "mora_count": 3,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "季刊",
+          "reading": "きかん",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "器官",
+          "reading": "きかん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "期間",
+          "reading": "きかん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "機関",
+          "reading": "きかん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "きげん",
+      "mora_count": 3,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "機嫌",
+          "reading": "きげん",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "期限",
+          "reading": "きげん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "起源",
+          "reading": "きげん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "きょうじゅ",
+      "mora_count": 3,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "教授",
+          "reading": "きょうじゅ",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "享受",
+          "reading": "きょうじゅ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "けいき",
+      "mora_count": 3,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "景気",
+          "reading": "けいき",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "契機",
+          "reading": "けいき",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "計器",
+          "reading": "けいき",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "けいじ",
+      "mora_count": 3,
+      "min_jlpt": 3,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "掲示",
+          "reading": "けいじ",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "刑事",
+          "reading": "けいじ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "こおり",
+      "mora_count": 3,
+      "min_jlpt": 3,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "氷",
+          "reading": "こおり",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "郡",
+          "reading": "こおり",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "さばく",
+      "mora_count": 3,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "砂漠",
+          "reading": "さばく",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "裁く",
+          "reading": "さばく",
+          "accent": 2,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "しまい",
+      "mora_count": 3,
+      "min_jlpt": 3,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "しまい",
+          "reading": "しまい",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "姉妹",
+          "reading": "しまい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "じたい",
+      "mora_count": 3,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "字体",
+          "reading": "じたい",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "事態",
+          "reading": "じたい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "辞退",
+          "reading": "じたい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "じどう",
+      "mora_count": 3,
+      "min_jlpt": 3,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "自動",
+          "reading": "じどう",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "児童",
+          "reading": "じどう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "たいし",
+      "mora_count": 3,
+      "min_jlpt": 3,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "大使",
+          "reading": "たいし",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "対し",
+          "reading": "たいし",
+          "accent": 3,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "だんす",
+      "mora_count": 3,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "箪笥",
+          "reading": "だんす",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "ダンス",
+          "reading": "だんす",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "つうか",
+      "mora_count": 3,
+      "min_jlpt": 3,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "通過",
+          "reading": "つうか",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "通貨",
+          "reading": "つうか",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "どうし",
+      "mora_count": 3,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "動詞",
+          "reading": "どうし",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "同士",
+          "reading": "どうし",
+          "accent": 1,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "同志",
+          "reading": "どうし",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "やとう",
+      "mora_count": 3,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "野党",
+          "reading": "やとう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "雇う",
+          "reading": "やとう",
+          "accent": 2,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "ようき",
+      "mora_count": 3,
+      "min_jlpt": 3,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "陽気",
+          "reading": "ようき",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "容器",
+          "reading": "ようき",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "かんじょう",
+      "mora_count": 4,
+      "min_jlpt": 3,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "感情",
+          "reading": "かんじょう",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "勘定",
+          "reading": "かんじょう",
+          "accent": 3,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "きゅうりょう",
+      "mora_count": 4,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "丘陵",
+          "reading": "きゅうりょう",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "給料",
+          "reading": "きゅうりょう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "けんとう",
+      "mora_count": 4,
+      "min_jlpt": 3,
+      "max_jlpt": 3,
+      "words": [
+        {
+          "surface": "検討",
+          "reading": "けんとう",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "見当",
+          "reading": "けんとう",
+          "accent": 3,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "しょうにん",
+      "mora_count": 4,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "承認",
+          "reading": "しょうにん",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        },
+        {
+          "surface": "証人",
+          "reading": "しょうにん",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "商人",
+          "reading": "しょうにん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "しょうひん",
+      "mora_count": 4,
+      "min_jlpt": 3,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "賞品",
+          "reading": "しょうひん",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "商品",
+          "reading": "しょうひん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "せいめい",
+      "mora_count": 4,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "声明",
+          "reading": "せいめい",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "姓名",
+          "reading": "せいめい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "生命",
+          "reading": "せいめい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "ちょうだい",
+      "mora_count": 4,
+      "min_jlpt": 3,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "長大",
+          "reading": "ちょうだい",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "ちょうだい",
+          "reading": "ちょうだい",
+          "accent": 3,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 3
+        }
+      ]
+    },
+    {
+      "reading": "うむ",
+      "mora_count": 2,
+      "min_jlpt": 2,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "産む",
+          "reading": "うむ",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "有無",
+          "reading": "うむ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "しん",
+      "mora_count": 2,
+      "min_jlpt": 2,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "新",
+          "reading": "しん",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "真",
+          "reading": "しん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 0
+        },
+        {
+          "surface": "芯",
+          "reading": "しん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "たけ",
+      "mora_count": 2,
+      "min_jlpt": 2,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "竹",
+          "reading": "たけ",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "丈",
+          "reading": "たけ",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "もち",
+      "mora_count": 2,
+      "min_jlpt": 2,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "餅",
+          "reading": "もち",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "持ち",
+          "reading": "もち",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "もる",
+      "mora_count": 2,
+      "min_jlpt": 2,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "盛る",
+          "reading": "もる",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "漏る",
+          "reading": "もる",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "いこう",
+      "mora_count": 3,
+      "min_jlpt": 2,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "意向",
+          "reading": "いこう",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "移行",
+          "reading": "いこう",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "以降",
+          "reading": "いこう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "おいる",
+      "mora_count": 3,
+      "min_jlpt": 2,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "オイル",
+          "reading": "おいる",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "老いる",
+          "reading": "おいる",
+          "accent": 2,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "かせん",
+      "mora_count": 3,
+      "min_jlpt": 2,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "下線",
+          "reading": "かせん",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "化繊",
+          "reading": "かせん",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "河川",
+          "reading": "かせん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "しかく",
+      "mora_count": 3,
+      "min_jlpt": 2,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "視覚",
+          "reading": "しかく",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "資格",
+          "reading": "しかく",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "四角",
+          "reading": "しかく",
+          "accent": 3,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "せんす",
+      "mora_count": 3,
+      "min_jlpt": 2,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "扇子",
+          "reading": "せんす",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "センス",
+          "reading": "せんす",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "だぶる",
+      "mora_count": 3,
+      "min_jlpt": 2,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "ダブル",
+          "reading": "だぶる",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "ダブる",
+          "reading": "だぶる",
+          "accent": 2,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "ならす",
+      "mora_count": 3,
+      "min_jlpt": 2,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "鳴らす",
+          "reading": "ならす",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "慣らす",
+          "reading": "ならす",
+          "accent": 2,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "馴らす",
+          "reading": "ならす",
+          "accent": 2,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "ふきん",
+      "mora_count": 3,
+      "min_jlpt": 2,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "付近",
+          "reading": "ふきん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "布巾",
+          "reading": "ふきん",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "ふくし",
+      "mora_count": 3,
+      "min_jlpt": 2,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "副詞",
+          "reading": "ふくし",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "福祉",
+          "reading": "ふくし",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "ふさい",
+      "mora_count": 3,
+      "min_jlpt": 2,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "負債",
+          "reading": "ふさい",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "夫妻",
+          "reading": "ふさい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "へいき",
+      "mora_count": 3,
+      "min_jlpt": 2,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "平気",
+          "reading": "へいき",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "兵器",
+          "reading": "へいき",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "やかん",
+      "mora_count": 3,
+      "min_jlpt": 2,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "薬缶",
+          "reading": "やかん",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "夜間",
+          "reading": "やかん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "ようご",
+      "mora_count": 3,
+      "min_jlpt": 2,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "用語",
+          "reading": "ようご",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "養護",
+          "reading": "ようご",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "ようし",
+      "mora_count": 3,
+      "min_jlpt": 2,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "用紙",
+          "reading": "ようし",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "要旨",
+          "reading": "ようし",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "かいほう",
+      "mora_count": 4,
+      "min_jlpt": 2,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "解放",
+          "reading": "かいほう",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "開放",
+          "reading": "かいほう",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "介抱",
+          "reading": "かいほう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "たいそう",
+      "mora_count": 4,
+      "min_jlpt": 2,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "体操",
+          "reading": "たいそう",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "大層",
+          "reading": "たいそう",
+          "accent": 1,
+          "pos": "副詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "ちゅうせい",
+      "mora_count": 4,
+      "min_jlpt": 2,
+      "max_jlpt": 2,
+      "words": [
+        {
+          "surface": "中性",
+          "reading": "ちゅうせい",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "中世",
+          "reading": "ちゅうせい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        }
+      ]
+    },
+    {
+      "reading": "のりかえ",
+      "mora_count": 4,
+      "min_jlpt": 2,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "乗換",
+          "reading": "のりかえ",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 2
+        },
+        {
+          "surface": "乗り換え",
+          "reading": "のりかえ",
+          "accent": 3,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "あい",
+      "mora_count": 2,
+      "min_jlpt": 1,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "あい",
+          "reading": "あい",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "相",
+          "reading": "あい",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "藍",
+          "reading": "あい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 0
+        }
+      ]
+    },
+    {
+      "reading": "かり",
+      "mora_count": 2,
+      "min_jlpt": 1,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "仮",
+          "reading": "かり",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "借り",
+          "reading": "かり",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "下吏",
+          "reading": "かり",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "ぎょう",
+      "mora_count": 2,
+      "min_jlpt": 1,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "業",
+          "reading": "ぎょう",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "行",
+          "reading": "ぎょう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "ぎり",
+      "mora_count": 2,
+      "min_jlpt": 1,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "桐",
+          "reading": "ぎり",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "義理",
+          "reading": "ぎり",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "じしゅ",
+      "mora_count": 2,
+      "min_jlpt": 1,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "自首",
+          "reading": "じしゅ",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "自主",
+          "reading": "じしゅ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "たん",
+      "mora_count": 2,
+      "min_jlpt": 1,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "単",
+          "reading": "たん",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "歎",
+          "reading": "たん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "ちょう",
+      "mora_count": 2,
+      "min_jlpt": 1,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "庁",
+          "reading": "ちょう",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "超",
+          "reading": "ちょう",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "長",
+          "reading": "ちょう",
+          "accent": 0,
+          "pos": "接頭辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "兆",
+          "reading": "ちょう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "腸",
+          "reading": "ちょう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "蝶",
+          "reading": "ちょう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "ばつ",
+      "mora_count": 2,
+      "min_jlpt": 1,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "伐",
+          "reading": "ばつ",
+          "accent": 0,
+          "pos": "接尾辞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "罰",
+          "reading": "ばつ",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "めす",
+      "mora_count": 2,
+      "min_jlpt": 1,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "召す",
+          "reading": "めす",
+          "accent": 1,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "雌",
+          "reading": "めす",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "かんご",
+      "mora_count": 3,
+      "min_jlpt": 1,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "漢語",
+          "reading": "かんご",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "看護",
+          "reading": "かんご",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "さよう",
+      "mora_count": 3,
+      "min_jlpt": 1,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "左様",
+          "reading": "さよう",
+          "accent": 0,
+          "pos": "形状詞",
+          "meaning": "",
+          "jlpt_level": 0
+        },
+        {
+          "surface": "作用",
+          "reading": "さよう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "せいし",
+      "mora_count": 3,
+      "min_jlpt": 1,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "静止",
+          "reading": "せいし",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "生死",
+          "reading": "せいし",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
         }
       ]
     },
     {
       "reading": "なまり",
       "mora_count": 3,
+      "min_jlpt": 1,
+      "max_jlpt": 1,
       "words": [
         {
           "surface": "鉛",
           "reading": "なまり",
           "accent": 0,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 1
         },
         {
           "surface": "なまり",
           "reading": "なまり",
           "accent": 3,
           "pos": "名詞",
-          "meaning": ""
+          "meaning": "",
+          "jlpt_level": 0
+        }
+      ]
+    },
+    {
+      "reading": "ひとめ",
+      "mora_count": 3,
+      "min_jlpt": 1,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "人目",
+          "reading": "ひとめ",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "一目",
+          "reading": "ひとめ",
+          "accent": 2,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "まかす",
+      "mora_count": 3,
+      "min_jlpt": 1,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "負かす",
+          "reading": "まかす",
+          "accent": 0,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "任す",
+          "reading": "まかす",
+          "accent": 2,
+          "pos": "動詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "げんてん",
+      "mora_count": 4,
+      "min_jlpt": 1,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "原典",
+          "reading": "げんてん",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "減点",
+          "reading": "げんてん",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "原点",
+          "reading": "げんてん",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "こうかい",
+      "mora_count": 4,
+      "min_jlpt": 1,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "公開",
+          "reading": "こうかい",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "後悔",
+          "reading": "こうかい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "航海",
+          "reading": "こうかい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "どうじょう",
+      "mora_count": 4,
+      "min_jlpt": 1,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "同情",
+          "reading": "どうじょう",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "道場",
+          "reading": "どうじょう",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "はいけい",
+      "mora_count": 4,
+      "min_jlpt": 1,
+      "max_jlpt": 1,
+      "words": [
+        {
+          "surface": "背景",
+          "reading": "はいけい",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        },
+        {
+          "surface": "拝啓",
+          "reading": "はいけい",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 1
+        }
+      ]
+    },
+    {
+      "reading": "かき",
+      "mora_count": 2,
+      "min_jlpt": 0,
+      "max_jlpt": 0,
+      "words": [
+        {
+          "surface": "柿",
+          "reading": "かき",
+          "accent": 0,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 0
+        },
+        {
+          "surface": "下記",
+          "reading": "かき",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 0
+        },
+        {
+          "surface": "牡蠣",
+          "reading": "かき",
+          "accent": 1,
+          "pos": "名詞",
+          "meaning": "",
+          "jlpt_level": 0
         }
       ]
     }
   ],
-  "count": 19
+  "count": 236
 }
