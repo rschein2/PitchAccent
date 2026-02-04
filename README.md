@@ -1,8 +1,20 @@
+---
+title: Japanese Pitch Accent
+emoji: 🎵
+colorFrom: red
+colorTo: blue
+sdk: streamlit
+sdk_version: 1.40.0
+app_file: app.py
+pinned: false
+license: mit
+---
+
 # Japanese Pitch Accent Tool
 
 <div align="center">
 
-### [**Try It Now — Free Online Tool**](https://pitchaccent.streamlit.app/)
+### [**Try It Now — Free Online Tool**](https://huggingface.co/spaces/rschein/pitch-accent)
 
 *No installation required. Paste Japanese text, see pitch patterns instantly.*
 
