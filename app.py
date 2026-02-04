@@ -786,97 +786,129 @@ def get_download_link(content, filename, mime_type, label):
     return f'<a href="data:{mime_type};base64,{b64}" download="{filename}" style="text-decoration:none;">{label}</a>'
 
 
+def get_best_representatives(words: list, mora_count: int) -> tuple:
+    """Pick the two best representative words for a minimal pair.
+
+    Prioritizes: N5 > N4 > N3 > N2 > N1 > unknown, and 名詞 > other POS.
+    Returns (word_low, word_high) for the primary contrast.
+    """
+    # Group by accent
+    by_accent = {}
+    for w in words:
+        acc = w['accent']
+        if acc not in by_accent:
+            by_accent[acc] = []
+        by_accent[acc].append(w)
+
+    if len(by_accent) < 2:
+        return None, None
+
+    # Sort accents
+    accents = sorted(by_accent.keys())
+
+    def score_word(w):
+        # Higher score = better representative
+        jlpt = w.get('jlpt_level', 0)
+        jlpt_score = jlpt if jlpt > 0 else -1  # N5=5 is best, unknown=-1
+        pos_score = 10 if w['pos'] == '名詞' else 0
+        return (jlpt_score, pos_score)
+
+    # Pick best from lowest and highest accent groups
+    low_acc = accents[0]
+    high_acc = accents[-1]
+
+    best_low = max(by_accent[low_acc], key=score_word)
+    best_high = max(by_accent[high_acc], key=score_word)
+
+    return best_low, best_high
+
+
 def render_minimal_pairs_study():
-    """Render the Study mode for Minimal Pairs."""
+    """Render the Study mode for Minimal Pairs - clean dictionary-style list."""
     st.markdown("---")
 
     # JLPT level filter
-    st.markdown("##### Filter by JLPT Level")
-    jlpt_cols = st.columns(6)
-    with jlpt_cols[0]:
-        show_all_jlpt = st.checkbox("All Levels", value=True, key="study_jlpt_all")
-    with jlpt_cols[1]:
-        show_n5 = st.checkbox("N5", value=False, key="study_jlpt_n5")
-    with jlpt_cols[2]:
-        show_n4 = st.checkbox("N4", value=False, key="study_jlpt_n4")
-    with jlpt_cols[3]:
-        show_n3 = st.checkbox("N3", value=False, key="study_jlpt_n3")
-    with jlpt_cols[4]:
-        show_n2 = st.checkbox("N2", value=False, key="study_jlpt_n2")
-    with jlpt_cols[5]:
-        show_n1 = st.checkbox("N1", value=False, key="study_jlpt_n1")
+    col_filter, col_mora = st.columns(2)
+    with col_filter:
+        jlpt_options = st.multiselect(
+            "JLPT Level:",
+            options=[5, 4, 3, 2, 1],
+            default=[5, 4, 3, 2, 1],
+            format_func=lambda x: f"N{x}"
+        )
+    with col_mora:
+        mora_options_available = sorted(set(p['mora_count'] for p in MINIMAL_PAIRS))
+        mora_filter = st.multiselect(
+            "Mora count:",
+            options=mora_options_available,
+            default=mora_options_available,
+            format_func=lambda x: f"{x} mora"
+        )
 
-    # Build JLPT filter set
-    jlpt_filter = None
-    if not show_all_jlpt and (show_n5 or show_n4 or show_n3 or show_n2 or show_n1):
-        jlpt_filter = set()
-        if show_n5:
-            jlpt_filter.add(5)
-        if show_n4:
-            jlpt_filter.add(4)
-        if show_n3:
-            jlpt_filter.add(3)
-        if show_n2:
-            jlpt_filter.add(2)
-        if show_n1:
-            jlpt_filter.add(1)
+    # Filter pairs
+    filtered_pairs = [
+        p for p in MINIMAL_PAIRS
+        if p['mora_count'] in mora_filter
+        and (p.get('min_jlpt', 0) in jlpt_options or p.get('min_jlpt', 0) == 0)
+    ]
 
-    # Filter pairs by JLPT level (min_jlpt indicates easiest word in pair)
-    filtered_pairs = MINIMAL_PAIRS
-    if jlpt_filter:
-        filtered_pairs = [p for p in MINIMAL_PAIRS if p.get('min_jlpt', 0) in jlpt_filter]
-
-    st.markdown(f"*Showing {len(filtered_pairs)} pairs*")
+    st.markdown(f"**{len(filtered_pairs)} minimal pairs**")
     st.markdown("---")
 
-    # Group by mora count
-    pairs_by_mora = {}
+    # Display as clean list
     for pair in filtered_pairs:
-        mora = pair['mora_count']
-        if mora not in pairs_by_mora:
-            pairs_by_mora[mora] = []
-        pairs_by_mora[mora].append(pair)
+        reading = pair['reading']
+        words = pair['words']
+        mora_count = pair['mora_count']
+        min_jlpt = pair.get('min_jlpt', 0)
 
-    # Show pairs grouped by mora count
-    for mora_count in sorted(pairs_by_mora.keys()):
-        pairs = pairs_by_mora[mora_count]
-        st.markdown(f"#### {mora_count}-Mora Words ({len(pairs)} pairs)")
+        # Get best two representatives
+        best_low, best_high = get_best_representatives(words, mora_count)
 
-        for pair in pairs:
-            reading = pair['reading']
-            words = pair['words']
-            min_jlpt = pair.get('min_jlpt', 0)
+        if not best_low or not best_high:
+            continue
 
-            # Header with JLPT badge
-            jlpt_badge = get_jlpt_badge_html(min_jlpt)
-            header_html = f"{reading}{jlpt_badge}"
+        # Group all words by accent for the expander
+        by_accent = {}
+        for w in words:
+            acc = w['accent']
+            if acc not in by_accent:
+                by_accent[acc] = []
+            by_accent[acc].append(w)
 
-            # Create colored display for each word
-            word_displays = []
-            for w in words:
-                pattern = accent_to_pattern(w['accent'], mora_count)
-                colored = get_accent_html(w['surface'], reading, w['accent'], pattern)
-                word_jlpt = get_jlpt_badge_html(w.get('jlpt_level', 0))
-                word_displays.append(f"{colored} <span style='color:#666'>[{w['accent']}]</span>{word_jlpt}")
+        # Create the main display line
+        jlpt_badge = get_jlpt_badge_html(min_jlpt) if min_jlpt > 0 else ""
 
-            words_html = " &nbsp;vs&nbsp; ".join(word_displays)
+        # Colored patterns for the two representatives
+        pattern_low = accent_to_pattern(best_low['accent'], mora_count)
+        pattern_high = accent_to_pattern(best_high['accent'], mora_count)
+        colored_low = get_accent_html(best_low['surface'], reading, best_low['accent'], pattern_low)
+        colored_high = get_accent_html(best_high['surface'], reading, best_high['accent'], pattern_high)
 
-            st.markdown(f"""
-            <div class="family-tree">
-                <div class="family-header">{header_html}</div>
-                <div style="font-size:1.2em;">{words_html}</div>
-            </div>
-            """, unsafe_allow_html=True)
+        # Main entry line
+        entry_html = f"""
+        <div style="padding:8px 0;border-bottom:1px solid #eee;">
+            <span style="font-size:1.1em;font-weight:500;">{reading}</span>{jlpt_badge}
+            <span style="margin-left:15px;">
+                {colored_low} <span style="color:#888">[{best_low['accent']}]</span>
+                &nbsp;vs&nbsp;
+                {colored_high} <span style="color:#888">[{best_high['accent']}]</span>
+            </span>
+        </div>
+        """
+        st.markdown(entry_html, unsafe_allow_html=True)
 
-            # Show details in expander
-            with st.expander(f"Details for {reading}"):
-                for w in words:
-                    pattern = accent_to_pattern(w['accent'], mora_count)
-                    type_name = get_accent_type_name(w['accent'], mora_count)
-                    jlpt_label = f"N{w.get('jlpt_level', 0)}" if w.get('jlpt_level', 0) > 0 else ""
-                    st.markdown(f"**{w['surface']}** - [{w['accent']}] {type_name} ({pattern}) - {w['pos']} {jlpt_label}")
+        # Expander for full details
+        with st.expander(f"All words for {reading}"):
+            for acc in sorted(by_accent.keys()):
+                acc_words = by_accent[acc]
+                type_name = get_accent_type_name(acc, mora_count)
+                pattern = accent_to_pattern(acc, mora_count)
 
-        st.markdown("")  # Spacing
+                st.markdown(f"**[{acc}] {type_name}** ({pattern})")
+                for w in acc_words:
+                    jlpt_label = f" N{w.get('jlpt_level', 0)}" if w.get('jlpt_level', 0) > 0 else ""
+                    st.markdown(f"- {w['surface']} ({w['pos']}){jlpt_label}")
 
 
 def render_minimal_pairs_drill():
@@ -914,24 +946,23 @@ def render_minimal_pairs_drill():
     if 'drill_last_correct' not in st.session_state:
         st.session_state.drill_last_correct = None
 
-    # Filter by mora count and JLPT level
-    col_mora, col_jlpt, col_stats = st.columns([1, 2, 1])
+    # Filter by JLPT level and mora count
+    col_jlpt, col_mora, col_stats = st.columns([2, 1, 1])
+    with col_jlpt:
+        selected_jlpt = st.multiselect(
+            "JLPT level:",
+            options=[5, 4, 3, 2, 1],
+            default=[5, 4],  # Default to easier levels
+            format_func=lambda x: f"N{x}"
+        )
+
     with col_mora:
         mora_options = sorted(set(p['mora_count'] for p in MINIMAL_PAIRS))
         selected_mora = st.multiselect(
-            "Mora count:",
+            "Mora:",
             options=mora_options,
-            default=mora_options,
-            format_func=lambda x: f"{x} mora"
-        )
-
-    with col_jlpt:
-        jlpt_options = [5, 4, 3, 2, 1]
-        selected_jlpt = st.multiselect(
-            "JLPT level:",
-            options=jlpt_options,
-            default=jlpt_options,
-            format_func=lambda x: f"N{x}"
+            default=[2, 3],  # Common word lengths
+            format_func=lambda x: f"{x}"
         )
 
     with col_stats:
@@ -1248,17 +1279,17 @@ with col_btn:
 with col_view:
     view_mode = st.radio(
         "View mode:",
-        ["Text", "Word cards", "Verbs", "Minimal Pairs"],
+        ["Minimal Pairs", "Text", "Word cards", "Verbs"],
         horizontal=True,
-        help="Text: full sentence with colors; Cards: detailed info per word; Verbs: conjugation patterns; Minimal Pairs: accent drill"
+        help="Minimal Pairs: study accent contrasts; Text: full sentence with colors; Cards: detailed info per word; Verbs: conjugation patterns"
     )
 
-# Handle Minimal Pairs view (doesn't require text input)
+# Handle Minimal Pairs view (doesn't require text input or UniDic)
 if view_mode == "Minimal Pairs":
     render_minimal_pairs_drill()
 
-# Process and display results for other views
-elif analyze_clicked or text_input.strip():
+# Process and display results for other views (requires clicking Analyze)
+elif analyze_clicked:
     if text_input.strip():
         # Different processing based on view mode
         if view_mode == "Verbs":
