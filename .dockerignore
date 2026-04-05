@@ -1,0 +1,14 @@
+venv/
+__pycache__/
+*.pyc
+data/
+docs/
+examples/
+music/
+scripts/
+*.tsv
+*.html
+app.py
+anki_generator.py
+README*.md
+.git/
