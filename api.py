@@ -97,7 +97,9 @@ def forms(req: FormsRequest):
     """Get all conjugated forms of a verb/adjective."""
     conjugator = get_conjugator()
     try:
-        results = conjugator.conjugate(req.word)
+        results = conjugator.get_all_conjugations(req.word)
+        if results is None:
+            return {"word": req.word, "forms": [], "error": "Could not conjugate (not a verb/adjective?)"}
         return {
             "word": req.word,
             "forms": [
@@ -119,7 +121,7 @@ def forms(req: FormsRequest):
 def parse(req: ParseRequest):
     """Morphological parse of a sentence — returns each word with reading and accent."""
     parser = get_parser()
-    parsed = parser.parse(req.text)
+    parsed = parser.parse_sentence(req.text)
     return {
         "text": req.text,
         "words": [
@@ -127,7 +129,7 @@ def parse(req: ParseRequest):
                 "surface": w.surface,
                 "reading": w.reading,
                 "pos": w.pos1,
-                "accent_type": w.accent_type,
+                "accent_type": w.aType,
                 "lemma": w.lemma,
             }
             for w in parsed.words
