@@ -137,6 +137,82 @@ def parse(req: ParseRequest):
     }
 
 
+class CompoundRequest(BaseModel):
+    phrase: str
+
+
+@app.post("/compound")
+def compound(req: CompoundRequest):
+    """Break down a phrase into components and show accent for each level.
+    E.g., 重い感染症 → [重い, 感染, 感染症, 重い感染症] each with accent."""
+    engine = get_engine()
+    parser = get_parser()
+
+    # Parse the full phrase
+    parsed = parser.parse_sentence(req.phrase)
+
+    # Collect individual words + the full phrase
+    results = []
+    seen = set()
+
+    for w in parsed.words:
+        if w.surface not in seen and w.pos1 in ('名詞', '動詞', '形容詞', '副詞', '形状詞'):
+            try:
+                r = engine.analyze(w.surface)
+                results.append({
+                    "surface": w.surface,
+                    "reading": r.reading if r else w.reading,
+                    "accent_type": r.accent_type if r else 0,
+                    "pattern": r.pattern if r else "",
+                    "contour": r.contour if r else "",
+                    "lemma": w.lemma,
+                })
+                seen.add(w.surface)
+            except:
+                pass
+
+    # Also analyze subcompounds if phrase has multiple morphemes
+    # Build progressively longer compounds from the right
+    if len(parsed.words) > 1:
+        content_words = [w for w in parsed.words if w.pos1 in ('名詞', '動詞', '形容詞', '副詞', '形状詞')]
+        for i in range(len(content_words) - 1):
+            compound_surface = ''.join(w.surface for w in content_words[i:])
+            if compound_surface not in seen:
+                try:
+                    r = engine.analyze(compound_surface)
+                    results.append({
+                        "surface": compound_surface,
+                        "reading": r.reading if r else "",
+                        "accent_type": r.accent_type if r else 0,
+                        "pattern": r.pattern if r else "",
+                        "contour": r.contour if r else "",
+                        "lemma": compound_surface,
+                        "is_compound": True,
+                    })
+                    seen.add(compound_surface)
+                except:
+                    pass
+
+    # Full phrase if not already covered
+    full = req.phrase.strip()
+    if full not in seen:
+        try:
+            r = engine.analyze(full)
+            results.append({
+                "surface": full,
+                "reading": r.reading if r else "",
+                "accent_type": r.accent_type if r else 0,
+                "pattern": r.pattern if r else "",
+                "contour": r.contour if r else "",
+                "lemma": full,
+                "is_compound": True,
+            })
+        except:
+            pass
+
+    return {"phrase": req.phrase, "components": results}
+
+
 if __name__ == "__main__":
     import uvicorn
     port = int(os.environ.get("PORT", 8000))
