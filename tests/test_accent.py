@@ -109,6 +109,19 @@ GOLD = [
     ("食べ始める", 5, "tabehajime'ru"),
     ("書き直す", 4, "kakinao'su"),
 
+    # ---------- contracted forms (colloquial) ----------
+    ("食べてる", 1, "ta'beteru — ~てる like ~ている"),
+    ("行ってる", 0, "itteru, heiban stays flat"),
+    ("見てる", 1, "mi'teru"),
+    ("食べてた", 1, "ta'beteta"),
+    ("食べちゃう", 1, "ta'bechau — ~ちゃう preserves like ~てしまう"),
+    ("食べちゃった", 1, "ta'bechatta"),
+    ("行っちゃった", 0, "itchatta, heiban stays flat"),
+    ("飲んじゃう", 1, "no'njau"),
+    ("飲んじゃった", 1, "no'njatta"),
+    ("買っとく", 0, "kattoku — ~とく like ~ておく"),
+    ("食べときます", 5, "tabetokima'su"),
+
     # ---------- nouns (single-word sanity) ----------
     ("箸", 1, "ha'shi chopsticks"),
     ("橋", 2, "hashi' bridge (odaka)"),
