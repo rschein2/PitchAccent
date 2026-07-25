@@ -521,11 +521,15 @@ def process_text(text):
                     pattern = accent_to_pattern(accent_type, mora_cnt)
                     # Convert reading to hiragana for contour
                     reading = kata_to_hira(reading)
+                    source = word.source
+                    variants = word.accent_variants
                 else:
                     result = engine.compute_accent(word.morphemes)
                     reading = result.reading
                     accent_type = result.accent_type
                     pattern = result.pattern
+                    source = result.source
+                    variants = result.accent_variants
 
                 # Generate contour notation
                 contour = pattern_to_contour(reading, pattern)
@@ -534,9 +538,11 @@ def process_text(text):
                     'surface': word.surface,
                     'reading': reading,
                     'accent': accent_type,
+                    'variants': variants,
                     'pattern': pattern,
                     'contour': contour,
                     'pos': word.pos1,
+                    'source': source,
                     'is_content': True,
                 }
                 content_words_data.append(word_data)

@@ -86,9 +86,12 @@ def analyze(req: AnalyzeRequest):
         "surface": result.surface,
         "reading": result.reading,
         "accent_type": result.accent_type,
+        "accent_variants": result.accent_variants,
         "mora_count": result.mora_count,
         "pattern": result.pattern,
         "contour": result.contour,
+        "source": result.source,
+        "corrections": result.corrections,
     }
 
 
@@ -130,7 +133,9 @@ def parse(req: ParseRequest):
                 "reading": w.reading,
                 "pos": w.pos1,
                 "accent_type": w.aType,
+                "accent_variants": w.accent_variants,
                 "lemma": w.lemma,
+                "source": w.source,
             }
             for w in parsed.words
         ],
@@ -163,9 +168,11 @@ def compound(req: CompoundRequest):
                     "surface": w.surface,
                     "reading": r.reading if r else w.reading,
                     "accent_type": r.accent_type if r else 0,
+                    "accent_variants": r.accent_variants if r else [],
                     "pattern": r.pattern if r else "",
                     "contour": r.contour if r else "",
                     "lemma": w.lemma,
+                    "source": r.source if r else "unidic",
                 })
                 seen.add(w.surface)
             except:
@@ -188,6 +195,7 @@ def compound(req: CompoundRequest):
                         "contour": r.contour if r else "",
                         "lemma": compound_surface,
                         "is_compound": True,
+                        "source": r.source if r else "unidic",
                     })
                     seen.add(compound_surface)
                 except:
@@ -206,6 +214,7 @@ def compound(req: CompoundRequest):
                 "contour": r.contour if r else "",
                 "lemma": full,
                 "is_compound": True,
+                "source": r.source if r else "unidic",
             })
         except:
             pass

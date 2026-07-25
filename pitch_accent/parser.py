@@ -42,6 +42,14 @@ class ParsedWord:
     compound_rules: list = field(default_factory=list)  # Rules applied
     accent_variants: list = field(default_factory=list)  # Dictionary variants
                                    # (primary first; empty if single accent)
+    source: str = "unidic"         # Where aType came from:
+                                   #   "dictionary" — Kanjium whole-word hit
+                                   #   "numeral"    — numeral+counter rules
+                                   #   "compound"   — compound sandhi rules
+                                   #   "unidic"     — UniDic aType as-is
+                                   # (verb/adjective words are accented later
+                                   # by AccentEngine.compute_accent, whose
+                                   # AccentResult.source supersedes this)
 
 
 @dataclass
@@ -309,6 +317,7 @@ class SentenceParser:
         compound_rules = []
         computed_accent = None
         accent_variants = []
+        source = "unidic"
 
         # Dictionary first: lexicalized words and compounds (安全保障[5],
         # 日本語[0], 一人[2]) beat computed sandhi rules.
@@ -316,6 +325,7 @@ class SentenceParser:
             found = self.accent_dict.lookup(combined_surface, combined_reading)
             if found:
                 computed_accent = found[0]
+                source = "dictionary"
                 if len(found) > 1:
                     accent_variants = found
                 if len(morphemes) > 1:
@@ -335,6 +345,7 @@ class SentenceParser:
                     counter_morphemes[0]
                 )
                 computed_accent = merged.get("aType", "0")
+                source = "numeral"
                 if "_numeral_rule" in merged:
                     compound_rules.append(f"numeral: {merged['_numeral_rule']}")
 
@@ -342,6 +353,7 @@ class SentenceParser:
         elif len(morphemes) > 1 and self.use_compound_rules:
             merged = self.compound_engine.process_noun_sequence(morphemes)
             computed_accent = merged.get("aType", morphemes[0].get("aType", "0"))
+            source = "compound"
             if "_compound_rules" in merged:
                 compound_rules.extend(merged["_compound_rules"])
 
@@ -370,6 +382,7 @@ class SentenceParser:
             is_compound=len(morphemes) > 1,
             compound_rules=compound_rules,
             accent_variants=accent_variants,
+            source=source,
         )
 
     def _is_content_word(self, pos1: str, pos2: str) -> bool:

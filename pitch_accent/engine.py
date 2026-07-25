@@ -41,6 +41,14 @@ class AccentResult:
     accent_variants: list = field(default_factory=list)  # All accepted accents
                            # (dictionary variants, primary first; empty if
                            # the word has a single known accent)
+    source: str = "rules"  # Where the accent came from:
+                           #   "dictionary"       — whole-word Kanjium hit
+                           #   "dictionary+rules" — base verified/corrected by
+                           #                        Kanjium, conjugation computed
+                           #   "rules"            — UniDic fields + F/C/M rules only
+    corrections: list = field(default_factory=list)  # Machine-readable list of
+                           # corrections that fired (e.g. "acon-override:た→F1",
+                           # "dict-base:食べる[2]", "potential-verb:乗れる[0]")
 
     def __str__(self):
         type_name = {
@@ -321,6 +329,8 @@ class AccentEngine:
         # (歩ける → lemma 歩く) while aType correctly belongs to 歩ける[3];
         # looking up the lemma would clobber it with 歩く[2].
         dict_variants: list[int] = []
+        corrections: list[str] = []
+        base_verified = False
         if self.accent_dict is not None:
             base = first.get("orth_base") or first.get("lemma")
             base_reading = first.get("kana_base") or first.get("lemma_reading")
@@ -328,10 +338,12 @@ class AccentEngine:
                 found = self.accent_dict.lookup(base, base_reading)
                 if found:
                     dict_variants = found
+                    base_verified = True
                     if current_accent != found[0]:
                         breakdown.append(
                             f"{base}: dictionary accent {found} overrides aType={current_accent}"
                         )
+                        corrections.append(f"dict-base:{base}{found}")
                         current_accent = found[0]
                 elif self._is_potential_verb(first):
                     # 可能動詞 (乗れる, 歩ける): not in the dictionary, and
@@ -342,6 +354,7 @@ class AccentEngine:
                     base_found = self.accent_dict.lookup(
                         first.get("lemma"), first.get("lemma_reading"))
                     if base_found:
+                        base_verified = True
                         pot_mora = count_mora(kata_to_hira(first.get("kana_base") or ""))
                         derived = 0 if base_found[0] == 0 else max(1, pot_mora - 1)
                         if derived != current_accent:
@@ -350,6 +363,8 @@ class AccentEngine:
                                 f"(base {first.get('lemma')}{base_found}) "
                                 f"overrides aType={current_accent} → {derived}"
                             )
+                            corrections.append(
+                                f"potential-verb:{first.get('orth_base')}[{derived}]")
                             current_accent = derived
 
         reading = first.get("reading", first["surface"])
@@ -467,6 +482,7 @@ class AccentEngine:
                         rule_str += f",{l_val}"
                     if overridden:
                         rule_str += " (override)"
+                        corrections.append(f"acon-override:{m_surface}→{f_type}")
 
                     breakdown.append(
                         f"+ {m_surface}: {rule_str} (N1={current_mora}, M1={prev_accent}) → accent={current_accent}"
@@ -521,6 +537,8 @@ class AccentEngine:
             # Variants only apply unmodified when nothing combined onto the
             # base word; conjugation may collapse or shift them.
             accent_variants=dict_variants if (len(morphemes) == 1 and len(dict_variants) > 1) else [],
+            source="dictionary+rules" if base_verified else "rules",
+            corrections=corrections,
         )
 
     # う-row → え-row map for deriving potential verb readings (乗る→乗れる)
@@ -669,6 +687,7 @@ class FugashiAccentEngine(AccentEngine):
                     breakdown=[f"dictionary: {text} [{reading_hira}] → {variants}"],
                     contour=pattern_to_contour(reading_hira, pattern),
                     accent_variants=variants if len(variants) > 1 else [],
+                    source="dictionary",
                 )
 
         return self.compute_accent(morphemes)
