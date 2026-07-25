@@ -29,6 +29,34 @@ def count_mora(reading: str) -> int:
     return count
 
 
+def split_morae(reading: str) -> list:
+    """Split a reading into morae (small kana merge with the previous mora)."""
+    morae = []
+    for char in reading:
+        if char in SMALL_KANA and morae:
+            morae[-1] += char
+        else:
+            morae.append(char)
+    return morae
+
+
+def normalize_nucleus(reading: str, accent: int) -> int:
+    """
+    Shift an accent nucleus off a special mora (ん/っ/ー), which cannot
+    carry the accent in standard Tokyo Japanese, to the nearest legal mora
+    on its left. Returns the accent unchanged when it is already legal,
+    heiban (0), or out of range.
+    """
+    if accent <= 1:
+        return accent
+    morae = split_morae(reading)
+    if accent > len(morae):
+        return accent
+    while accent > 1 and morae[accent - 1][0] in SPECIAL_MORA:
+        accent -= 1
+    return accent
+
+
 def kata_to_hira(text: str) -> str:
     """Convert katakana to hiragana (leaves other characters untouched)."""
     result = []

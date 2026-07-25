@@ -67,24 +67,27 @@ def parse_accented_word(span) -> tuple[str, int]:
     return kana, accent
 
 
-def fetch_verb(verb: str) -> dict | None:
+def fetch_word(word: str) -> list[dict]:
     """
-    Fetch OJAD's conjugation row for one verb.
+    Fetch ALL of OJAD's conjugation rows for a headword.
 
-    Returns {"reading": ..., "forms": {form_key: {"kana": ..., "accents": [...]}}}
-    or None if the verb wasn't found.
+    Homographs get one row per reading (開く: あく AND ひらく), so the
+    result is a list of {"reading": ..., "forms": {...}} entries. Empty
+    list if the word wasn't found.
     """
-    url = f"{BASE_URL}/yure:visible/word:{quote(verb)}"
+    url = f"{BASE_URL}/yure:visible/word:{quote(word)}"
     resp = session.get(url, timeout=30)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 
+    entries = []
+    seen_readings = set()
     for tr in soup.select("tr"):
         midashi = tr.select_one("td.midashi")
         if not midashi:
             continue
         headword = midashi.get_text(strip=True).split("・")[0]
-        if headword != verb:
+        if headword != word:
             continue
 
         cells = tr.select("td.katsuyo")
@@ -107,15 +110,18 @@ def fetch_verb(verb: str) -> dict | None:
                 forms[key] = {"kana": kana, "accents": variants}
 
         if not forms:
-            return None
+            continue
         reading = forms.get("jisho", {}).get("kana", "")
-        return {"reading": reading, "forms": forms}
+        if reading in seen_readings:
+            continue
+        seen_readings.add(reading)
+        entries.append({"reading": reading, "forms": forms})
 
-    return None
+    return entries
 
 
-def collect_verbs(limit: int) -> list[str]:
-    """Common single-word verbs from the JLPT vocabulary, easiest level first."""
+def collect_words(limit: int, pos: str = "動詞") -> list[str]:
+    """Common single-word verbs/adjectives from JLPT vocab, easiest level first."""
     import fugashi
     import unidic
     tagger = fugashi.Tagger(f'-d "{unidic.DICDIR}"')
@@ -126,60 +132,92 @@ def collect_verbs(limit: int) -> list[str]:
     level_order = {"N5": 0, "N4": 1, "N3": 2, "N2": 3, "N1": 4}
     candidates = sorted(vocab.items(), key=lambda kv: level_order.get(kv[1], 9))
 
-    verbs = []
+    words = []
     for word, _level in candidates:
-        if len(verbs) >= limit:
+        if len(words) >= limit:
             break
         nodes = list(tagger(word))
         if len(nodes) != 1:
             continue
         f0 = nodes[0].feature
-        if f0.pos1 != "動詞" or nodes[0].surface != f0.lemma:
+        if f0.pos1 != pos or nodes[0].surface != f0.lemma:
             continue
         ctype = f0.cType or ""
-        if not any(t in ctype for t in ("五段", "一段", "サ行変格", "カ行変格")):
+        if pos == "動詞" and not any(
+                t in ctype for t in ("五段", "一段", "サ行変格", "カ行変格")):
             continue
-        verbs.append(word)
-    return verbs
+        if pos == "形容詞" and "形容詞" not in ctype:
+            continue
+        words.append(word)
+    return words
+
+
+def migrate_v1(gold: dict) -> dict:
+    """Wrap v1 single-entry records ({reading, forms}) into the v2 schema
+    ({pos, entries: [...]})."""
+    migrated = {}
+    for word, rec in gold.items():
+        if "entries" in rec:
+            migrated[word] = rec
+        else:
+            migrated[word] = {"pos": rec.get("pos", "verb"),
+                              "entries": [{"reading": rec["reading"],
+                                           "forms": rec["forms"]}]}
+    return migrated
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=200,
-                    help="number of JLPT verbs to mine (default 200)")
+                    help="number of JLPT words to mine (default 200)")
     ap.add_argument("--verbs", nargs="*",
-                    help="explicit verb list (overrides JLPT selection)")
+                    help="explicit word list (overrides JLPT selection)")
+    ap.add_argument("--adjectives", action="store_true",
+                    help="mine i-adjectives instead of verbs")
+    ap.add_argument("--refetch", nargs="*",
+                    help="re-fetch these words even if already present")
     args = ap.parse_args()
+
+    pos_label = "adjective" if args.adjectives else "verb"
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     gold: dict[str, dict] = {}
     if OUTPUT.exists():
         with open(OUTPUT, encoding="utf-8") as f:
-            gold = json.load(f)
-        print(f"Resuming: {len(gold)} verbs already mined")
+            gold = migrate_v1(json.load(f))
+        print(f"Resuming: {len(gold)} words already mined")
 
-    verbs = args.verbs if args.verbs else collect_verbs(args.limit)
-    todo = [v for v in verbs if v not in gold]
-    print(f"Fetching {len(todo)} verbs from OJAD ({DELAY}s delay)...")
+    if args.refetch:
+        for w in args.refetch:
+            gold.pop(w, None)
+        words = args.refetch
+    elif args.verbs:
+        words = args.verbs
+    else:
+        words = collect_words(args.limit, "形容詞" if args.adjectives else "動詞")
+
+    todo = [w for w in words if w not in gold]
+    print(f"Fetching {len(todo)} {pos_label}s from OJAD ({DELAY}s delay)...")
 
     fetched = failed = 0
-    for i, verb in enumerate(todo):
+    for i, word in enumerate(todo):
         try:
-            entry = fetch_verb(verb)
+            entries = fetch_word(word)
         except requests.RequestException as exc:
-            print(f"  [{i+1}/{len(todo)}] {verb}: network error {exc}")
+            print(f"  [{i+1}/{len(todo)}] {word}: network error {exc}")
             failed += 1
             time.sleep(DELAY)
             continue
 
-        if entry:
-            gold[verb] = entry
+        if entries:
+            gold[word] = {"pos": pos_label, "entries": entries}
             fetched += 1
-            print(f"  [{i+1}/{len(todo)}] {verb} [{entry['reading']}] "
-                  f"{len(entry['forms'])} forms")
+            readings = "/".join(e["reading"] for e in entries)
+            print(f"  [{i+1}/{len(todo)}] {word} [{readings}] "
+                  f"{len(entries)} entr{'ies' if len(entries) > 1 else 'y'}")
         else:
             failed += 1
-            print(f"  [{i+1}/{len(todo)}] {verb}: not found in OJAD")
+            print(f"  [{i+1}/{len(todo)}] {word}: not found in OJAD")
 
         # Save incrementally so interruptions lose nothing
         if fetched % 10 == 0 or i == len(todo) - 1:
@@ -190,7 +228,7 @@ def main():
 
     with open(OUTPUT, "w", encoding="utf-8") as f:
         json.dump(gold, f, ensure_ascii=False, indent=1)
-    print(f"\nDone: {len(gold)} verbs total ({fetched} new, {failed} failed/missing)")
+    print(f"\nDone: {len(gold)} words total ({fetched} new, {failed} failed/missing)")
     print(f"Wrote {OUTPUT}")
 
 

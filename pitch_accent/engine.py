@@ -25,6 +25,7 @@ from .utils import (
     kata_to_hira,
     accent_to_pattern,
     pattern_to_contour,
+    normalize_nucleus,
 )
 
 
@@ -290,7 +291,8 @@ class AccentEngine:
 
         return base_accent
 
-    def compute_accent(self, morphemes: list[dict]) -> AccentResult:
+    def compute_accent(self, morphemes: list[dict],
+                       _forced_base: Optional[int] = None) -> AccentResult:
         """
         Compute accent for a sequence of morphemes.
 
@@ -301,6 +303,10 @@ class AccentEngine:
         - aType: str (accent type, or "*")
         - aConType: str (combination type)
         - aModType: str (modification type)
+
+        _forced_base (internal): compute with this base accent instead of
+        aType/dictionary — used to derive accent_variants of conjugated
+        forms when the base word has several dictionary accents.
 
         Returns AccentResult with computed accent.
         """
@@ -330,8 +336,11 @@ class AccentEngine:
         # looking up the lemma would clobber it with 歩く[2].
         dict_variants: list[int] = []
         corrections: list[str] = []
+        combo_variants: list[int] = []
         base_verified = False
-        if self.accent_dict is not None:
+        if _forced_base is not None:
+            current_accent = _forced_base
+        elif self.accent_dict is not None:
             base = first.get("orth_base") or first.get("lemma")
             base_reading = first.get("kana_base") or first.get("lemma_reading")
             if base:
@@ -429,7 +438,28 @@ class AccentEngine:
             override_rule = (self.ACON_OVERRIDES.get((m_ctype, pos_key))
                              or self.SUFFIX_OVERRIDES.get((m_surface, m_pos1, pos_key)))
 
-            if m_pos1 == "動詞" and current_pos_key == "動詞":
+            if (m_pos1 == "形容詞" and morph.get("lemma") == "無い"
+                    and current_pos_key == "形容詞"):
+                # Helper adjective ない after an adjective stem (高くない).
+                # Its aConType is C3 (a noun-compound rule) — wrong here.
+                # OJAD/NHK: heiban stem → accent lands on な (甘くない[4]);
+                # accented stem → accent pulls back one mora, with the
+                # unshifted position as a variant (悪くない[1,2]).
+                prev_accent = current_accent
+                if current_accent == 0:
+                    current_accent = current_mora + 1
+                else:
+                    reading_so_far = kata_to_hira(reading)
+                    pulled = normalize_nucleus(reading_so_far,
+                                               max(1, current_accent - 1))
+                    combo_variants = [pulled, current_accent]
+                    current_accent = pulled
+                breakdown.append(
+                    f"+ {m_surface}: 形容詞+ない rule (M1={prev_accent}) "
+                    f"→ accent={current_accent}"
+                    + (f" (variants {combo_variants})" if combo_variants else "")
+                )
+            elif m_pos1 == "動詞" and current_pos_key == "動詞":
                 # A verb following a verb phrase is an auxiliary or a compound
                 # verb, NOT the rear of a noun compound — its C-type (which
                 # describes noun-compound behavior) must not be applied here.
@@ -517,14 +547,39 @@ class AccentEngine:
             prev_was_te = (m_pos1 == "助詞" and m_pos2 == "接続助詞"
                            and m_surface in ("て", "で"))
 
-        # Convert to pattern
-        pattern = self.accent_to_pattern(current_accent, current_mora)
-
         # Convert katakana reading to hiragana for display
         reading_hira = self._kata_to_hira(reading)
 
+        # A computed nucleus can't sit on ん/っ/ー — shift it left if a rule
+        # parked it there (dictionary accents never need this).
+        fixed = normalize_nucleus(reading_hira, current_accent)
+        if fixed != current_accent:
+            breakdown.append(
+                f"nucleus on special mora: {current_accent} → {fixed}")
+            current_accent = fixed
+
+        # Convert to pattern
+        pattern = self.accent_to_pattern(current_accent, current_mora)
+
         # Generate pitch contour notation (た/べ\る style)
         contour = self.pattern_to_contour(reading_hira, pattern)
+
+        # Assemble accepted accents, primary first: combination variants
+        # (形容詞+ない) plus base-word dictionary variants propagated through
+        # the conjugation (危ない[0,3] → 危なくない keeps both readings).
+        variants = [current_accent] + combo_variants
+        if _forced_base is None and len(dict_variants) > 1:
+            if len(morphemes) == 1:
+                variants += dict_variants
+            else:
+                for alt in dict_variants[1:]:
+                    alt_res = self.compute_accent(morphemes, _forced_base=alt)
+                    variants.append(alt_res.accent_type)
+                    variants += alt_res.accent_variants
+        deduped: list[int] = []
+        for v in variants:
+            if v not in deduped:
+                deduped.append(v)
 
         return AccentResult(
             surface=surface,
@@ -534,9 +589,7 @@ class AccentEngine:
             pattern=pattern,
             breakdown=breakdown,
             contour=contour,
-            # Variants only apply unmodified when nothing combined onto the
-            # base word; conjugation may collapse or shift them.
-            accent_variants=dict_variants if (len(morphemes) == 1 and len(dict_variants) > 1) else [],
+            accent_variants=deduped if len(deduped) > 1 else [],
             source="dictionary+rules" if base_verified else "rules",
             corrections=corrections,
         )

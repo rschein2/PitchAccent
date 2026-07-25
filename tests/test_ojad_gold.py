@@ -48,6 +48,14 @@ KNOWN_DISAGREEMENTS: dict[tuple[str, str], str] = {
         "MeCab parses the isolated fragment 通れ as the potential verb 通れる's "
         "renyokei [2], while OJAD's row is the imperative of 通る [1]; both are "
         "valid readings of the bare fragment"),
+    ("丸い", "ta"): (
+        "MeCab parses 丸かった as an invented godan verb 丸かる with aType=* — "
+        "lexicon quirk, not an accent-rule bug"),
+    ("宜しい", "nai"): (
+        "MeCab tags 宜しく as a lexicalized adverb (よろしくお願いします), not "
+        "the adjective's renyokei, so the 形容詞+ない rule doesn't apply"),
+    ("宜しい", "nakatta"): (
+        "same adverb-vs-adjective POS call as 宜しい/nai"),
 }
 
 # Suffixes per OJAD form for ichidan verbs (attach to kanji stem)
@@ -129,6 +137,23 @@ def build_surface(verb_info: dict, verb: str, form: str) -> str | None:
     return None
 
 
+# i-adjective conjugation suffixes (attach to the stem = word minus い).
+# OJAD repurposes columns: masu=〜いです, ukemi=adverbial 〜く;
+# shieki duplicates the dictionary form and meirei/kano/ishi are empty.
+ADJ_FORMS = {
+    "jisho": "い", "masu": "いです", "te": "くて", "ta": "かった",
+    "nai": "くない", "nakatta": "くなかった", "ba": "ければ", "ukemi": "く",
+}
+
+
+def build_adj_surface(word: str, form: str) -> str | None:
+    if form not in ADJ_FORMS:
+        return None
+    if not word.endswith("い"):
+        return None
+    return word[:-1] + ADJ_FORMS[form]
+
+
 def run(verbose: bool = False):
     with open(GOLD_FILE, encoding="utf-8") as f:
         gold = json.load(f)
@@ -140,13 +165,30 @@ def run(verbose: bool = False):
     failures = []
 
     for verb, entry in gold.items():
-        verb_info = conjugator.detect_verb_type(verb)
-        if not verb_info:
-            skipped += len(entry["forms"])
-            continue
+        # v1 records are a single entry; v2 has {"pos", "entries": [...]}
+        record = entry
+        entries = record.get("entries") or [record]
+        pos = record.get("pos", "verb")
+        is_adjective = pos == "adjective"
 
-        for form, gdata in entry["forms"].items():
-            surface = build_surface(verb_info, verb, form)
+        verb_info = None
+        if not is_adjective:
+            verb_info = conjugator.detect_verb_type(verb)
+            if not verb_info:
+                skipped += sum(len(e["forms"]) for e in entries)
+                continue
+
+        # Pick the entry matching the reading MeCab chooses for this word
+        # (homographs: 開く has rows for both あく and ひらく).
+        mecab_reading = engine.analyze(verb).reading
+        chosen = next((e for e in entries if e["reading"] == mecab_reading),
+                      entries[0])
+
+        for form, gdata in chosen["forms"].items():
+            if is_adjective:
+                surface = build_adj_surface(verb, form)
+            else:
+                surface = build_surface(verb_info, verb, form)
             if not surface:
                 skipped += 1
                 continue
@@ -160,7 +202,11 @@ def run(verbose: bool = False):
                     print(f"SKIP {verb}/{form}: reading {result.reading} != {gdata['kana']}")
                 continue
 
-            if result.accent_type in set(gdata["accents"]):
+            # Pass if any accepted accent (primary or variant) matches an
+            # OJAD variant — words like 危ない legitimately carry two accents
+            # and sources order them differently.
+            ours = {result.accent_type, *result.accent_variants}
+            if ours & set(gdata["accents"]):
                 passed += 1
             elif (verb, form) in KNOWN_DISAGREEMENTS:
                 known += 1
