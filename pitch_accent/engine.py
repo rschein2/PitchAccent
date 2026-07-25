@@ -7,9 +7,17 @@ Computes pitch accent for conjugated forms using UniDic's F-type combination rul
 The rules come directly from UniDic's per-morpheme fields (aType, aConType,
 aModType) as returned by MeCab — there is no separate rules file. Known-wrong
 UniDic data is corrected in one place: AccentEngine.ACON_OVERRIDES.
+
+Accuracy layering (highest priority first):
+1. Whole-word dictionary lookup (Kanjium, ~124k entries) — lexicalized
+   accents win over computation (FugashiAccentEngine.analyze).
+2. Base-word accent correction — the first morpheme's lemma is looked up
+   in the dictionary and its accent replaces UniDic's aType if they
+   disagree (compute_accent).
+3. Rule-based combination (F/C/M rules) for everything else.
 """
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Optional
 
 from .utils import (
@@ -30,6 +38,9 @@ class AccentResult:
     pattern: str           # L/H pattern like "LHLL"
     breakdown: list        # Step-by-step computation trace
     contour: str = ""      # Pitch contour like "た/べ\る" (/ = rise, \ = fall)
+    accent_variants: list = field(default_factory=list)  # All accepted accents
+                           # (dictionary variants, primary first; empty if
+                           # the word has a single known accent)
 
     def __str__(self):
         type_name = {
@@ -62,6 +73,19 @@ class AccentEngine:
     ACON_OVERRIDES = {
         ("助動詞-タ", "動詞"): {"type": "F1", "M": None, "L": None},
     }
+
+    def __init__(self, use_dictionary: bool = True):
+        """
+        Args:
+            use_dictionary: consult the Kanjium accent dictionary to correct
+                base-word accents (and, in FugashiAccentEngine.analyze, to
+                short-circuit whole-word lookups). Falls back gracefully to
+                pure rule computation if the data file is absent.
+        """
+        self.accent_dict = None
+        if use_dictionary:
+            from .accent_dict import get_accent_dictionary
+            self.accent_dict = get_accent_dictionary()
 
     def count_mora(self, reading: str) -> int:
         """Count mora in a reading (delegates to utils.count_mora)."""
@@ -273,6 +297,22 @@ class AccentEngine:
         else:
             current_accent = 0
 
+        # Dictionary correction: if the lemma's accent is known (Kanjium)
+        # and disagrees with UniDic's aType, trust the dictionary. The
+        # combination rules then run from the corrected base.
+        dict_variants: list[int] = []
+        if self.accent_dict is not None:
+            lemma = first.get("lemma")
+            if lemma:
+                found = self.accent_dict.lookup(lemma, first.get("lemma_reading"))
+                if found:
+                    dict_variants = found
+                    if current_accent != found[0]:
+                        breakdown.append(
+                            f"{lemma}: dictionary accent {found} overrides aType={current_accent}"
+                        )
+                        current_accent = found[0]
+
         reading = first.get("reading", first["surface"])
         current_mora = self.count_mora(reading)
 
@@ -434,6 +474,9 @@ class AccentEngine:
             pattern=pattern,
             breakdown=breakdown,
             contour=contour,
+            # Variants only apply unmodified when nothing combined onto the
+            # base word; conjugation may collapse or shift them.
+            accent_variants=dict_variants if (len(morphemes) == 1 and len(dict_variants) > 1) else [],
         )
 
     def _parse_acon_for_pos(self, acon: str, pos_key: str) -> Optional[dict]:
@@ -491,7 +534,8 @@ class FugashiAccentEngine(AccentEngine):
     AccentEngine that uses fugashi/MeCab to parse input text.
     """
 
-    def __init__(self):
+    def __init__(self, use_dictionary: bool = True):
+        super().__init__(use_dictionary=use_dictionary)
         import fugashi
         import unidic
         self.tagger = fugashi.Tagger(f'-d "{unidic.DICDIR}"')
@@ -499,6 +543,11 @@ class FugashiAccentEngine(AccentEngine):
     def analyze(self, text: str) -> AccentResult:
         """
         Parse text with MeCab and compute accent.
+
+        Lexicalized whole words win: if the input as a whole is in the
+        accent dictionary (with the reading MeCab chose), that accent is
+        returned directly and no combination rules run. Rules handle
+        conjugated forms and unlisted compounds.
         """
         morphemes = []
 
@@ -514,7 +563,30 @@ class FugashiAccentEngine(AccentEngine):
                 "aType": f.aType if hasattr(f, 'aType') else "*",
                 "aConType": f.aConType if hasattr(f, 'aConType') else "*",
                 "aModType": f.aModType if hasattr(f, 'aModType') else "*",
+                "lemma": f.lemma if hasattr(f, 'lemma') else node.surface,
+                "lemma_reading": f.lForm if hasattr(f, 'lForm') else None,
             })
+
+        # Whole-word dictionary hit takes priority over rule computation
+        if self.accent_dict is not None and morphemes:
+            reading_hira = kata_to_hira(
+                "".join(m.get("reading") or m["surface"] for m in morphemes)
+            )
+            variants = self.accent_dict.lookup(text, reading_hira)
+            if variants:
+                accent = variants[0]
+                mora = count_mora(reading_hira)
+                pattern = accent_to_pattern(accent, mora)
+                return AccentResult(
+                    surface=text,
+                    reading=reading_hira,
+                    accent_type=accent,
+                    mora_count=mora,
+                    pattern=pattern,
+                    breakdown=[f"dictionary: {text} [{reading_hira}] → {variants}"],
+                    contour=pattern_to_contour(reading_hira, pattern),
+                    accent_variants=variants if len(variants) > 1 else [],
+                )
 
         return self.compute_accent(morphemes)
 

@@ -16,6 +16,7 @@ from typing import Optional
 import fugashi
 import unidic
 
+from .accent_dict import get_accent_dictionary
 from .compound import CompoundAccentEngine
 from .numeral import NumeralAccentEngine
 from .numeral_reading import number_to_reading
@@ -39,6 +40,8 @@ class ParsedWord:
     morphemes: list = field(default_factory=list)  # For compound analysis
     is_compound: bool = False      # True if this is a computed compound
     compound_rules: list = field(default_factory=list)  # Rules applied
+    accent_variants: list = field(default_factory=list)  # Dictionary variants
+                                   # (primary first; empty if single accent)
 
 
 @dataclass
@@ -80,10 +83,12 @@ class SentenceParser:
     # POS that can be part of noun compounds
     NOUN_COMPOUND_POS = {"名詞", "接尾辞"}
 
-    def __init__(self, use_compound_rules: bool = True, use_numeral_rules: bool = True):
+    def __init__(self, use_compound_rules: bool = True, use_numeral_rules: bool = True,
+                 use_dictionary: bool = True):
         self.tagger = fugashi.Tagger(f'-d "{unidic.DICDIR}"')
         self.use_compound_rules = use_compound_rules
         self.use_numeral_rules = use_numeral_rules
+        self.accent_dict = get_accent_dictionary() if use_dictionary else None
 
         if use_compound_rules:
             self.compound_engine = CompoundAccentEngine()
@@ -133,6 +138,7 @@ class SentenceParser:
                 "aConType": aConType,
                 "aModType": aModType,
                 "lemma": lemma,
+                "lemma_reading": f.lForm if hasattr(f, 'lForm') else None,
             }
 
             # Handle noun-like sequences (nouns, numerals, counters, suffixes)
@@ -167,6 +173,7 @@ class SentenceParser:
                             "aConType": next_f.aConType if hasattr(next_f, 'aConType') else "*",
                             "aModType": next_f.aModType if hasattr(next_f, 'aModType') else "*",
                             "lemma": next_f.lemma if hasattr(next_f, 'lemma') else next_node.surface,
+                            "lemma_reading": next_f.lForm if hasattr(next_f, 'lForm') else None,
                         }
                         noun_morphemes.append(next_morpheme)
                         j += 1
@@ -206,6 +213,7 @@ class SentenceParser:
                             "aConType": next_f.aConType if hasattr(next_f, 'aConType') else "*",
                             "aModType": next_f.aModType if hasattr(next_f, 'aModType') else "*",
                             "lemma": next_f.lemma if hasattr(next_f, 'lemma') else next_node.surface,
+                            "lemma_reading": next_f.lForm if hasattr(next_f, 'lForm') else None,
                         }
                         compound_morphemes.append(next_morpheme)
                         compound_surface += next_node.surface
@@ -294,9 +302,23 @@ class SentenceParser:
 
         compound_rules = []
         computed_accent = None
+        accent_variants = []
+
+        # Dictionary first: lexicalized words and compounds (安全保障[5],
+        # 日本語[0], 一人[2]) beat computed sandhi rules.
+        if self.accent_dict is not None:
+            found = self.accent_dict.lookup(combined_surface, combined_reading)
+            if found:
+                computed_accent = found[0]
+                if len(found) > 1:
+                    accent_variants = found
+                if len(morphemes) > 1:
+                    compound_rules.append(f"dictionary: {found}")
 
         # If it's a numeral + counter phrase, use numeral rules
-        if has_numeral and has_counter and self.use_numeral_rules:
+        if computed_accent is not None:
+            pass
+        elif has_numeral and has_counter and self.use_numeral_rules:
             # Find numeral and counter parts
             numeral_morphemes = [m for m in morphemes if m["pos2"] in self.NUMERAL_NOUN_TYPES]
             counter_morphemes = [m for m in morphemes if m["pos2"] in self.COUNTER_NOUN_TYPES]
@@ -341,6 +363,7 @@ class SentenceParser:
             morphemes=morphemes,
             is_compound=len(morphemes) > 1,
             compound_rules=compound_rules,
+            accent_variants=accent_variants,
         )
 
     def _is_content_word(self, pos1: str, pos2: str) -> bool:
