@@ -17,6 +17,10 @@ from collections import defaultdict
 from dataclasses import dataclass, asdict
 from typing import Optional
 import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from pitch_accent.utils import count_mora as _count_mora, kata_to_hira as _kata_to_hira
 
 # Common words to check - we'll expand this
 # These are words known to have homophones with different accents
@@ -144,31 +148,18 @@ def load_jlpt_vocab() -> dict[str, int]:
 class MinimalPairMiner:
     """Mine minimal pairs from UniDic."""
 
-    SMALL_KANA = set("ぁぃぅぇぉゃゅょゎっ")
-
     def __init__(self, jlpt_vocab: dict[str, int] = None):
         self.tagger = fugashi.Tagger(f'-d "{unidic.DICDIR}"')
         self.words_by_reading: dict[str, list[WordEntry]] = defaultdict(list)
         self.jlpt_vocab = jlpt_vocab or {}
 
     def count_mora(self, reading: str) -> int:
-        """Count mora in a reading."""
-        count = 0
-        for char in reading:
-            if char not in self.SMALL_KANA:
-                count += 1
-        return count
+        """Count mora in a reading (delegates to pitch_accent.utils)."""
+        return _count_mora(reading)
 
     def kata_to_hira(self, text: str) -> str:
-        """Convert katakana to hiragana."""
-        result = []
-        for char in text:
-            code = ord(char)
-            if 0x30A1 <= code <= 0x30F6:
-                result.append(chr(code - 0x60))
-            else:
-                result.append(char)
-        return "".join(result)
+        """Convert katakana to hiragana (delegates to pitch_accent.utils)."""
+        return _kata_to_hira(text)
 
     def parse_word(self, word: str) -> Optional[WordEntry]:
         """Parse a word and extract accent information."""

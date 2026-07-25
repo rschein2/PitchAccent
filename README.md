@@ -242,8 +242,7 @@ Implements Miyazaki-style numeral × counter category system with 13 categories 
 │
 ├── pitch_accent/              # Core library package
 │   ├── __init__.py
-│   ├── engine.py              # Accent computation (F-type rules)
-│   ├── rules.json             # UniDic suffix combination rules
+│   ├── engine.py              # Accent computation (F-type rules from UniDic, incl. ACON_OVERRIDES)
 │   ├── compound.py            # Compound noun sandhi
 │   ├── numeral.py             # Counter categories & accent rules
 │   ├── numeral_reading.py     # Arabic → hiragana conversion

@@ -39,6 +39,12 @@ except ImportError:
     print("  pip install requests beautifulsoup4 --break-system-packages")
     sys.exit(1)
 
+try:
+    from .utils import count_mora
+except ImportError:
+    # Allow running as a standalone script (python lookup.py)
+    from utils import count_mora
+
 
 @dataclass
 class PitchAccentResult:
@@ -163,14 +169,8 @@ class JPDBClient:
             return PitchAccentResult(word=word, error=f"Parse error: {e}")
     
     def _count_mora(self, reading: str) -> int:
-        """Count mora in a reading (accounting for small kana)."""
-        # Small kana that don't count as separate mora
-        small = set("ぁぃぅぇぉゃゅょゎァィゥェォャュョヮ")
-        count = 0
-        for char in reading:
-            if char not in small:
-                count += 1
-        return count
+        """Count mora in a reading (delegates to utils.count_mora)."""
+        return count_mora(reading)
 
     def _pattern_to_accent_type(self, pattern: str) -> int:
         """
@@ -342,9 +342,8 @@ class OJADClient:
         return ""
     
     def _count_mora(self, reading: str) -> int:
-        """Count mora in reading."""
-        small = set("ぁぃぅぇぉゃゅょゎァィゥェォャュョヮ")
-        return sum(1 for c in reading if c not in small)
+        """Count mora in reading (delegates to utils.count_mora)."""
+        return count_mora(reading)
 
 
 class PitchAccentLookup:

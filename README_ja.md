@@ -205,8 +205,7 @@ UniDicは素人によるWiki的なデータではなく、専門の言語学者�
 │
 ├── pitch_accent/              # コアライブラリパッケージ
 │   ├── __init__.py
-│   ├── engine.py              # アクセント計算（F型規則）
-│   ├── rules.json             # UniDic接尾辞結合規則
+│   ├── engine.py              # アクセント計算（UniDic F型規則＋ACON_OVERRIDES）
 │   ├── compound.py            # 複合名詞の連濁
 │   ├── numeral.py             # 助数詞カテゴリーとアクセント規則
 │   ├── numeral_reading.py     # アラビア数字 → ひらがな変換

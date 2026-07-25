@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 """
 Extract accent combination rules from UniDic and build a lookup table.
+
+NOTE: This is a research/inspection tool only. The output file
+(accent_rules.json) is NOT read by the engine — pitch_accent/engine.py
+uses UniDic's aConType/aModType fields directly via MeCab, with
+corrections in AccentEngine.ACON_OVERRIDES.
 """
 import fugashi
 import unidic

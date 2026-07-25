@@ -57,12 +57,16 @@ Based on parsing conjugated forms with our UniDic installation:
 | Suffix | aConType | Effect |
 |--------|----------|--------|
 | て (te-form) | 動詞%F1 | Preserve stem accent |
-| た (ta-form) | 動詞%F2@1 | Heiban→N1+1, accented→preserve |
+| た (ta-form) | 動詞%F2@1 → **overridden to F1** | Preserve stem accent (see below) |
 | ない (negative) | 動詞%F3@0 | Heiban→stay flat, accented→N1 |
 | ます (polite) | 動詞%F4@1 | Always N1+1 |
 | たい (desiderative) | 動詞%F4@1 | Always N1+1 |
 
-**Note:** The UniDic manual (Table 12) lists た as F1, but our UniDic installation returns F2@1. This may be a version difference.
+**Note:** UniDic's dictionary data gives た `動詞%F2@1`, which would make the
+past tense of every heiban verb odaka (行った→[3]). Standard Tokyo accent keeps
+it flat (行った[0], 買った[0]), and the UniDic manual's own Table 12 lists た as
+F1. The engine corrects this in `AccentEngine.ACON_OVERRIDES` — the single
+place where known-wrong UniDic data is fixed.
 
 ## Worked Examples
 
@@ -98,23 +102,34 @@ Based on parsing conjugated forms with our UniDic installation:
 4. F3@0: Since M1=0 (heiban), M2 = **0** (stays heiban)
 5. Result: いかない [0] = **LHHH** ✓
 
-## Test Results (After M4@1 Fix)
+## Test Results (current engine output — verified against NHK/OJAD)
 
 | Verb | Base | te-form | ta-form | nai-form | masu-form | volitional |
 |------|------|---------|---------|----------|-----------|------------|
-| 見る | [1] | [1] HL | [1] HL | [1] HLL | [2] LHL | [1] HLL |
-| 食べる | [2] | [1] HLL | [1] HLL | [2] LHLL | [3] LHHL | [1] HLLL |
-| 起きる | [2] | [1] HLL | [1] HLL | [2] LHLL | [3] LHHL | [1] HLLL |
-| 行く | [0] | [0] LHH | [3]* LHH | [0] LHHH | [3] LHHL | [1] HLL |
-| 書く | [1] | [1] HLL | [1] HLL | [2] LHLL | [3] LHHL | [1] HLL |
+| 見る | [1] | [1] HL | [1] HL | [1] HLL | [2] LHL | [2] LHL |
+| 食べる | [2] | [1] HLL | [1] HLL | [2] LHLL | [3] LHHL | [3] LHHL |
+| 起きる | [2] | [1] HLL | [1] HLL | [2] LHLL | [3] LHHL | [3] LHHL |
+| 行く | [0] | [0] LHH | [0] LHH | [0] LHHH | [3] LHHL | [2] LHL |
+| 書く | [1] | [1] HLL | [1] HLL | [2] LHLL | [3] LHHL | [2] LHL |
 
-*Note: 行った shows [3] due to UniDic's F2@1 for た. Some sources suggest it should be heiban.
+The full gold battery lives in `tests/test_accent.py` — run it after any rule change.
 
-## Known Discrepancies
+## Resolved Discrepancies
 
-1. **た (past tense)**: Our UniDic returns F2@1, but the UniDic manual Table 12 lists it as F1. This affects heiban verbs like 行く.
+1. **た (past tense)**: UniDic's data returns F2@1 but the manual's Table 12
+   lists F1. F2@1 wrongly made heiban past forms odaka (行った→[3]).
+   Fixed via `AccentEngine.ACON_OVERRIDES` (助動詞-タ → F1 for verbs).
 
-2. **Volitional form**: Currently using F1 on the suffix, but UniDic Table 9 suggests the stem itself gets M1@n modification for volitional inflection.
+2. **Suffix aModType**: Inflected suffixes (ましょ M1@1, られ M4@1, なかっ M2@2,
+   たら M2@1) carry an aModType that adjusts the accent of the combined form
+   using its total mora count. The engine now applies it after each F-rule
+   combination (fixes 食べましょう[4], 食べられて[3]).
+
+3. **Auxiliary verbs after て**: a verb following て/で (いる, ある, みる, くる…)
+   is an auxiliary, not the rear of a noun compound, so its C-type must not
+   apply. Unaccented auxiliaries keep the te-form accent (食べている[1]);
+   accented ones take N1+M2 (行ってくる[4], 書いてある[4]). Renyokei compound
+   verbs (食べ始める) are accented on V2's penultimate mora.
 
 ## References
 

@@ -13,6 +13,7 @@ References:
 from dataclasses import dataclass
 from typing import Optional
 
+from .utils import count_mora, kata_to_hira
 
 # Special mora (特殊拍) - don't place accent nucleus on these
 SPECIAL_MORA = set("んっー")
@@ -33,16 +34,6 @@ class CompoundResult:
     mora_count: int
     components: list[str]  # Original component words
     rule_applied: str      # Which rule was used
-
-
-def count_mora(reading: str) -> int:
-    """Count mora in a reading, treating small kana as part of previous mora."""
-    SMALL_KANA = set("ぁぃぅぇぉゃゅょゎァィゥェォャュョヮ")
-    count = 0
-    for char in reading:
-        if char not in SMALL_KANA:
-            count += 1
-    return count
 
 
 def ends_with_special_mora(reading: str) -> bool:
@@ -244,7 +235,7 @@ class CompoundAccentEngine:
             surface = m.get("surface", "")
             reading = m.get("reading", surface)
             # Convert katakana to hiragana
-            reading = self._kata_to_hira(reading)
+            reading = kata_to_hira(reading)
 
             # Parse aType (may be "1,0" format)
             atype_str = m.get("aType", "0")
@@ -276,18 +267,6 @@ class CompoundAccentEngine:
             "_compound_rules": rules,
             "_components": [m.get("surface", "") for m in nouns],
         }
-
-    def _kata_to_hira(self, text: str) -> str:
-        """Convert katakana to hiragana."""
-        result = []
-        for char in text:
-            code = ord(char)
-            if 0x30A1 <= code <= 0x30F6:
-                result.append(chr(code - 0x60))
-            else:
-                result.append(char)
-        return "".join(result)
-
 
 def main():
     """Test compound accent computation."""

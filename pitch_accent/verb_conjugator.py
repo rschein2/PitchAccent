@@ -38,6 +38,7 @@ import fugashi
 import unidic
 
 from .engine import AccentEngine, AccentResult
+from .utils import count_mora, kata_to_hira
 
 
 @dataclass
@@ -232,21 +233,13 @@ class VerbConjugator:
     3. Uses AccentEngine to compute the correct accent
     """
 
-    SMALL_KANA = set("ぁぃぅぇぉゃゅょゎァィゥェォャュョヮっッ")
-    SOKUON = set("っッ")
-
     def __init__(self):
         self.tagger = fugashi.Tagger(f'-d "{unidic.DICDIR}"')
         self.accent_engine = AccentEngine()
 
     def count_mora(self, reading: str) -> int:
-        """Count mora in a reading."""
-        count = 0
-        for char in reading:
-            if char in self.SMALL_KANA and char not in self.SOKUON:
-                continue
-            count += 1
-        return count
+        """Count mora in a reading (delegates to utils.count_mora)."""
+        return count_mora(reading)
 
     def detect_verb_type(self, verb_text: str) -> Optional[dict]:
         """
@@ -517,15 +510,8 @@ class VerbConjugator:
         }
 
     def _kata_to_hira(self, text: str) -> str:
-        """Convert katakana to hiragana."""
-        result = []
-        for char in text:
-            code = ord(char)
-            if 0x30A1 <= code <= 0x30F6:
-                result.append(chr(code - 0x60))
-            else:
-                result.append(char)
-        return "".join(result)
+        """Convert katakana to hiragana (delegates to utils.kata_to_hira)."""
+        return kata_to_hira(text)
 
 
 def main():

@@ -264,7 +264,7 @@ def get_accent_type_name(accent_type, mora_count):
         return "中高 nakadaka"
 
 # Import lightweight utilities (no UniDic dependency)
-from pitch_accent.utils import accent_to_pattern, pattern_to_contour, count_mora
+from pitch_accent.utils import accent_to_pattern, pattern_to_contour, count_mora, kata_to_hira
 
 # Lazy-load heavy components that require UniDic
 _parser = None
@@ -497,18 +497,6 @@ def generate_inline_sentence_html(result):
                 parts.append(f'<span style="color:{color}">{word["reading"]}</span>')
 
     return ''.join(parts)
-
-
-def kata_to_hira(text: str) -> str:
-    """Convert katakana to hiragana."""
-    result = []
-    for char in text:
-        code = ord(char)
-        if 0x30A1 <= code <= 0x30F6:
-            result.append(chr(code - 0x60))
-        else:
-            result.append(char)
-    return "".join(result)
 
 
 def process_text(text):

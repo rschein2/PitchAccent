@@ -3,23 +3,43 @@
 Lightweight pitch accent utilities.
 
 These functions don't require UniDic or any heavy dependencies.
-Used by the minimal pairs view and other places that just need
-pattern computation without full text parsing.
+
+This module is the single source of truth for mora counting, kana
+conversion, and L/H pattern generation. All other modules (engine,
+parser, compound, numeral, lookup, app, scripts) import from here —
+do not re-implement these helpers elsewhere.
 """
 
 # Small kana that don't count as separate mora (except っ/ッ which do count)
 SMALL_KANA = set("ぁぃぅぇぉゃゅょゎァィゥェォャュョヮ")
 SOKUON = set("っッ")
 
+# Special mora (特殊拍): can't carry an accent nucleus
+SPECIAL_MORA = set("んっーンッ")
+
 
 def count_mora(reading: str) -> int:
-    """Count mora in a reading."""
+    """Count mora in a reading. Small kana merge with the previous mora;
+    っ/ッ (sokuon) and ー DO count as mora."""
     count = 0
     for char in reading:
-        if char in SMALL_KANA and char not in SOKUON:
+        if char in SMALL_KANA:
             continue
         count += 1
     return count
+
+
+def kata_to_hira(text: str) -> str:
+    """Convert katakana to hiragana (leaves other characters untouched)."""
+    result = []
+    for char in text:
+        code = ord(char)
+        # Katakana range 0x30A1-0x30F6 maps to hiragana at -0x60
+        if 0x30A1 <= code <= 0x30F6:
+            result.append(chr(code - 0x60))
+        else:
+            result.append(char)
+    return "".join(result)
 
 
 def accent_to_pattern(accent_type: int, mora_count: int,

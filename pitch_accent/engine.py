@@ -3,15 +3,21 @@
 Japanese Pitch Accent Computation Engine
 
 Computes pitch accent for conjugated forms using UniDic's F-type combination rules.
+
+The rules come directly from UniDic's per-morpheme fields (aType, aConType,
+aModType) as returned by MeCab — there is no separate rules file. Known-wrong
+UniDic data is corrected in one place: AccentEngine.ACON_OVERRIDES.
 """
-import json
 import re
 from dataclasses import dataclass
 from typing import Optional
-from pathlib import Path
 
-# Load extracted rules
-RULES_FILE = Path(__file__).parent / "rules.json"
+from .utils import (
+    count_mora,
+    kata_to_hira,
+    accent_to_pattern,
+    pattern_to_contour,
+)
 
 
 @dataclass
@@ -43,131 +49,32 @@ class AccentEngine:
     3. Suffix combination (aConType with F1-F6 rules)
     """
 
-    # Small kana that don't count as separate mora
-    SMALL_KANA = set("ぁぃぅぇぉゃゅょゎァィゥェォャュョヮっッ")
-    # But っ/ッ DO count as mora for accent purposes
-    SOKUON = set("っッ")
-
-    def __init__(self, rules_file: Path = RULES_FILE):
-        with open(rules_file, encoding="utf-8") as f:
-            data = json.load(f)
-        self.suffix_rules = data["suffix_rules"]
-        self.verb_patterns = data["verb_inflection_patterns"]
-
-        # Build quick lookup by surface
-        self.suffix_by_surface = {}
-        for key, rule in self.suffix_rules.items():
-            surface = rule["surface"]
-            if surface not in self.suffix_by_surface:
-                self.suffix_by_surface[surface] = []
-            self.suffix_by_surface[surface].append(rule)
+    # Corrections for UniDic data that yields wrong accents.
+    # Keyed by (cType, pos_key) -> parsed rule dict (same shape as
+    # _parse_acon_for_pos output). This is the ONLY place such fixes live.
+    #
+    # 助動詞-タ (た/だ/たら): UniDic ships 動詞%F2@1, which would turn the
+    # past tense of every heiban verb odaka (行った→[3]). Standard Tokyo
+    # accent (NHK/OJAD) keeps it heiban: 行った[0], 買った[0]. Accented verbs
+    # preserve their accent either way, so plain F1 is correct for verbs.
+    # (たら still gains an accent on heiban verbs via its own aModType M2@1,
+    # which compute_accent applies after combination: 行ったら→[3].)
+    ACON_OVERRIDES = {
+        ("助動詞-タ", "動詞"): {"type": "F1", "M": None, "L": None},
+    }
 
     def count_mora(self, reading: str) -> int:
-        """Count mora in a reading."""
-        count = 0
-        for i, char in enumerate(reading):
-            # Small kana (except っ) don't count
-            if char in self.SMALL_KANA and char not in self.SOKUON:
-                continue
-            count += 1
-        return count
+        """Count mora in a reading (delegates to utils.count_mora)."""
+        return count_mora(reading)
 
     def accent_to_pattern(self, accent_type: int, mora_count: int,
                           include_particle: bool = True) -> str:
-        """
-        Convert accent type to L/H pattern.
-
-        Args:
-            accent_type: 0=heiban, k=drop after k-th mora
-            mora_count: number of mora in the word
-            include_particle: if True, add extra mora to show pitch on particle
-                              (matches JPDB convention)
-
-        Rules:
-        - First mora is L (low) except for 頭高 (type 1)
-        - After accent position, pitch drops to L and stays L
-        - Type 0 (heiban): LHHH...H (stays high, including particle)
-        """
-        if mora_count == 0:
-            return ""
-
-        # Total positions to generate (word + optional particle)
-        total = mora_count + (1 if include_particle else 0)
-
-        if mora_count == 1 and not include_particle:
-            return "H" if accent_type == 1 else "L"
-
-        if accent_type == 0:
-            # Heiban: LHHH...H (stays high through particle)
-            return "L" + "H" * (total - 1)
-        elif accent_type == 1:
-            # Atamadaka: HLLL...L (drops after first)
-            return "H" + "L" * (total - 1)
-        else:
-            # Nakadaka/Odaka: LHHH...HL...L
-            # Rise after first, drop after accent position
-            if accent_type > total:
-                # Edge case: accent beyond word+particle
-                return "L" + "H" * (total - 1)
-            else:
-                high_count = accent_type - 1  # H's after initial L
-                low_count = total - accent_type
-                return "L" + "H" * high_count + "L" * low_count
+        """Convert accent type to L/H pattern (delegates to utils)."""
+        return accent_to_pattern(accent_type, mora_count, include_particle)
 
     def pattern_to_contour(self, reading: str, pattern: str) -> str:
-        """
-        Convert reading + L/H pattern to pitch contour notation.
-
-        Uses / for rising pitch and \\ for falling pitch between morae.
-
-        Examples:
-            たべる + LHLL → た/べ\\る
-            みる + HLL → み\\る
-            いく + LHH → い/く (heiban - no fall within word)
-
-        Args:
-            reading: Kana reading (hiragana or katakana)
-            pattern: L/H pattern string
-
-        Returns:
-            Contour string with /\\ markers between morae
-        """
-        if not reading or not pattern:
-            return reading
-
-        # Split reading into morae
-        morae = []
-        i = 0
-        small_kana = set("ぁぃぅぇぉゃゅょゎァィゥェォャュョヮ")
-
-        while i < len(reading):
-            mora = reading[i]
-            # Combine with following small kana
-            if i + 1 < len(reading) and reading[i + 1] in small_kana:
-                mora += reading[i + 1]
-                i += 1
-            morae.append(mora)
-            i += 1
-
-        # Build contour string
-        result = []
-        # Use the shorter of morae or pattern (pattern may include particle)
-        use_len = min(len(morae), len(pattern))
-
-        for i in range(use_len):
-            result.append(morae[i])
-
-            # Add transition marker if not last mora
-            if i < use_len - 1 and i + 1 < len(pattern):
-                curr = pattern[i]
-                next_p = pattern[i + 1]
-                if curr == "L" and next_p == "H":
-                    result.append("/")
-                elif curr == "H" and next_p == "L":
-                    result.append("\\")
-                # Same pitch = no marker
-
-        return "".join(result)
+        """Convert reading + L/H pattern to contour (delegates to utils)."""
+        return pattern_to_contour(reading, pattern)
 
     def apply_f_rule(self, f_type: str, m_val: Optional[int], l_val: Optional[int],
                      prev_accent: int, prev_mora: int) -> int:
@@ -391,18 +298,26 @@ class AccentEngine:
             current_pos_key = "名詞"
 
         # Process remaining morphemes (suffixes/particles)
+        # Track whether the previous morpheme was the connective て/で,
+        # which signals that a following verb is an auxiliary (いる/みる/くる...).
+        prev_was_te = False
+
         for morph in morphemes[1:]:
             m_reading = morph.get("reading", morph["surface"])
             m_surface = morph["surface"]
+            m_pos1 = morph.get("pos1", "")
+            m_pos2 = morph.get("pos2", "")
+            m_ctype = morph.get("cType", "") or ""
+            m_mod = morph.get("aModType", "*")
             m_mora = self.count_mora(m_reading)
+            new_total_mora = current_mora + m_mora
 
-            # Get rear element's accent (for C-type rules)
+            # Get rear element's accent (for C-type rules and auxiliary verbs)
             # Apply any aModType to the rear element first
             rear_atype = morph.get("aType", "*")
             if rear_atype and rear_atype != "*":
                 rear_accent = int(str(rear_atype).split(",")[0])
-                # Apply rear element's aModType if present
-                rear_mod = morph.get("aModType", "*")
+                rear_mod = m_mod
                 if rear_mod and rear_mod != "*":
                     rear_accent = self.apply_mod_type(rear_mod, rear_accent, m_mora)
             else:
@@ -413,10 +328,31 @@ class AccentEngine:
 
             # Check aConType - could be C-type (compounds) or F-type (suffixes)
             acon = morph.get("aConType", "")
-
-            # First check for C-type rules (C1-C5)
             c_match = re.match(r"C([1-5])", acon)
-            if c_match:
+
+            if m_pos1 == "動詞" and current_pos_key == "動詞":
+                # A verb following a verb phrase is an auxiliary or a compound
+                # verb, NOT the rear of a noun compound — its C-type (which
+                # describes noun-compound behavior) must not be applied here.
+                prev_accent = current_accent
+                if prev_was_te:
+                    # て + auxiliary (いる/ある/おく/みる/くる/しまう/くれる...):
+                    # unaccented auxiliary keeps the te-form accent
+                    # (食べている[1], 行っている[0]); accented auxiliary takes
+                    # the accent at N1 + M2 (行ってくる[4], 食べてみる[4]).
+                    if rear_accent != 0:
+                        current_accent = current_mora + rear_accent
+                    breakdown.append(
+                        f"+ {m_surface}: aux verb after て (M2={rear_accent}) → accent={current_accent}"
+                    )
+                else:
+                    # Renyokei compound verb (食べ+始める, 書き+直す):
+                    # accented on V2's penultimate mora → N1 + (mora(V2) - 1).
+                    current_accent = current_mora + max(1, m_mora - 1)
+                    breakdown.append(
+                        f"+ {m_surface}: compound verb (V2 penult) → accent={current_accent}"
+                    )
+            elif c_match:
                 c_type = f"C{c_match.group(1)}"
                 prev_accent = current_accent
                 current_accent = self.apply_c_rule(c_type, current_mora, current_accent, rear_accent)
@@ -425,8 +361,12 @@ class AccentEngine:
                     f"+ {m_surface}: {c_type} (N1={current_mora}, M1={prev_accent}, M2={rear_accent}) → accent={current_accent}"
                 )
             else:
-                # Look for F-type rules
-                f_rule = self._parse_acon_for_pos(acon, pos_key)
+                # Look for F-type rules; check the override table first
+                # (corrections for known-wrong UniDic data).
+                f_rule = self.ACON_OVERRIDES.get((m_ctype, pos_key))
+                overridden = f_rule is not None
+                if not f_rule:
+                    f_rule = self._parse_acon_for_pos(acon, pos_key)
 
                 if f_rule:
                     f_type = f_rule["type"]
@@ -441,6 +381,8 @@ class AccentEngine:
                         rule_str += f"@{m_val}"
                     if l_val is not None:
                         rule_str += f",{l_val}"
+                    if overridden:
+                        rule_str += " (override)"
 
                     breakdown.append(
                         f"+ {m_surface}: {rule_str} (N1={current_mora}, M1={prev_accent}) → accent={current_accent}"
@@ -448,17 +390,32 @@ class AccentEngine:
                 else:
                     breakdown.append(f"+ {m_surface}: no rule found (aConType={acon}), preserving accent={current_accent}")
 
+                # Inflected suffixes carry their own aModType, which adjusts
+                # the accent of the COMBINED form (N0 = total mora so far):
+                # ましょ(う) M1@1 → 食べましょう[4]; られ M4@1 → 食べられて[3];
+                # たら M2@1 → 行ったら[3]. Suffixes with their own aType were
+                # already adjusted above (rear_accent), so skip those.
+                if m_mod and m_mod != "*" and (not rear_atype or rear_atype == "*"):
+                    mod_prev = current_accent
+                    current_accent = self.apply_mod_type(m_mod, current_accent, new_total_mora)
+                    if current_accent != mod_prev:
+                        breakdown.append(
+                            f"  aModType {m_mod} (N0={new_total_mora}): {mod_prev} → {current_accent}"
+                        )
+
             # Update totals
-            current_mora += m_mora
+            current_mora = new_total_mora
             reading += m_reading
             surface += m_surface
 
             # Update POS key for next suffix based on cType
             # たい and ない make the whole thing adjective-like for subsequent suffixes
-            ctype = morph.get("cType", "")
-            if "タイ" in ctype or "ナイ" in ctype:
+            if "タイ" in m_ctype or "ナイ" in m_ctype:
                 current_pos_key = "形容詞"
                 breakdown.append(f"  (POS becomes 形容詞 after {m_surface})")
+
+            prev_was_te = (m_pos1 == "助詞" and m_pos2 == "接続助詞"
+                           and m_surface in ("て", "で"))
 
         # Convert to pattern
         pattern = self.accent_to_pattern(current_accent, current_mora)
@@ -525,16 +482,8 @@ class AccentEngine:
         return None
 
     def _kata_to_hira(self, text: str) -> str:
-        """Convert katakana to hiragana."""
-        result = []
-        for char in text:
-            code = ord(char)
-            # Katakana range: 0x30A0-0x30FF -> Hiragana: 0x3040-0x309F
-            if 0x30A1 <= code <= 0x30F6:
-                result.append(chr(code - 0x60))
-            else:
-                result.append(char)
-        return "".join(result)
+        """Convert katakana to hiragana (delegates to utils.kata_to_hira)."""
+        return kata_to_hira(text)
 
 
 class FugashiAccentEngine(AccentEngine):
@@ -542,9 +491,7 @@ class FugashiAccentEngine(AccentEngine):
     AccentEngine that uses fugashi/MeCab to parse input text.
     """
 
-    def __init__(self, rules_file: Path = RULES_FILE):
-        super().__init__(rules_file)
-
+    def __init__(self):
         import fugashi
         import unidic
         self.tagger = fugashi.Tagger(f'-d "{unidic.DICDIR}"')

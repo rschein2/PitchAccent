@@ -19,6 +19,7 @@ import unidic
 from .compound import CompoundAccentEngine
 from .numeral import NumeralAccentEngine
 from .numeral_reading import number_to_reading
+from .utils import kata_to_hira
 
 
 @dataclass
@@ -107,7 +108,7 @@ class SentenceParser:
 
             # Get morpheme info
             surface = node.surface
-            reading = self._kata_to_hira(f.kana) if hasattr(f, 'kana') and f.kana else surface
+            reading = kata_to_hira(f.kana) if hasattr(f, 'kana') and f.kana else surface
             pos1 = f.pos1 if hasattr(f, 'pos1') else ""
             pos2 = f.pos2 if hasattr(f, 'pos2') else ""
             lemma = f.lemma if hasattr(f, 'lemma') else surface
@@ -208,7 +209,7 @@ class SentenceParser:
                         }
                         compound_morphemes.append(next_morpheme)
                         compound_surface += next_node.surface
-                        next_reading = self._kata_to_hira(next_f.kana) if hasattr(next_f, 'kana') and next_f.kana else next_node.surface
+                        next_reading = kata_to_hira(next_f.kana) if hasattr(next_f, 'kana') and next_f.kana else next_node.surface
                         compound_reading += next_reading
                         j += 1
                     else:
@@ -268,7 +269,7 @@ class SentenceParser:
         reading_parts = []
         for m in morphemes:
             surface = m["surface"]
-            reading = self._kata_to_hira(m["reading"])
+            reading = kata_to_hira(m["reading"])
 
             # If this is a numeral (Arabic digits), convert to Japanese reading
             if surface.isdigit():
@@ -352,17 +353,6 @@ class SentenceParser:
         if pos1 in self.CONTENT_POS:
             return True
         return False
-
-    def _kata_to_hira(self, text: str) -> str:
-        """Convert katakana to hiragana."""
-        result = []
-        for char in text:
-            code = ord(char)
-            if 0x30A1 <= code <= 0x30F6:
-                result.append(chr(code - 0x60))
-            else:
-                result.append(char)
-        return "".join(result)
 
     def extract_sentences(self, text: str) -> list[str]:
         """

@@ -166,10 +166,7 @@ def accent_to_pattern(accent: int, mora_count: int) -> str:
             return "L" + "H" * (accent - 1) + "L" * (total - accent)
 
 
-def count_mora(reading: str) -> int:
-    """Count mora in reading."""
-    SMALL_KANA = set("ぁぃぅぇぉゃゅょゎァィゥェォャュョヮ")
-    return sum(1 for c in reading if c not in SMALL_KANA)
+from pitch_accent.utils import count_mora
 
 
 def main():

@@ -14,6 +14,7 @@ References:
 from dataclasses import dataclass
 from typing import Optional
 
+from .utils import count_mora
 
 # Counter categories (α-ν) based on Miyazaki classification
 # Each counter is assigned to a category that determines its accent behavior
@@ -243,16 +244,6 @@ READING_ALTERNATIONS = {
     (7, "時"): ("しち", "じ"),
     (9, "時"): ("く", "じ"),
 }
-
-
-def count_mora(reading: str) -> int:
-    """Count mora in a reading."""
-    SMALL_KANA = set("ぁぃぅぇぉゃゅょゎァィゥェォャュョヮ")
-    count = 0
-    for char in reading:
-        if char not in SMALL_KANA:
-            count += 1
-    return count
 
 
 def get_counter_category(counter: str) -> Optional[str]:

@@ -236,30 +236,7 @@ def get_word_accent_info(word: str) -> Optional[dict]:
         return None
 
 
-def count_mora(reading: str) -> int:
-    """Count mora in reading."""
-    SMALL_KANA = set("ぁぃぅぇぉゃゅょゎァィゥェォャュョヮ")
-    return sum(1 for c in reading if c not in SMALL_KANA)
-
-
-def accent_to_pattern(accent: int, mora_count: int) -> str:
-    """Convert accent type to L/H pattern."""
-    if mora_count == 0:
-        return ""
-    total = mora_count + 1
-    if accent == 0:
-        return "L" + "H" * (total - 1)
-    elif accent == 1:
-        return "H" + "L" * (total - 1)
-    else:
-        if accent > total:
-            return "L" + "H" * (total - 1)
-        return "L" + "H" * (accent - 1) + "L" * (total - accent)
-
-
-def kata_to_hira(text: str) -> str:
-    """Convert katakana to hiragana."""
-    return ''.join(chr(ord(c) - 0x60) if 0x30A1 <= ord(c) <= 0x30F6 else c for c in text)
+from pitch_accent.utils import count_mora, accent_to_pattern, kata_to_hira
 
 
 def main():
