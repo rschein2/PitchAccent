@@ -70,8 +70,23 @@ class AccentEngine:
     # preserve their accent either way, so plain F1 is correct for verbs.
     # (たら still gains an accent on heiban verbs via its own aModType M2@1,
     # which compute_accent applies after combination: 行ったら→[3].)
+    #
+    # The 形容詞 branch (形容詞%F4@-2) is equally wrong: OJAD shows 〜なかった
+    # keeps the accent of the 〜ない form (食べなかった[2] from 食べない[2],
+    # 行かなかった[3] via なかっ's own M2@2), which is F1. F4@-2 only
+    # coincidentally matched 4-mora stems like 高かっ.
     ACON_OVERRIDES = {
         ("助動詞-タ", "動詞"): {"type": "F1", "M": None, "L": None},
+        ("助動詞-タ", "形容詞"): {"type": "F1", "M": None, "L": None},
+    }
+
+    # Overrides keyed by (surface, pos1, pos_key) for suffixes whose cType
+    # is unhelpful. Volitional よう (tagged 形状詞/助動詞語幹, lemma 様,
+    # aConType C3 — a noun-compound rule) after a verb: the accent always
+    # lands on よ, i.e. F4@1 (倒れよう[4], parallel to 食べよう[3] where
+    # MeCab keeps 意志推量形 as one token with M1@1).
+    SUFFIX_OVERRIDES = {
+        ("よう", "形状詞", "動詞"): {"type": "F4", "M": 1, "L": None},
     }
 
     def __init__(self, use_dictionary: bool = True):
@@ -297,21 +312,45 @@ class AccentEngine:
         else:
             current_accent = 0
 
-        # Dictionary correction: if the lemma's accent is known (Kanjium)
+        # Dictionary correction: if the base word's accent is known (Kanjium)
         # and disagrees with UniDic's aType, trust the dictionary. The
         # combination rules then run from the corrected base.
+        #
+        # The lookup key is orthBase (this token's own paradigm headword),
+        # NOT lemma: MeCab lemmatizes potential verbs to the base verb
+        # (歩ける → lemma 歩く) while aType correctly belongs to 歩ける[3];
+        # looking up the lemma would clobber it with 歩く[2].
         dict_variants: list[int] = []
         if self.accent_dict is not None:
-            lemma = first.get("lemma")
-            if lemma:
-                found = self.accent_dict.lookup(lemma, first.get("lemma_reading"))
+            base = first.get("orth_base") or first.get("lemma")
+            base_reading = first.get("kana_base") or first.get("lemma_reading")
+            if base:
+                found = self.accent_dict.lookup(base, base_reading)
                 if found:
                     dict_variants = found
                     if current_accent != found[0]:
                         breakdown.append(
-                            f"{lemma}: dictionary accent {found} overrides aType={current_accent}"
+                            f"{base}: dictionary accent {found} overrides aType={current_accent}"
                         )
                         current_accent = found[0]
+                elif self._is_potential_verb(first):
+                    # 可能動詞 (乗れる, 歩ける): not in the dictionary, and
+                    # UniDic's aType is unreliable for them (乗れる ships [2],
+                    # correct is [0]). Standard rule, derived from the base
+                    # verb: heiban base → heiban; accented base → accent on
+                    # the potential form's penultimate mora.
+                    base_found = self.accent_dict.lookup(
+                        first.get("lemma"), first.get("lemma_reading"))
+                    if base_found:
+                        pot_mora = count_mora(kata_to_hira(first.get("kana_base") or ""))
+                        derived = 0 if base_found[0] == 0 else max(1, pot_mora - 1)
+                        if derived != current_accent:
+                            breakdown.append(
+                                f"{first.get('orth_base')}: potential-verb rule "
+                                f"(base {first.get('lemma')}{base_found}) "
+                                f"overrides aType={current_accent} → {derived}"
+                            )
+                            current_accent = derived
 
         reading = first.get("reading", first["surface"])
         current_mora = self.count_mora(reading)
@@ -370,6 +409,11 @@ class AccentEngine:
             acon = morph.get("aConType", "")
             c_match = re.match(r"C([1-5])", acon)
 
+            # Overrides beat whatever aConType the morpheme carries
+            # (including C-types: volitional よう ships C3).
+            override_rule = (self.ACON_OVERRIDES.get((m_ctype, pos_key))
+                             or self.SUFFIX_OVERRIDES.get((m_surface, m_pos1, pos_key)))
+
             if m_pos1 == "動詞" and current_pos_key == "動詞":
                 # A verb following a verb phrase is an auxiliary or a compound
                 # verb, NOT the rear of a noun compound — its C-type (which
@@ -392,7 +436,7 @@ class AccentEngine:
                     breakdown.append(
                         f"+ {m_surface}: compound verb (V2 penult) → accent={current_accent}"
                     )
-            elif c_match:
+            elif c_match and not override_rule:
                 c_type = f"C{c_match.group(1)}"
                 prev_accent = current_accent
                 current_accent = self.apply_c_rule(c_type, current_mora, current_accent, rear_accent)
@@ -401,9 +445,9 @@ class AccentEngine:
                     f"+ {m_surface}: {c_type} (N1={current_mora}, M1={prev_accent}, M2={rear_accent}) → accent={current_accent}"
                 )
             else:
-                # Look for F-type rules; check the override table first
-                # (corrections for known-wrong UniDic data).
-                f_rule = self.ACON_OVERRIDES.get((m_ctype, pos_key))
+                # F-type rules; overrides (corrections for known-wrong
+                # UniDic data) take precedence.
+                f_rule = override_rule
                 overridden = f_rule is not None
                 if not f_rule:
                     f_rule = self._parse_acon_for_pos(acon, pos_key)
@@ -478,6 +522,31 @@ class AccentEngine:
             # base word; conjugation may collapse or shift them.
             accent_variants=dict_variants if (len(morphemes) == 1 and len(dict_variants) > 1) else [],
         )
+
+    # う-row → え-row map for deriving potential verb readings (乗る→乗れる)
+    _E_ROW = {"う": "え", "く": "け", "ぐ": "げ", "す": "せ", "つ": "て",
+              "ぬ": "ね", "ぶ": "べ", "む": "め", "る": "れ"}
+
+    def _is_potential_verb(self, morph: dict) -> bool:
+        """
+        True if this token is a 可能動詞: a 下一段 verb MeCab derived from a
+        godan base (orthBase 乗れる vs lemma 乗る), where the potential's
+        reading is base-reading with the final う-row mora shifted to え-row
+        plus る (のる→のれる). The reading check excludes mere spelling
+        variants, which share the lemma's reading.
+        """
+        orth_base = morph.get("orth_base")
+        lemma = morph.get("lemma")
+        if not orth_base or not lemma or orth_base == lemma:
+            return False
+        if not (morph.get("cType") or "").startswith("下一段"):
+            return False
+        lemma_reading = kata_to_hira(morph.get("lemma_reading") or "")
+        kana_base = kata_to_hira(morph.get("kana_base") or "")
+        if len(lemma_reading) < 2 or not kana_base:
+            return False
+        e_row = self._E_ROW.get(lemma_reading[-1])
+        return e_row is not None and kana_base == lemma_reading[:-1] + e_row + "る"
 
     def _parse_acon_for_pos(self, acon: str, pos_key: str) -> Optional[dict]:
         """Parse aConType string and extract rule for given POS.
@@ -565,10 +634,24 @@ class FugashiAccentEngine(AccentEngine):
                 "aModType": f.aModType if hasattr(f, 'aModType') else "*",
                 "lemma": f.lemma if hasattr(f, 'lemma') else node.surface,
                 "lemma_reading": f.lForm if hasattr(f, 'lForm') else None,
+                "orth_base": f.orthBase if hasattr(f, 'orthBase') else None,
+                "kana_base": f.kanaBase if hasattr(f, 'kanaBase') else None,
             })
 
-        # Whole-word dictionary hit takes priority over rule computation
-        if self.accent_dict is not None and morphemes:
+        # Whole-word dictionary hit takes priority over rule computation —
+        # but only for non-conjugated inputs (dictionary forms, nouns,
+        # compounds). Kanjium also lists some conjugated forms with dubious
+        # accents (飛んで[3,0]); conjugation belongs to the rules, which run
+        # from a dictionary-corrected base anyway.
+        is_conjugated = any(
+            m.get("pos1") == "助動詞"
+            or (m.get("pos1") == "助詞" and m.get("pos2") == "接続助詞")
+            for m in morphemes
+        ) or (
+            morphemes and morphemes[0].get("pos1") in ("動詞", "形容詞")
+            and morphemes[0].get("cForm", "") not in ("終止形-一般", "連体形-一般", "*", "")
+        )
+        if self.accent_dict is not None and morphemes and not is_conjugated:
             reading_hira = kata_to_hira(
                 "".join(m.get("reading") or m["surface"] for m in morphemes)
             )

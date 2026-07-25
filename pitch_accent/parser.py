@@ -139,6 +139,8 @@ class SentenceParser:
                 "aModType": aModType,
                 "lemma": lemma,
                 "lemma_reading": f.lForm if hasattr(f, 'lForm') else None,
+                "orth_base": f.orthBase if hasattr(f, 'orthBase') else None,
+                "kana_base": f.kanaBase if hasattr(f, 'kanaBase') else None,
             }
 
             # Handle noun-like sequences (nouns, numerals, counters, suffixes)
@@ -174,6 +176,8 @@ class SentenceParser:
                             "aModType": next_f.aModType if hasattr(next_f, 'aModType') else "*",
                             "lemma": next_f.lemma if hasattr(next_f, 'lemma') else next_node.surface,
                             "lemma_reading": next_f.lForm if hasattr(next_f, 'lForm') else None,
+                            "orth_base": next_f.orthBase if hasattr(next_f, 'orthBase') else None,
+                            "kana_base": next_f.kanaBase if hasattr(next_f, 'kanaBase') else None,
                         }
                         noun_morphemes.append(next_morpheme)
                         j += 1
@@ -214,6 +218,8 @@ class SentenceParser:
                             "aModType": next_f.aModType if hasattr(next_f, 'aModType') else "*",
                             "lemma": next_f.lemma if hasattr(next_f, 'lemma') else next_node.surface,
                             "lemma_reading": next_f.lForm if hasattr(next_f, 'lForm') else None,
+                            "orth_base": next_f.orthBase if hasattr(next_f, 'orthBase') else None,
+                            "kana_base": next_f.kanaBase if hasattr(next_f, 'kanaBase') else None,
                         }
                         compound_morphemes.append(next_morpheme)
                         compound_surface += next_node.surface

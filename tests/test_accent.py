@@ -68,7 +68,8 @@ GOLD = [
     ("食べない", 2, "tabe'nai"),
     ("行かない", 0, "ikanai, heiban stays flat"),
     ("書かない", 2, "kaka'nai"),
-    ("食べなかった", 3, "tabena'katta"),
+    ("食べなかった", 2, "tabe'nakatta — keeps the accent of 食べない[2] "
+                        "(OJAD; was wrongly [3] before the 形容詞-タ override)"),
     ("行かなかった", 3, "ikana'katta — past negative gains accent "
                         "(parallel to 高かった[2]; UniDic なかっ M2@2)"),
 

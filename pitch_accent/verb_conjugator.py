@@ -367,6 +367,10 @@ class VerbConjugator:
                 "aType": f.aType if hasattr(f, 'aType') else "*",
                 "aConType": f.aConType if hasattr(f, 'aConType') else "*",
                 "aModType": f.aModType if hasattr(f, 'aModType') else "*",
+                "lemma": f.lemma if hasattr(f, 'lemma') else node.surface,
+                "lemma_reading": f.lForm if hasattr(f, 'lForm') else None,
+                "orth_base": f.orthBase if hasattr(f, 'orthBase') else None,
+                "kana_base": f.kanaBase if hasattr(f, 'kanaBase') else None,
             }
             morphemes.append(morph)
 
