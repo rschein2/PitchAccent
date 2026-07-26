@@ -1,0 +1,2899 @@
+{
+ "_source": "日本語教育用アクセント辞典 (accent.u-biq.org, counter1-4), retrieved via Wayback Machine. Drafted entries are marked confidence=drafted — verify in the NHK accent dictionary.",
+ "counters": {
+  "人": {
+   "gloss": "人数",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "ひとり",
+     "accent": 2
+    },
+    "2": {
+     "reading": "ふたり",
+     "accent": 3
+    },
+    "3": {
+     "reading": "さんにん",
+     "accent": 3
+    },
+    "4": {
+     "reading": "よにん",
+     "accent": 2
+    },
+    "5": {
+     "reading": "ごにん",
+     "accent": 2
+    },
+    "6": {
+     "reading": "ろくにん",
+     "accent": 2
+    },
+    "7": {
+     "reading": "しちにん",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はちにん",
+     "accent": 2
+    },
+    "9": {
+     "reading": "くにん",
+     "accent": 2
+    },
+    "10": {
+     "reading": "じゅうにん",
+     "accent": 1
+    }
+   }
+  },
+  "世帯": {
+   "gloss": "家族",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっせたい",
+     "accent": 3
+    },
+    "2": {
+     "reading": "にせたい",
+     "accent": 2
+    },
+    "3": {
+     "reading": "さんせたい",
+     "accent": 3
+    },
+    "4": {
+     "reading": "よんせたい",
+     "accent": 3
+    },
+    "5": {
+     "reading": "ごせたい",
+     "accent": 2
+    },
+    "6": {
+     "reading": "ろくせたい",
+     "accent": 3
+    },
+    "7": {
+     "reading": "ななせたい",
+     "accent": 3
+    },
+    "8": {
+     "reading": "はっせたい",
+     "accent": 3
+    },
+    "9": {
+     "reading": "きゅうせたい",
+     "accent": 3
+    },
+    "10": {
+     "reading": "じゅっせたい",
+     "accent": 3
+    }
+   }
+  },
+  "か国": {
+   "gloss": "国",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっかこく",
+     "accent": 3
+    },
+    "2": {
+     "reading": "にかこく",
+     "accent": 2
+    },
+    "3": {
+     "reading": "さんかこく",
+     "accent": 3
+    },
+    "4": {
+     "reading": "よんかこく",
+     "accent": 3
+    },
+    "5": {
+     "reading": "ごかこく",
+     "accent": 2
+    },
+    "6": {
+     "reading": "ろっかこく",
+     "accent": 3
+    },
+    "7": {
+     "reading": "ななかこく",
+     "accent": 3
+    },
+    "8": {
+     "reading": "はちかこく",
+     "accent": 3
+    },
+    "9": {
+     "reading": "きゅうかこく",
+     "accent": 3
+    },
+    "10": {
+     "reading": "じゅっかこく",
+     "accent": 3
+    }
+   }
+  },
+  "回": {
+   "gloss": "回数",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっかい",
+     "accent": 3
+    },
+    "2": {
+     "reading": "にかい",
+     "accent": 2
+    },
+    "3": {
+     "reading": "さんかい",
+     "accent": 3
+    },
+    "4": {
+     "reading": "よんかい",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごかい",
+     "accent": 2
+    },
+    "6": {
+     "reading": "ろっかい",
+     "accent": 3
+    },
+    "7": {
+     "reading": "ななかい",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はちかい",
+     "accent": 3
+    },
+    "9": {
+     "reading": "きゅうかい",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅっかい",
+     "accent": 3
+    }
+   }
+  },
+  "匹": {
+   "gloss": "小さい動物",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっぴき",
+     "accent": 4
+    },
+    "2": {
+     "reading": "にひき",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんびき",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんひき",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごひき",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろっぴき",
+     "accent": 4
+    },
+    "7": {
+     "reading": "ななひき",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はっぴき",
+     "accent": 4
+    },
+    "9": {
+     "reading": "きゅうひき",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅっぴき",
+     "accent": 4
+    }
+   }
+  },
+  "頭": {
+   "gloss": "大きい動物",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっとう",
+     "accent": 1
+    },
+    "2": {
+     "reading": "にとう",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんとう",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんとう",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごとう",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろくとう",
+     "accent": 2
+    },
+    "7": {
+     "reading": "ななとう",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はっとう",
+     "accent": 1
+    },
+    "9": {
+     "reading": "きゅうとう",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅっとう",
+     "accent": 1
+    }
+   }
+  },
+  "羽": {
+   "gloss": "鳥",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちわ",
+     "accent": 2
+    },
+    "2": {
+     "reading": "にわ",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんば",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんわ",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごわ",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろくわ",
+     "accent": 2
+    },
+    "7": {
+     "reading": "ななわ",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はちわ",
+     "accent": 2
+    },
+    "9": {
+     "reading": "きゅうわ",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅっぱ",
+     "accent": 1
+    }
+   }
+  },
+  "尾": {
+   "gloss": "魚",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちび",
+     "accent": 2
+    },
+    "2": {
+     "reading": "にび",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんび",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんび",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごび",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろくび",
+     "accent": 2
+    },
+    "7": {
+     "reading": "ななび",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はちび",
+     "accent": 2
+    },
+    "9": {
+     "reading": "きゅうび",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅうび",
+     "accent": 1
+    }
+   }
+  },
+  "つ": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "ひとつ",
+     "accent": 2
+    },
+    "2": {
+     "reading": "ふたつ",
+     "accent": 3
+    },
+    "3": {
+     "reading": "みっつ",
+     "accent": 3
+    },
+    "4": {
+     "reading": "よっつ",
+     "accent": 3
+    },
+    "5": {
+     "reading": "いつつ",
+     "accent": 2
+    },
+    "6": {
+     "reading": "むっつ",
+     "accent": 3
+    },
+    "7": {
+     "reading": "ななつ",
+     "accent": 2
+    },
+    "8": {
+     "reading": "やっつ",
+     "accent": 3
+    },
+    "9": {
+     "reading": "ここのつ",
+     "accent": 2
+    },
+    "10": {
+     "reading": "とお",
+     "accent": 1
+    }
+   }
+  },
+  "個": {
+   "gloss": "小さいもの",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっこ",
+     "accent": 1
+    },
+    "2": {
+     "reading": "にこ",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんこ",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんこ",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごこ",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろっこ",
+     "accent": 1
+    },
+    "7": {
+     "reading": "ななこ",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はちこ",
+     "accent": 2
+    },
+    "9": {
+     "reading": "きゅうこ",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅっこ",
+     "accent": 1
+    }
+   }
+  },
+  "台": {
+   "gloss": "機械",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちだい",
+     "accent": 2
+    },
+    "2": {
+     "reading": "にだい",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんだい",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんだい",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごだい",
+     "accent": 0
+    },
+    "6": {
+     "reading": "ろくだい",
+     "accent": 2
+    },
+    "7": {
+     "reading": "ななだい",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はちだい",
+     "accent": 2
+    },
+    "9": {
+     "reading": "きゅうだい",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅうだい",
+     "accent": 1
+    }
+   }
+  },
+  "枚": {
+   "gloss": "薄いもの",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちまい",
+     "accent": 2
+    },
+    "2": {
+     "reading": "にまい",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんまい",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんまい",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごまい",
+     "accent": 0
+    },
+    "6": {
+     "reading": "ろくまい",
+     "accent": 2
+    },
+    "7": {
+     "reading": "ななまい",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はちまい",
+     "accent": 2
+    },
+    "9": {
+     "reading": "きゅうまい",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅうまい",
+     "accent": 1
+    }
+   }
+  },
+  "冊": {
+   "gloss": "本",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっさつ",
+     "accent": 4
+    },
+    "2": {
+     "reading": "にさつ",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんさつ",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんさつ",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごさつ",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろくさつ",
+     "accent": 4
+    },
+    "7": {
+     "reading": "ななさつ",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はっさつ",
+     "accent": 4
+    },
+    "9": {
+     "reading": "きゅうさつ",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅっさつ",
+     "accent": 4
+    }
+   }
+  },
+  "本": {
+   "gloss": "細長いもの",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっぽん",
+     "accent": 1
+    },
+    "2": {
+     "reading": "にほん",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんぼん",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんほん",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごほん",
+     "accent": 0
+    },
+    "6": {
+     "reading": "ろっぽん",
+     "accent": 1
+    },
+    "7": {
+     "reading": "ななほん",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はちほん",
+     "accent": 2
+    },
+    "9": {
+     "reading": "きゅうほん",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅっぽん",
+     "accent": 1
+    }
+   }
+  },
+  "足": {
+   "gloss": "靴",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっそく",
+     "accent": 4
+    },
+    "2": {
+     "reading": "にそく",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんぞく",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんそく",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごそく",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろくそく",
+     "accent": 4
+    },
+    "7": {
+     "reading": "ななそく",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はっそく",
+     "accent": 4
+    },
+    "9": {
+     "reading": "きゅうそく",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅっそく",
+     "accent": 4
+    }
+   }
+  },
+  "着": {
+   "gloss": "服",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっちゃく",
+     "accent": 4
+    },
+    "2": {
+     "reading": "にちゃく",
+     "accent": 3
+    },
+    "3": {
+     "reading": "さんちゃく",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんちゃく",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごちゃく",
+     "accent": 3
+    },
+    "6": {
+     "reading": "ろくちゃく",
+     "accent": 4
+    },
+    "7": {
+     "reading": "ななちゃく",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はっちゃく",
+     "accent": 4
+    },
+    "9": {
+     "reading": "きゅうちゃく",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅっちゃく",
+     "accent": 4
+    }
+   }
+  },
+  "箱": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "ひとはこ",
+     "accent": 2
+    },
+    "2": {
+     "reading": "ふたはこ",
+     "accent": 2
+    },
+    "3": {
+     "reading": "さんぱこ",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんはこ",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごはこ",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろっぱこ",
+     "accent": 1
+    },
+    "7": {
+     "reading": "ななはこ",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はちはこ",
+     "accent": 2
+    },
+    "9": {
+     "reading": "きゅうはこ",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅっぱこ",
+     "accent": 1
+    }
+   }
+  },
+  "曲": {
+   "gloss": "音楽",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっきょく",
+     "accent": 4
+    },
+    "2": {
+     "reading": "にきょく",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんきょく",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんきょく",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごきょく",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろっきょく",
+     "accent": 4
+    },
+    "7": {
+     "reading": "ななきょく",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はちきょく",
+     "accent": 4
+    },
+    "9": {
+     "reading": "きゅうきょく",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅっきょく",
+     "accent": 4
+    }
+   }
+  },
+  "件": {
+   "gloss": "用件",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっけん",
+     "accent": 1
+    },
+    "2": {
+     "reading": "にけん",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんけん",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんけん",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごけん",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろっけん",
+     "accent": 1
+    },
+    "7": {
+     "reading": "ななけん",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はちけん",
+     "accent": 2
+    },
+    "9": {
+     "reading": "きゅうけん",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅっけん",
+     "accent": 1
+    }
+   }
+  },
+  "組": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "ひとくみ",
+     "accent": 2
+    },
+    "2": {
+     "reading": "ふたくみ",
+     "accent": 2
+    },
+    "3": {
+     "reading": "さんくみ",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんくみ",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごくみ",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろっくみ",
+     "accent": 1
+    },
+    "7": {
+     "reading": "ななくみ",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はちくみ",
+     "accent": 2
+    },
+    "9": {
+     "reading": "きゅうくみ",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅっくみ",
+     "accent": 1
+    }
+   }
+  },
+  "キロ": {
+   "gloss": "kg",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちキロ",
+     "accent": 2
+    },
+    "2": {
+     "reading": "にキロ",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんキロ",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんキロ",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごキロ",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろっキロ",
+     "accent": 1
+    },
+    "7": {
+     "reading": "ななキロ",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はちキロ",
+     "accent": 2
+    },
+    "9": {
+     "reading": "きゅうキロ",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅっキロ",
+     "accent": 1
+    }
+   }
+  },
+  "メートル": {
+   "gloss": "m",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちメートル",
+     "accent": 3
+    },
+    "2": {
+     "reading": "にメートル",
+     "accent": 2
+    },
+    "3": {
+     "reading": "さんメートル",
+     "accent": 3
+    },
+    "4": {
+     "reading": "よんメートル",
+     "accent": 3
+    },
+    "5": {
+     "reading": "ごメートル",
+     "accent": 2
+    },
+    "6": {
+     "reading": "ろくメートル",
+     "accent": 3
+    },
+    "7": {
+     "reading": "ななメートル",
+     "accent": 3
+    },
+    "8": {
+     "reading": "はちメートル",
+     "accent": 3
+    },
+    "9": {
+     "reading": "きゅうメートル",
+     "accent": 3
+    },
+    "10": {
+     "reading": "じゅうメートル",
+     "accent": 3
+    }
+   }
+  },
+  "センチ": {
+   "gloss": "cm",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっセンチ",
+     "accent": 3
+    },
+    "2": {
+     "reading": "にセンチ",
+     "accent": 2
+    },
+    "3": {
+     "reading": "さんセンチ",
+     "accent": 3
+    },
+    "4": {
+     "reading": "よんセンチ",
+     "accent": 3
+    },
+    "5": {
+     "reading": "ごセンチ",
+     "accent": 2
+    },
+    "6": {
+     "reading": "ろくセンチ",
+     "accent": 3
+    },
+    "7": {
+     "reading": "ななセンチ",
+     "accent": 3
+    },
+    "8": {
+     "reading": "はっセンチ",
+     "accent": 3
+    },
+    "9": {
+     "reading": "きゅうセンチ",
+     "accent": 3
+    },
+    "10": {
+     "reading": "じゅっセンチ",
+     "accent": 3
+    }
+   }
+  },
+  "ミリ": {
+   "gloss": "mm",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちミリ",
+     "accent": 2
+    },
+    "2": {
+     "reading": "にミリ",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんミリ",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんミリ",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごミリ",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろくミリ",
+     "accent": 2
+    },
+    "7": {
+     "reading": "ななミリ",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はちミリ",
+     "accent": 2
+    },
+    "9": {
+     "reading": "きゅうミリ",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅうミリ",
+     "accent": 1
+    }
+   }
+  },
+  "トン": {
+   "gloss": "t",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっトン",
+     "accent": 1
+    },
+    "2": {
+     "reading": "にトン",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんトン",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんトン",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごトン",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろくトン",
+     "accent": 2
+    },
+    "7": {
+     "reading": "ななトン",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はちトン",
+     "accent": 2
+    },
+    "9": {
+     "reading": "きゅうトン",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅっトン",
+     "accent": 1
+    }
+   }
+  },
+  "グラム": {
+   "gloss": "g",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちグラム",
+     "accent": 3
+    },
+    "2": {
+     "reading": "にグラム",
+     "accent": 2
+    },
+    "3": {
+     "reading": "さんグラム",
+     "accent": 3
+    },
+    "4": {
+     "reading": "よんグラム",
+     "accent": 3
+    },
+    "5": {
+     "reading": "ごグラム",
+     "accent": 2
+    },
+    "6": {
+     "reading": "ろくグラム",
+     "accent": 3
+    },
+    "7": {
+     "reading": "ななグラム",
+     "accent": 3
+    },
+    "8": {
+     "reading": "はちグラム",
+     "accent": 3
+    },
+    "9": {
+     "reading": "きゅうグラム",
+     "accent": 3
+    },
+    "10": {
+     "reading": "じゅうグラム",
+     "accent": 3
+    }
+   }
+  },
+  "カラット": {
+   "gloss": "k",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちカラット",
+     "accent": 3
+    },
+    "2": {
+     "reading": "にカラット",
+     "accent": 2
+    },
+    "3": {
+     "reading": "さんカラット",
+     "accent": 3
+    },
+    "4": {
+     "reading": "よんカラット",
+     "accent": 3
+    },
+    "5": {
+     "reading": "ごカラット",
+     "accent": 2
+    },
+    "6": {
+     "reading": "ろくカラット",
+     "accent": 3
+    },
+    "7": {
+     "reading": "ななカラット",
+     "accent": 3
+    },
+    "8": {
+     "reading": "はちカラット",
+     "accent": 3
+    },
+    "9": {
+     "reading": "きゅうカラット",
+     "accent": 3
+    },
+    "10": {
+     "reading": "じゅっカラット",
+     "accent": 3
+    }
+   }
+  },
+  "平方メートル": {
+   "gloss": "㎡",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちへいほうメートル",
+     "accent": 7
+    },
+    "2": {
+     "reading": "にへいほうメートル",
+     "accent": 6
+    },
+    "3": {
+     "reading": "さんへいほうメートル",
+     "accent": 7
+    },
+    "4": {
+     "reading": "よんへいほうメートル",
+     "accent": 7
+    },
+    "5": {
+     "reading": "ごへいほうメートル",
+     "accent": 6
+    },
+    "6": {
+     "reading": "ろくへいほうメートル",
+     "accent": 7
+    },
+    "7": {
+     "reading": "ななへいほうメートル",
+     "accent": 7
+    },
+    "8": {
+     "reading": "はちへいほうメートル",
+     "accent": 7
+    },
+    "9": {
+     "reading": "きゅうへいほうメートル",
+     "accent": 7
+    },
+    "10": {
+     "reading": "じゅうへいほうメートル",
+     "accent": 7
+    }
+   }
+  },
+  "畳": {
+   "gloss": "部屋の広さ",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちじょう",
+     "accent": 3
+    },
+    "2": {
+     "reading": "にじょう",
+     "accent": 2
+    },
+    "3": {
+     "reading": "さんじょう",
+     "accent": 3
+    },
+    "4": {
+     "reading": "よじょう",
+     "accent": 2
+    },
+    "5": {
+     "reading": "ごじょう",
+     "accent": 2
+    },
+    "6": {
+     "reading": "ろくじょう",
+     "accent": 3
+    },
+    "7": {
+     "reading": "ななじょう",
+     "accent": 3
+    },
+    "8": {
+     "reading": "はちじょう",
+     "accent": 3
+    },
+    "9": {
+     "reading": "きゅうじょう",
+     "accent": 3
+    },
+    "10": {
+     "reading": "じゅうじょう",
+     "accent": 3
+    }
+   }
+  },
+  "リットル": {
+   "gloss": "l",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちリットル",
+     "accent": 3
+    },
+    "2": {
+     "reading": "にリットル",
+     "accent": 2
+    },
+    "3": {
+     "reading": "さんリットル",
+     "accent": 3
+    },
+    "4": {
+     "reading": "よんリットル",
+     "accent": 3
+    },
+    "5": {
+     "reading": "ごリットル",
+     "accent": 2
+    },
+    "6": {
+     "reading": "ろくリットル",
+     "accent": 3
+    },
+    "7": {
+     "reading": "ななリットル",
+     "accent": 3
+    },
+    "8": {
+     "reading": "はちリットル",
+     "accent": 3
+    },
+    "9": {
+     "reading": "きゅうリットル",
+     "accent": 3
+    },
+    "10": {
+     "reading": "じゅうリットル",
+     "accent": 3
+    }
+   }
+  },
+  "杯": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっぱい",
+     "accent": 1
+    },
+    "2": {
+     "reading": "にはい",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんばい",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんはい",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごはい",
+     "accent": 0
+    },
+    "6": {
+     "reading": "ろっぱい",
+     "accent": 1
+    },
+    "7": {
+     "reading": "ななはい",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はっぱい",
+     "accent": 1
+    },
+    "9": {
+     "reading": "きゅうはい",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅっぱい",
+     "accent": 1
+    }
+   }
+  },
+  "度": {
+   "gloss": "気温",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちど",
+     "accent": 2
+    },
+    "2": {
+     "reading": "にど",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんど",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんど",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごど",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろくど",
+     "accent": 2
+    },
+    "7": {
+     "reading": "ななど",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はちど",
+     "accent": 2
+    },
+    "9": {
+     "reading": "きゅうど",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅうど",
+     "accent": 1
+    }
+   }
+  },
+  "点": {
+   "gloss": "点数",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いってん",
+     "accent": 3
+    },
+    "2": {
+     "reading": "にてん",
+     "accent": 2
+    },
+    "3": {
+     "reading": "さんてん",
+     "accent": 3
+    },
+    "4": {
+     "reading": "よんてん",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごてん",
+     "accent": 2
+    },
+    "6": {
+     "reading": "ろくてん",
+     "accent": 3
+    },
+    "7": {
+     "reading": "ななてん",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はってん",
+     "accent": 3
+    },
+    "9": {
+     "reading": "きゅうてん",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅってん",
+     "accent": 3
+    }
+   }
+  },
+  "皿": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "ひとさら",
+     "accent": 2
+    },
+    "2": {
+     "reading": "ふたさら",
+     "accent": 2
+    },
+    "3": {
+     "reading": "みさら",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんさら",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごさら",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろくさら",
+     "accent": 2
+    },
+    "7": {
+     "reading": "ななさら",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はちさら",
+     "accent": 2
+    },
+    "9": {
+     "reading": "きゅうさら",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅっさら",
+     "accent": 1
+    }
+   }
+  },
+  "人前": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちにんまえ",
+     "accent": 0
+    },
+    "2": {
+     "reading": "ににんまえ",
+     "accent": 0
+    },
+    "3": {
+     "reading": "さんにんまえ",
+     "accent": 0
+    },
+    "4": {
+     "reading": "よにんまえ",
+     "accent": 0
+    },
+    "5": {
+     "reading": "ごにんまえ",
+     "accent": 0
+    },
+    "6": {
+     "reading": "ろくにんまえ",
+     "accent": 0
+    },
+    "7": {
+     "reading": "ななにんまえ",
+     "accent": 0
+    },
+    "8": {
+     "reading": "はちにんまえ",
+     "accent": 0
+    },
+    "9": {
+     "reading": "きゅうにんまえ",
+     "accent": 0
+    },
+    "10": {
+     "reading": "じゅうにんまえ",
+     "accent": 0
+    }
+   }
+  },
+  "歳": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっさい",
+     "accent": 1
+    },
+    "2": {
+     "reading": "にさい",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんさい",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんさい",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごさい",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろくさい",
+     "accent": 2
+    },
+    "7": {
+     "reading": "ななさい",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はっさい",
+     "accent": 1
+    },
+    "9": {
+     "reading": "きゅうさい",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅっさい",
+     "accent": 1
+    }
+   }
+  },
+  "階": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっかい",
+     "accent": 0
+    },
+    "2": {
+     "reading": "にかい",
+     "accent": 0
+    },
+    "3": {
+     "reading": "さんがい",
+     "accent": 0
+    },
+    "4": {
+     "reading": "よんかい",
+     "accent": 0
+    },
+    "5": {
+     "reading": "ごかい",
+     "accent": 0
+    },
+    "6": {
+     "reading": "ろっかい",
+     "accent": 0
+    },
+    "7": {
+     "reading": "ななかい",
+     "accent": 0
+    },
+    "8": {
+     "reading": "はちかい",
+     "accent": 0
+    },
+    "9": {
+     "reading": "きゅうかい",
+     "accent": 0
+    },
+    "10": {
+     "reading": "じゅっかい",
+     "accent": 0
+    }
+   }
+  },
+  "番": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちばん",
+     "accent": 2
+    },
+    "2": {
+     "reading": "にばん",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんばん",
+     "accent": 0
+    },
+    "4": {
+     "reading": "よんばん",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごばん",
+     "accent": 0
+    },
+    "6": {
+     "reading": "ろくばん",
+     "accent": 2
+    },
+    "7": {
+     "reading": "ななばん",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はちばん",
+     "accent": 2
+    },
+    "9": {
+     "reading": "きゅうばん",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅうばん",
+     "accent": 1
+    }
+   }
+  },
+  "位": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちい",
+     "accent": 2
+    },
+    "2": {
+     "reading": "にい",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんい",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんい",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごい",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろくい",
+     "accent": 2
+    },
+    "7": {
+     "reading": "なない",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はちい",
+     "accent": 2
+    },
+    "9": {
+     "reading": "きゅうい",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅうい",
+     "accent": 1
+    }
+   }
+  },
+  "つ目": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "ひとつめ",
+     "accent": 4
+    },
+    "2": {
+     "reading": "ふたつめ",
+     "accent": 4
+    },
+    "3": {
+     "reading": "みっつめ",
+     "accent": 4
+    },
+    "4": {
+     "reading": "よっつめ",
+     "accent": 4
+    },
+    "5": {
+     "reading": "いつつめ",
+     "accent": 4
+    },
+    "6": {
+     "reading": "むっつめ",
+     "accent": 4
+    },
+    "7": {
+     "reading": "ななつめ",
+     "accent": 4
+    },
+    "8": {
+     "reading": "やっつめ",
+     "accent": 4
+    },
+    "9": {
+     "reading": "ここのつめ",
+     "accent": 5
+    },
+    "10": {
+     "reading": "じゅっこめ",
+     "accent": 4
+    }
+   }
+  },
+  "段目": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちだんめ",
+     "accent": 0
+    },
+    "2": {
+     "reading": "にだんめ",
+     "accent": 0
+    },
+    "3": {
+     "reading": "さんだんめ",
+     "accent": 0
+    },
+    "4": {
+     "reading": "よんだんめ",
+     "accent": 0
+    },
+    "5": {
+     "reading": "ごだんめ",
+     "accent": 0
+    },
+    "6": {
+     "reading": "ろくだんめ",
+     "accent": 0
+    },
+    "7": {
+     "reading": "ななだんめ",
+     "accent": 0
+    },
+    "8": {
+     "reading": "はちだんめ",
+     "accent": 0
+    },
+    "9": {
+     "reading": "きゅうだんめ",
+     "accent": 0
+    },
+    "10": {
+     "reading": "じゅうだんめ",
+     "accent": 0
+    }
+   }
+  },
+  "話": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちわ",
+     "accent": 2
+    },
+    "2": {
+     "reading": "にわ",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんわ",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんわ",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごわ",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろくわ",
+     "accent": 2
+    },
+    "7": {
+     "reading": "ななわ",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はちわ",
+     "accent": 2
+    },
+    "9": {
+     "reading": "きゅうわ",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅうわ",
+     "accent": 1
+    }
+   }
+  },
+  "番線": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちばんせん",
+     "accent": 0
+    },
+    "2": {
+     "reading": "にばんせん",
+     "accent": 0
+    },
+    "3": {
+     "reading": "さんばんせん",
+     "accent": 0
+    },
+    "4": {
+     "reading": "よんばんせん",
+     "accent": 0
+    },
+    "5": {
+     "reading": "ごばんせん",
+     "accent": 0
+    },
+    "6": {
+     "reading": "ろくばんせん",
+     "accent": 0
+    },
+    "7": {
+     "reading": "ななばんせん",
+     "accent": 0
+    },
+    "8": {
+     "reading": "はちばんせん",
+     "accent": 0
+    },
+    "9": {
+     "reading": "きゅうばんせん",
+     "accent": 0
+    },
+    "10": {
+     "reading": "じゅうばんせん",
+     "accent": 0
+    }
+   }
+  },
+  "課": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっか",
+     "accent": 1
+    },
+    "2": {
+     "reading": "にか",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんか",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんか",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごか",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろっか",
+     "accent": 1
+    },
+    "7": {
+     "reading": "ななか",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はちか",
+     "accent": 2
+    },
+    "9": {
+     "reading": "きゅうか",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅっか",
+     "accent": 1
+    }
+   }
+  },
+  "ページ": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちぺージ",
+     "accent": 3
+    },
+    "2": {
+     "reading": "にぺージ",
+     "accent": 2
+    },
+    "3": {
+     "reading": "さんぺージ",
+     "accent": 3
+    },
+    "4": {
+     "reading": "よんぺージ",
+     "accent": 3
+    },
+    "5": {
+     "reading": "ごぺージ",
+     "accent": 2
+    },
+    "6": {
+     "reading": "ろくぺージ",
+     "accent": 3
+    },
+    "7": {
+     "reading": "ななぺージ",
+     "accent": 3
+    },
+    "8": {
+     "reading": "はちぺージ",
+     "accent": 3
+    },
+    "9": {
+     "reading": "きゅうぺージ",
+     "accent": 3
+    },
+    "10": {
+     "reading": "じゅっぺージ",
+     "accent": 3
+    }
+   }
+  },
+  "行目": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちぎょうめ",
+     "accent": 0
+    },
+    "2": {
+     "reading": "にぎょうめ",
+     "accent": 0
+    },
+    "3": {
+     "reading": "さんぎょうめ",
+     "accent": 0
+    },
+    "4": {
+     "reading": "よんぎょうめ",
+     "accent": 0
+    },
+    "5": {
+     "reading": "ごぎょうめ",
+     "accent": 0
+    },
+    "6": {
+     "reading": "ろくぎょうめ",
+     "accent": 0
+    },
+    "7": {
+     "reading": "ななぎょうめ",
+     "accent": 0
+    },
+    "8": {
+     "reading": "はちぎょうめ",
+     "accent": 0
+    },
+    "9": {
+     "reading": "きゅうぎょうめ",
+     "accent": 0
+    },
+    "10": {
+     "reading": "じゅうぎょうめ",
+     "accent": 0
+    }
+   }
+  },
+  "文字目": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "ひともじめ",
+     "accent": 0
+    },
+    "2": {
+     "reading": "ふたもじめ",
+     "accent": 0
+    },
+    "3": {
+     "reading": "さんもじめ",
+     "accent": 0
+    },
+    "4": {
+     "reading": "よんもじめ",
+     "accent": 0
+    },
+    "5": {
+     "reading": "ごもじめ",
+     "accent": 0
+    },
+    "6": {
+     "reading": "ろくもじめ",
+     "accent": 0
+    },
+    "7": {
+     "reading": "ななもじめ",
+     "accent": 0
+    },
+    "8": {
+     "reading": "はちもじめ",
+     "accent": 0
+    },
+    "9": {
+     "reading": "きゅうもじめ",
+     "accent": 0
+    },
+    "10": {
+     "reading": "じゅうもじめ",
+     "accent": 0
+    }
+   }
+  },
+  "秒": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちびょう",
+     "accent": 2
+    },
+    "2": {
+     "reading": "にびょう",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんびょう",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんびょう",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごびょう",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろくびょう",
+     "accent": 2
+    },
+    "7": {
+     "reading": "ななびょう",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はちびょう",
+     "accent": 2
+    },
+    "9": {
+     "reading": "きゅうびょう",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅうびょう",
+     "accent": 1
+    }
+   }
+  },
+  "秒間": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちびょうかん",
+     "accent": 3
+    },
+    "2": {
+     "reading": "にびょうかん",
+     "accent": 2
+    },
+    "3": {
+     "reading": "さんびょうかん",
+     "accent": 3
+    },
+    "4": {
+     "reading": "よんびょうかん",
+     "accent": 3
+    },
+    "5": {
+     "reading": "ごびょうかん",
+     "accent": 2
+    },
+    "6": {
+     "reading": "ろくびょうかん",
+     "accent": 3
+    },
+    "7": {
+     "reading": "ななびょうかん",
+     "accent": 3
+    },
+    "8": {
+     "reading": "はちびょうかん",
+     "accent": 3
+    },
+    "9": {
+     "reading": "きゅうびょうかん",
+     "accent": 3
+    },
+    "10": {
+     "reading": "じゅうびょうかん",
+     "accent": 3
+    }
+   }
+  },
+  "分": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっぷん",
+     "accent": 1
+    },
+    "2": {
+     "reading": "にふん",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんぷん",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんぷん",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごふん",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろっぷん",
+     "accent": 1
+    },
+    "7": {
+     "reading": "ななふん",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はっぷん",
+     "accent": 1
+    },
+    "9": {
+     "reading": "きゅうふん",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅっぷん",
+     "accent": 1
+    }
+   }
+  },
+  "分間": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっぷんかん",
+     "accent": 3
+    },
+    "2": {
+     "reading": "にふんかん",
+     "accent": 2
+    },
+    "3": {
+     "reading": "さんぷんかん",
+     "accent": 3
+    },
+    "4": {
+     "reading": "よんぷんかん",
+     "accent": 3
+    },
+    "5": {
+     "reading": "ごふんかん",
+     "accent": 2
+    },
+    "6": {
+     "reading": "ろっぷんかん",
+     "accent": 3
+    },
+    "7": {
+     "reading": "ななふんかん",
+     "accent": 3
+    },
+    "8": {
+     "reading": "はっぷんかん",
+     "accent": 3
+    },
+    "9": {
+     "reading": "きゅうふんかん",
+     "accent": 3
+    },
+    "10": {
+     "reading": "じゅっぷんかん",
+     "accent": 3
+    }
+   }
+  },
+  "時": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちじ",
+     "accent": 2
+    },
+    "2": {
+     "reading": "にじ",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんじ",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よじ",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごじ",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろくじ",
+     "accent": 2
+    },
+    "7": {
+     "reading": "しちじ",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はちじ",
+     "accent": 2
+    },
+    "9": {
+     "reading": "くじ",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅうじ",
+     "accent": 1
+    }
+   }
+  },
+  "時間": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちじかん",
+     "accent": 3
+    },
+    "2": {
+     "reading": "にじかん",
+     "accent": 2
+    },
+    "3": {
+     "reading": "さんじかん",
+     "accent": 3
+    },
+    "4": {
+     "reading": "よじかん",
+     "accent": 2
+    },
+    "5": {
+     "reading": "ごじかん",
+     "accent": 2
+    },
+    "6": {
+     "reading": "ろくじかん",
+     "accent": 3
+    },
+    "7": {
+     "reading": "しちじかん",
+     "accent": 3
+    },
+    "8": {
+     "reading": "はちじかん",
+     "accent": 3
+    },
+    "9": {
+     "reading": "くじかん",
+     "accent": 2
+    },
+    "10": {
+     "reading": "じゅうじかん",
+     "accent": 3
+    }
+   }
+  },
+  "日": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "ついたち",
+     "accent": 4
+    },
+    "2": {
+     "reading": "ふつか",
+     "accent": 0
+    },
+    "3": {
+     "reading": "みっか",
+     "accent": 0
+    },
+    "4": {
+     "reading": "よっか",
+     "accent": 0
+    },
+    "5": {
+     "reading": "いつか",
+     "accent": 0
+    },
+    "6": {
+     "reading": "むいか",
+     "accent": 0
+    },
+    "7": {
+     "reading": "なのか",
+     "accent": 0
+    },
+    "8": {
+     "reading": "ようか",
+     "accent": 0
+    },
+    "9": {
+     "reading": "ここのか",
+     "accent": 4
+    },
+    "10": {
+     "reading": "とおか",
+     "accent": 0
+    }
+   }
+  },
+  "日間": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "2": {
+     "reading": "ふつかかん",
+     "accent": 3
+    },
+    "3": {
+     "reading": "みっかかん",
+     "accent": 3
+    },
+    "4": {
+     "reading": "よっかかん",
+     "accent": 3
+    },
+    "5": {
+     "reading": "いつかかん",
+     "accent": 3
+    },
+    "6": {
+     "reading": "むいかかん",
+     "accent": 3
+    },
+    "7": {
+     "reading": "なのかかん",
+     "accent": 3
+    },
+    "8": {
+     "reading": "ようかかん",
+     "accent": 3
+    },
+    "9": {
+     "reading": "ここのかかん",
+     "accent": 4
+    },
+    "10": {
+     "reading": "とおかかん",
+     "accent": 3
+    }
+   }
+  },
+  "月": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちがつ",
+     "accent": 4
+    },
+    "2": {
+     "reading": "にがつ",
+     "accent": 3
+    },
+    "3": {
+     "reading": "さんがつ",
+     "accent": 1
+    },
+    "4": {
+     "reading": "しがつ",
+     "accent": 3
+    },
+    "5": {
+     "reading": "ごがつ",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろくがつ",
+     "accent": 4
+    },
+    "7": {
+     "reading": "しちがつ",
+     "accent": 4
+    },
+    "8": {
+     "reading": "はちがつ",
+     "accent": 4
+    },
+    "9": {
+     "reading": "くがつ",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅうがつ",
+     "accent": 4
+    }
+   }
+  },
+  "か月": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっかげつ",
+     "accent": 3
+    },
+    "2": {
+     "reading": "にかげつ",
+     "accent": 2
+    },
+    "3": {
+     "reading": "さんかげつ",
+     "accent": 3
+    },
+    "4": {
+     "reading": "よんかげつ",
+     "accent": 3
+    },
+    "5": {
+     "reading": "ごかげつ",
+     "accent": 2
+    },
+    "6": {
+     "reading": "ろっかげつ",
+     "accent": 3
+    },
+    "7": {
+     "reading": "ななかげつ",
+     "accent": 3
+    },
+    "8": {
+     "reading": "はちかげつ",
+     "accent": 3
+    },
+    "9": {
+     "reading": "きゅうかげつ",
+     "accent": 3
+    },
+    "10": {
+     "reading": "じゅっかげつ",
+     "accent": 3
+    }
+   }
+  },
+  "年": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちねん",
+     "accent": 2
+    },
+    "2": {
+     "reading": "にねん",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんねん",
+     "accent": 0
+    },
+    "4": {
+     "reading": "よねん",
+     "accent": 0
+    },
+    "5": {
+     "reading": "ごねん",
+     "accent": 0
+    },
+    "6": {
+     "reading": "ろくねん",
+     "accent": 2
+    },
+    "7": {
+     "reading": "しちねん",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はちねん",
+     "accent": 2
+    },
+    "9": {
+     "reading": "くねん",
+     "accent": 0
+    },
+    "10": {
+     "reading": "じゅうねん",
+     "accent": 1
+    }
+   }
+  },
+  "年間": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いちねんかん",
+     "accent": 3
+    },
+    "2": {
+     "reading": "にねんかん",
+     "accent": 2
+    },
+    "3": {
+     "reading": "さんねんかん",
+     "accent": 3
+    },
+    "4": {
+     "reading": "よねんかん",
+     "accent": 2
+    },
+    "5": {
+     "reading": "ごねんかん",
+     "accent": 2
+    },
+    "6": {
+     "reading": "ろくねんかん",
+     "accent": 3
+    },
+    "7": {
+     "reading": "しちねんかん",
+     "accent": 3
+    },
+    "8": {
+     "reading": "はちねんかん",
+     "accent": 3
+    },
+    "9": {
+     "reading": "くねんかん",
+     "accent": 2
+    },
+    "10": {
+     "reading": "じゅうねんかん",
+     "accent": 3
+    }
+   }
+  },
+  "週間": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっしゅうかん",
+     "accent": 3
+    },
+    "2": {
+     "reading": "にしゅうかん",
+     "accent": 2
+    },
+    "3": {
+     "reading": "さんしゅうかん",
+     "accent": 3
+    },
+    "4": {
+     "reading": "よんしゅうかん",
+     "accent": 3
+    },
+    "5": {
+     "reading": "ごしゅうかん",
+     "accent": 2
+    },
+    "6": {
+     "reading": "ろくしゅうかん",
+     "accent": 3
+    },
+    "7": {
+     "reading": "ななしゅうかん",
+     "accent": 3
+    },
+    "8": {
+     "reading": "はっしゅうかん",
+     "accent": 3
+    },
+    "9": {
+     "reading": "きゅうしゅうかん",
+     "accent": 3
+    },
+    "10": {
+     "reading": "じゅっしゅうかん",
+     "accent": 3
+    }
+   }
+  },
+  "周年": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっしゅうねん",
+     "accent": 3
+    },
+    "2": {
+     "reading": "にしゅうねん",
+     "accent": 2
+    },
+    "3": {
+     "reading": "さんしゅうねん",
+     "accent": 3
+    },
+    "4": {
+     "reading": "よんしゅうねん",
+     "accent": 3
+    },
+    "5": {
+     "reading": "ごしゅうねん",
+     "accent": 2
+    },
+    "6": {
+     "reading": "ろくしゅうねん",
+     "accent": 3
+    },
+    "7": {
+     "reading": "ななしゅうねん",
+     "accent": 3
+    },
+    "8": {
+     "reading": "はっしゅうねん",
+     "accent": 3
+    },
+    "9": {
+     "reading": "きゅうしゅうねん",
+     "accent": 3
+    },
+    "10": {
+     "reading": "じゅっしゅうねん",
+     "accent": 3
+    }
+   }
+  },
+  "泊": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっぱく",
+     "accent": 4
+    },
+    "2": {
+     "reading": "にはく",
+     "accent": 1
+    },
+    "3": {
+     "reading": "さんぱく",
+     "accent": 1
+    },
+    "4": {
+     "reading": "よんぱく",
+     "accent": 1
+    },
+    "5": {
+     "reading": "ごはく",
+     "accent": 1
+    },
+    "6": {
+     "reading": "ろっぱく",
+     "accent": 4
+    },
+    "7": {
+     "reading": "ななはく",
+     "accent": 2
+    },
+    "8": {
+     "reading": "はっぱく",
+     "accent": 4
+    },
+    "9": {
+     "reading": "きゅうはく",
+     "accent": 1
+    },
+    "10": {
+     "reading": "じゅっぱく",
+     "accent": 4
+    }
+   }
+  },
+  "世紀": {
+   "gloss": "",
+   "confidence": "verified",
+   "numerals": {
+    "1": {
+     "reading": "いっせいき",
+     "accent": 3
+    },
+    "2": {
+     "reading": "にせいき",
+     "accent": 2
+    },
+    "3": {
+     "reading": "さんせいき",
+     "accent": 3
+    },
+    "4": {
+     "reading": "よんせいき",
+     "accent": 3
+    },
+    "5": {
+     "reading": "ごせいき",
+     "accent": 2
+    },
+    "6": {
+     "reading": "ろくせいき",
+     "accent": 3
+    },
+    "7": {
+     "reading": "ななせいき",
+     "accent": 3
+    },
+    "8": {
+     "reading": "はっせいき",
+     "accent": 3
+    },
+    "9": {
+     "reading": "きゅうせいき",
+     "accent": 3
+    },
+    "10": {
+     "reading": "じゅっせいき",
+     "accent": 3
+    }
+   }
+  }
+ }
+}

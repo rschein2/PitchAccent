@@ -124,6 +124,7 @@ class SentenceParser:
             reading = kata_to_hira(f.kana) if hasattr(f, 'kana') and f.kana else surface
             pos1 = f.pos1 if hasattr(f, 'pos1') else ""
             pos2 = f.pos2 if hasattr(f, 'pos2') else ""
+            pos3 = f.pos3 if hasattr(f, 'pos3') else ""
             lemma = f.lemma if hasattr(f, 'lemma') else surface
             aType = f.aType if hasattr(f, 'aType') else "*"
             aConType = f.aConType if hasattr(f, 'aConType') else "*"
@@ -140,6 +141,7 @@ class SentenceParser:
                 "reading": f.kana if hasattr(f, 'kana') and f.kana else surface,
                 "pos1": pos1,
                 "pos2": pos2,
+                "pos3": pos3,
                 "cType": cType,
                 "cForm": cForm,
                 "aType": aType,
@@ -177,6 +179,7 @@ class SentenceParser:
                             "reading": next_f.kana if hasattr(next_f, 'kana') and next_f.kana else next_node.surface,
                             "pos1": next_pos1,
                             "pos2": next_pos2,
+                            "pos3": next_f.pos3 if hasattr(next_f, 'pos3') else "",
                             "cType": next_f.cType if hasattr(next_f, 'cType') else "*",
                             "cForm": next_f.cForm if hasattr(next_f, 'cForm') else "*",
                             "aType": next_f.aType if hasattr(next_f, 'aType') else "*",
@@ -312,7 +315,7 @@ class SentenceParser:
 
         # Determine if this is primarily a numeral phrase or noun compound
         has_numeral = any(m["pos2"] in self.NUMERAL_NOUN_TYPES for m in morphemes)
-        has_counter = any(m["pos2"] in self.COUNTER_NOUN_TYPES for m in morphemes)
+        has_counter = any(self._is_counter(m) for m in morphemes)
 
         compound_rules = []
         computed_accent = None
@@ -331,26 +334,33 @@ class SentenceParser:
                 if len(morphemes) > 1:
                     compound_rules.append(f"dictionary: {found}")
 
-        # If it's a numeral + counter phrase, use numeral rules
-        if computed_accent is not None:
-            pass
-        elif has_numeral and has_counter and self.use_numeral_rules:
-            # Find numeral and counter parts
+        # Numeral + counter phrase → table-driven numeral rules. The engine
+        # returns None for counters outside its table, in which case we fall
+        # through to the compound rules below.
+        if computed_accent is None and has_numeral and has_counter and self.use_numeral_rules:
             numeral_morphemes = [m for m in morphemes if m["pos2"] in self.NUMERAL_NOUN_TYPES]
-            counter_morphemes = [m for m in morphemes if m["pos2"] in self.COUNTER_NOUN_TYPES]
+            counter_morphemes = [m for m in morphemes if self._is_counter(m)]
 
-            if counter_morphemes:
+            if numeral_morphemes and counter_morphemes:
                 merged = self.numeral_engine.process_numeral_phrase(
                     numeral_morphemes,
                     counter_morphemes[0]
                 )
-                computed_accent = merged.get("aType", "0")
-                source = "numeral"
-                if "_numeral_rule" in merged:
-                    compound_rules.append(f"numeral: {merged['_numeral_rule']}")
+                if merged is not None:
+                    computed_accent = merged.get("aType", "0")
+                    source = "numeral"
+                    # The table reading carries the sandhi (いっぷん, さんぼん)
+                    # — use it when the phrase is exactly numeral+counter.
+                    if len(morphemes) == len(numeral_morphemes) + 1:
+                        combined_reading = merged.get("reading", combined_reading)
+                    if "_numeral_rule" in merged:
+                        conf = merged.get("_numeral_confidence", "")
+                        compound_rules.append(
+                            f"numeral: {merged['_numeral_rule']}"
+                            + (f" ({conf})" if conf else ""))
 
-        # If it's multiple nouns (compound), use compound rules
-        elif len(morphemes) > 1 and self.use_compound_rules:
+        # Multiple nouns (compound) → compound sandhi rules
+        if computed_accent is None and len(morphemes) > 1 and self.use_compound_rules:
             merged = self.compound_engine.process_noun_sequence(morphemes)
             computed_accent = merged.get("aType", morphemes[0].get("aType", "0"))
             source = "compound"
@@ -358,7 +368,7 @@ class SentenceParser:
                 compound_rules.extend(merged["_compound_rules"])
 
         # Single noun - use its own accent
-        else:
+        if computed_accent is None:
             computed_accent = morphemes[0].get("aType", "0")
 
         # Handle comma in aType (multiple options - take first)
@@ -384,6 +394,20 @@ class SentenceParser:
             accent_variants=accent_variants,
             source=source,
         )
+
+    def _is_counter(self, morpheme: dict) -> bool:
+        """
+        Counter (助数詞) detection. UniDic tags counters inconsistently:
+        本 → 接尾辞/名詞的/助数詞, 冊・人 → 接尾辞/名詞的/一般,
+        年・分・階 → 名詞/普通名詞/助数詞可能 — so match broadly. Only
+        called for sequences that contain a numeral.
+        """
+        pos1 = morpheme.get("pos1", "")
+        pos2 = morpheme.get("pos2", "")
+        pos3 = morpheme.get("pos3", "")
+        return (pos2 in self.COUNTER_NOUN_TYPES
+                or pos3 in ("助数詞", "助数詞可能")
+                or (pos1 == "接尾辞" and pos2 == "名詞的"))
 
     def _is_content_word(self, pos1: str, pos2: str) -> bool:
         """Check if a word is a content word based on POS."""
