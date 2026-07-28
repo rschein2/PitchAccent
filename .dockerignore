@@ -1,7 +1,10 @@
 venv/
 __pycache__/
 *.pyc
-data/
+# data/kanjium and data/numeral_accent.json MUST ship in the image —
+# only exclude the heavy build-time-only data
+data/jlpt/
+data/minimal_pairs.json
 docs/
 examples/
 music/
