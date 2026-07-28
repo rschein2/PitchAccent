@@ -42,6 +42,8 @@ pitch_accent/jlpt_word_cache.json
 
 # Large downloads
 *.gz
+# ...except the Kanjium accent dictionary, which the engine ships with
+!data/kanjium/accents.txt.gz
 
 # Test outputs
 test_*.txt
