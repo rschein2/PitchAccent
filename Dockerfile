@@ -15,8 +15,11 @@ RUN pip install --no-cache-dir -r requirements-api.txt
 # Download UniDic dictionary
 RUN python -m unidic download
 
-# Copy app code
+# Copy app code AND data layers. data/ is required: without it the engine
+# silently degrades to rules-only (no Kanjium dictionary, no numeral table).
 COPY pitch_accent/ pitch_accent/
+COPY data/kanjium/ data/kanjium/
+COPY data/numeral_accent.json data/
 COPY api.py .
 
 # Railway provides PORT env var

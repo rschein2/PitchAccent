@@ -13,7 +13,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional
 
-app = FastAPI(title="Pitch Accent API", version="0.1.0")
+app = FastAPI(title="Pitch Accent API", version="0.2.0")
 
 # CORS — allow calls from any origin (Next.js app)
 app.add_middleware(
